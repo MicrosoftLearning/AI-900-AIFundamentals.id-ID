@@ -2,18 +2,18 @@
 title: Petunjuk Host Online
 permalink: index.html
 layout: home
-ms.openlocfilehash: b85af520a10e63a2f9a5696db03bfd946aff968f
-ms.sourcegitcommit: 1ef64e3008a439d0d0bb3d93a27d3df68d3d64a9
+ms.openlocfilehash: 86fa2da9bfa9e4d7edb0c853f77e95fe69e97411
+ms.sourcegitcommit: 3fc8440b350b498c2f50ab4ce531a0f906792584
 ms.translationtype: HT
 ms.contentlocale: id-ID
-ms.lasthandoff: 03/17/2022
-ms.locfileid: "140688692"
+ms.lasthandoff: 09/08/2022
+ms.locfileid: "147866006"
 ---
 # <a name="azure-ai-fundamentals-exercises"></a>Latihan Dasar-Dasar AI Azure
 
-Gunakan tautan di bawah untuk menyelesaikan latihan lab langsung untuk kursus Microsoft [AI-900 *Dasar-Dasar Microsoft Azure AI*](https://docs.microsoft.com/learn/certifications/courses/ai-900t00).
+Latihan langsung ini dirancang untuk mendukung konten pelatihan di [Microsoft Learn](https://docs.microsoft.com/training/).
 
-Untuk menyelesaikan latihan ini, Anda harus berlangganan Microsoft Azure Jika instruktur Anda belum menyediakannya, Anda dapat mendaftar untuk coba gratis di [https://azure.microsoft.com](https://azure.microsoft.com).
+Untuk menyelesaikan latihan ini, Anda harus berlangganan Microsoft Azure Anda dapat mendaftar untuk uji coba gratis di [https://azure.microsoft.com](https://azure.microsoft.com).
 
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/instructions'" %}
 | Latihan |
