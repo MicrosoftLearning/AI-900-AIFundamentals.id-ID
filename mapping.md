@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: 69f8fd8920fccc0aecc4fb5d5a40e506935f8340
-ms.sourcegitcommit: 276908bd75615fb4d4712b912426129587e9c307
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "140788221"
----
 # <a name="ai-900-trainer-lab-mapping"></a>Pemetaan lab pelatih AI-900
 
 Kursus ini, AI-900: Dasar-Dasar AI, memiliki subset lab yang ditujukan untuk pelatihan dengan bimbingan instruktur yang disesuaikan untuk kursus 1 hari.
