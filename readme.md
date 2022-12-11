@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: 4e00e832d02871de3fa4511273434b6e8db58df3
-ms.sourcegitcommit: 71edd7d093464547be5a87725ef67dad082aafbf
-ms.translationtype: HT
-ms.contentlocale: id-ID
-ms.lasthandoff: 08/23/2022
-ms.locfileid: "147629850"
----
 # <a name="ai-900-microsoft-azure-ai-fundamentals"></a>AI-900: Dasar-dasar AI Microsoft Azure
 
 Repositori ini berisi latihan lab langsung untuk kursus Microsoft [AI-900 *Dasar-Dasar Microsoft Azure AI*](https://docs.microsoft.com/en-us/learn/certifications/courses/ai-900t00) dan [modul mandiri di Microsoft Learn](https://docs.microsoft.com/learn/certifications/azure-ai-fundamentals). Lab ini dirancang untuk melengkapi materi pembelajaran dan memungkinkan Anda mempraktikkan teknologi yang dijelaskan. 
