@@ -126,9 +126,11 @@ Sebelum dapat melatih model, biasanya Anda perlu menerapkan beberapa transformas
 
     ![Cuplikan layar lokasi pustaka, bilah pencarian, dan ikon komponen aset perancang.](media/create-classification-model/designer-asset-library-components.png)
 
-1. Temukan modul **Normalkan Data** dan letakkan di kanvas, di bawah himpunan data **diabetes-data**. Selanjutnya sambungkan output dari bagian bawah himpunan data **diabetes-data** ke input di bagian atas modul **Normalize Data**, seperti ini:
+1. Cari modul **Memilih Kolom di Himpunan Data** dan letakkan di kanvas, di bawah himpunan data **diabetes-data**. Kemudian hubungkan output dari bagian bawah himpunan data **diabetes-data** ke input di bagian atas modul **Memilih Kolom di Himpunan Data**.
 
-    ![Cuplikan layar alur dengan himpunan data yang terhubung ke modul Normalisasi Data.](media/create-classification-model/dataset-normalize.png)
+1. Cari modul **Menormalisasi Data** dan letakkan di atas kanvas, di bawah modul **Memilih Kolom di Himpunan Data**. Kemudian hubungkan output dari bagian bawah modul **Memilih Kolom di Himpunan Data** ke input di bagian atas modul **Menormalisasi Data**, seperti ini:
+
+    ![Cuplikan layar alur dengan himpunan data yang terhubung untuk modul memilih kolom dan Normalisasi Data.](media/create-classification-model/dataset-normalize.png)
 
 1. Klik dua kali modul **Normalisasi Data** untuk melihat pengaturannya, perhatikan bahwa modul ini mengharuskan Anda menentukan metode transformasi dan kolom yang akan diubah. 
 
@@ -277,6 +279,7 @@ Performa model ini tidak terlalu bagus, sebagian karena kita hanya melakukan rek
     
     - Tambahkan komponen **input layanan web** agar data baru dapat dikirimkan.
     - Ganti himpunan data **diabetes-data** dengan modul **Masukkan Data Secara Manual** yang tidak menyertakan kolom label (**Diabetik**).
+    - Edit kolom yang dipilih dalam modul **Memilih Kolom di Himpunan Data**.
     - Hapus modul **Evaluate Model**.
     - Masukkan modul **Execute Python Script** sebelum output layanan web hanya mengembalikan ID pasien, nilai label yang diprediksi, dan peluang.
 
@@ -293,6 +296,8 @@ Performa model ini tidak terlalu bagus, sebagian karena kita hanya melakukan rek
 
 1. Hubungkan modul **Enter Data Manually** baru ke input **Himpunan data** yang sama dari modul **Apply Transformation** sebagai **Web Service Input**.
 
+1. Edit modul **Memilih Kolom di Himpunan Data**. Hapus **Diabetes** dari *Kolom Terpilih*. 
+
 1. Alur inferensi menyertakan modul **Evaluasi Model**, yang tidak berguna saat memprediksi dari data baru, jadi hapus modul ini.
 
 1. Output dari modul **Model Skor** mencakup semua fitur input dan label prediksi serta skor probabilitas. Untuk membatasi output hanya ke prediksi dan peluang:
@@ -304,7 +309,7 @@ import pandas as pd
 
 def azureml_main(dataframe1 = None, dataframe2 = None):
 
-    scored_results = dataframe1[['PatientID', 'Scored Labels', 'Scored Probabilities']]
+    scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
     scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
                                 'Scored Probabilities':'Probability'},
                         inplace=True)
