@@ -1,6 +1,7 @@
 ---
 lab:
   title: Menjelajahi pendalaman pengetahuan
+  module: Module 5 - Conversational AI
 ---
 
 # <a name="explore-knowledge-mining"></a>Menjelajahi pendalaman pengetahuan

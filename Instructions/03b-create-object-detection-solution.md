@@ -1,6 +1,7 @@
 ---
 lab:
   title: Menjelajahi deteksi objek
+  module: Module 3 - Computer Vision
 ---
 
 # <a name="explore-object-detection"></a>Menjelajahi deteksi objek

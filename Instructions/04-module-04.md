@@ -1,6 +1,7 @@
 ---
 lab:
   title: Menjelajahi analitik teks
+  module: Module 4 - Natural Language Processing (NLP)
 ---
 
 # <a name="explore-text-analytics"></a>Menjelajahi analitik teks

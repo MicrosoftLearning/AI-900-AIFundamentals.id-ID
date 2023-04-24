@@ -1,6 +1,7 @@
 ---
 lab:
   title: Menjelajahi pengelompokan dengan Azure Machine Learning Designer
+  module: Module 2 - Machine Learning
 ---
 
 # <a name="explore-clustering-with-azure-machine-learning-designer"></a>Menjelajahi pengelompokan dengan Azure Machine Learning Designer

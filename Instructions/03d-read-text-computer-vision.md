@@ -1,6 +1,7 @@
 ---
 lab:
   title: Menjelajahi pengenalan karakter optik
+  module: Module 3 - Computer Vision
 ---
 
 # <a name="explore-optical-character-recognition"></a>Menjelajahi pengenalan karakter optik

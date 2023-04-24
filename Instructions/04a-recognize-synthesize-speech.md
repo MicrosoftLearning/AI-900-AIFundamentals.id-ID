@@ -1,6 +1,7 @@
 ---
 lab:
   title: Menjelajahi ucapan
+  module: Module 4 - Natural Language Processing (NLP)
 ---
 
 # <a name="explore-speech"></a>Menjelajahi ucapan

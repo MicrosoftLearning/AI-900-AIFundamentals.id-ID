@@ -1,6 +1,7 @@
 ---
 lab:
   title: Menjelajahi pemahaman bahasa
+  module: Module 4 - Natural Language Processing (NLP)
 ---
 
 # <a name="explore-language-understanding"></a>Menjelajahi pemahaman bahasa

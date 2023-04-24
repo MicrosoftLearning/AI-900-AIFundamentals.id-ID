@@ -1,6 +1,7 @@
 ---
 lab:
   title: Menjelajahi pengenalan wajah
+  module: Module 3 - Computer Vision
 ---
 
 # <a name="explore-face-recognition"></a>Menjelajahi pengenalan wajah

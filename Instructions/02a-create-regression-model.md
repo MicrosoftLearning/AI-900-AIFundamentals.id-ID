@@ -1,6 +1,7 @@
 ---
 lab:
   title: Menjelajahi regresi dengan Azure Machine Learning Designer
+  module: Module 2 - Machine Learning
 ---
 
 # <a name="explore-regression-with-azure-machine-learning-designer"></a>Menjelajahi regresi dengan Azure Machine Learning Designer
