@@ -1,7 +1,6 @@
 ---
 lab:
   title: Menjelajahi jawaban atas pertanyaan
-  module: Module 4 - Natural Language Processing (NLP)
 ---
 
 # <a name="explore-question-answering"></a>Menjelajahi jawaban atas pertanyaan

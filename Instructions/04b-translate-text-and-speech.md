@@ -1,7 +1,6 @@
 ---
 lab:
   title: Menjelajahi terjemahan
-  module: Module 4 - Natural Language Processing (NLP)
 ---
 
 # <a name="explore-translation"></a>Menjelajahi terjemahan

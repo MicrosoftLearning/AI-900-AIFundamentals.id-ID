@@ -1,7 +1,6 @@
 ---
 lab:
   title: Jelajahi Cognitive Services
-  module: Module 1 - Introduction to AI
 ---
 
 # <a name="explore-cognitive-services"></a>Jelajahi Cognitive Services

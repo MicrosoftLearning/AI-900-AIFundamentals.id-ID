@@ -1,7 +1,6 @@
 ---
 lab:
   title: Menjelajahi pengenalan formulir
-  module: Module 3 - Computer Vision
 ---
 
 # <a name="explore-form-recognition"></a>Menjelajahi pengenalan formulir

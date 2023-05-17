@@ -1,7 +1,6 @@
 ---
 lab:
   title: Jelajahi Computer Vision
-  module: Module 3 - Computer Vision
 ---
 
 # <a name="explore-computer-vision"></a>Jelajahi Computer Vision

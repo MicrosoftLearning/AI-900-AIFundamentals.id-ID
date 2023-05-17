@@ -1,7 +1,6 @@
 ---
 lab:
   title: Menjelajahi Pembelajaran Mesin Otomatis di Azure ML
-  module: Module 2 - Machine Learning
 ---
 
 # <a name="explore-automated-machine-learning-in-azure-ml"></a>Menjelajahi Pembelajaran Mesin Otomatis di Azure ML

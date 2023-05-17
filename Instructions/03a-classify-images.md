@@ -1,7 +1,6 @@
 ---
 lab:
   title: Menjelajahi klasifikasi gambar
-  module: Module 3 - Computer Vision
 ---
 
 # <a name="explore-image-classification"></a>Menjelajahi klasifikasi gambar
