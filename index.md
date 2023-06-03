@@ -10,7 +10,7 @@ Latihan langsung ini dirancang untuk mendukung konten pelatihan di [Microsoft Le
 
 Untuk menyelesaikan latihan ini, Anda harus berlangganan Microsoft Azure Anda dapat mendaftar untuk uji coba gratis di [https://azure.microsoft.com](https://azure.microsoft.com).
 
-{% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions'" %}
+{% assign labs = site.pages | where_exp:"page", "page.url contains '/instructions'" %}
 | Latihan |
 | ------- | 
 {% for activity in labs  %}| [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }}) |
