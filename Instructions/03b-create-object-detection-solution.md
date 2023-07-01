@@ -3,19 +3,19 @@ lab:
   title: Menjelajahi deteksi objek
 ---
 
-# <a name="explore-object-detection"></a>Menjelajahi deteksi objek
+# Menjelajahi deteksi objek
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
 *Deteksi objek* adalah bentuk computer vision di mana model pembelajaran mesin dilatih untuk mengklasifikasikan masing-masing instans objek dalam gambar, dan menunjukkan *kotak pembatas* yang menandai lokasinya. Anda dapat menganggap hal ini sebagai perkembangan dari *klasifikasi gambar* (di mana model menjawab pertanyaan "gambar apa ini?") untuk membangun solusi di mana kita dapat menanyakan model "objek apa yang ada di dalam gambar, dan di mana mereka?".
 
-Misalnya, toko kelontong mungkin menggunakan model deteksi objek untuk menerapkan sistem pembayaran otomatis yang memindai ban berjalan menggunakan kamera, dan dapat mengidentifikasi item tertentu tanpa perlu menempatkan setiap item di ban berjalan dan memindainya satu per satu.
+Misalnya, inisiatif keselamatan jalan mungkin mengidentifikasi pejalan kaki dan pengendara sepeda sebagai pengguna jalan yang paling rentan di persimpangan lalu lintas. Dengan menggunakan kamera untuk memantau persimpangan, gambar pengguna jalan dapat dianalisis untuk mendeteksi pejalan kaki dan pengendara sepeda untuk memantau jumlah mereka atau bahkan mengubah perilaku sinyal lalu lintas.
 
-Layanan kognitif **Custom Vision** di Microsoft Azure menyediakan solusi berbasis cloud untuk membuat dan menerbitkan model deteksi objek kustom. Di Azure, Anda dapat menggunakan layanan Custom Vision untuk melatih model klasifikasi gambar berdasarkan gambar yang ada. Ada dua elemen untuk membuat solusi klasifikasi gambar. Pertama, Anda harus melatih model untuk mengenali kelas yang berbeda menggunakan gambar yang ada. Kemudian, saat model dilatih, Anda harus menerbitkannya sebagai layanan yang dapat digunakan oleh aplikasi.
+Layanan kognitif **Custom Vision** di Microsoft Azure menyediakan solusi berbasis cloud untuk membuat dan menerbitkan model deteksi objek kustom. Di Azure, Anda dapat menggunakan layanan Custom Vision untuk melatih model deteksi objek berdasarkan gambar yang ada. Ada dua elemen untuk membuat solusi deteksi objek. Pertama, Anda harus melatih model untuk mendeteksi lokasi dan kelas objek menggunakan gambar berlabel. Kemudian, saat model dilatih, Anda harus menerbitkannya sebagai layanan yang dapat digunakan oleh aplikasi.
 
-Untuk menguji kemampuan layanan Custom Vision guna mendeteksi objek dalam gambar, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsionalitas yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi telepon.
+Untuk menguji kemampuan layanan Custom Vision guna mendeteksi objek dalam gambar, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsionalitas yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi seluler.
 
-## <a name="create-a-cognitive-services-resource"></a>Buat sumber daya *Cognitive Services*
+## Buat sumber daya *Cognitive Services*
 
 Anda dapat menggunakan layanan Custom Vision dengan membuat sumber daya **Custom Vision** atau sumber daya **Cognitive Services**.
 
@@ -35,132 +35,136 @@ Buat sumber daya **Cognitive Services** di langganan Azure Anda.
 
 1. Tinjau dan buat sumber daya, dan tunggu hingga penyebaran selesai. Lalu pergi ke sumber daya yang disebarkan.
 
-1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Cognitive Services Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
+1. Lihat halaman **Kunci dan Titik Akhir** untuk mengetahui sumber daya Cognitive Services Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
 
-## <a name="create-a-custom-vision-project"></a>Membuat proyek Visual Kustom
+## Membuat proyek Visual Kustom
 
 Untuk melatih model deteksi objek, Anda perlu membuat proyek Custom Vision berdasarkan sumber daya pelatihan. Untuk melakukannya, Anda akan menggunakan portal Custom Vision.
 
 1. Di tab browser baru, buka portal Custom Vision di [https://customvision.ai](https://customvision.ai?azure-portal=true), dan masuk menggunakan akun Microsoft yang terkait dengan langganan Azure Anda.
 
 1. Buat proyek baru dengan pengaturan berikut:
-    - **Nama**: Deteksi Belanjaan
-    - **Deskripsi**: Deteksi objek untuk belanjaan.
+    - **Nama**: Keselamatan Lalu Lintas
+    - **Deskripsi**: Deteksi objek untuk keamanan jalan.
     - **Sumber daya**: *Sumber daya yang Anda buat sebelumnya*
     - **Jenis Proyek**: Deteksi Objek
-    - **Domain**: Umum
+    - **Domain**: Umum \[A1]
 
 1. Tunggu proyek dibuat dan dibuka di browser.
 
-## <a name="add-and-tag-images"></a>Tambahkan dan beri tag gambar
+## Tambahkan dan beri tag gambar
 
 Untuk melatih model deteksi objek, Anda perlu mengunggah gambar yang berisi kelas yang ingin diidentifikasi oleh model, dan memberi tag gambar untuk menunjukkan kotak pembatas untuk setiap instans objek.
 
-1. Unduh dan ekstrak gambar pelatihan dari https://aka.ms/fruit-objects. Folder yang diekstrak berisi kumpulan gambar buah-buahan.
+1. Unduh dan ekstrak gambar pelatihan dari [https://aka.ms/traffic-images](https://aka.ms/traffic-images). Folder yang diekstrak berisi kumpulan gambar pengendara sepeda dan pejalan kaki.
 
-1. Di portal Custom Vision [https://customvision.ai](https://customvision.ai?azure-portal=true), pastikan Anda bekerja di proyek deteksi objek _Deteksi Belanjaan_. Kemudian pilih **Tambahkan gambar** dan unggah semua gambar dalam folder yang diekstrak.
+1. Di portal Custom Vision, di proyek deteksi objek **Keselamatan Lalu Lintas** Anda, pilih **Tambahkan gambar** dan unggah semua gambar di folder yang diekstrak.
 
-    ![Unggah gambar yang diunduh dengan mengklik tambahkan gambar.](media/create-object-detection-solution/fruit-upload.jpg)
+    ![Cuplikan layar kotak dialog Unggah Gambar di Custom Vision Studio.](media/create-object-detection-solution/upload-images.png)
 
 1. Setelah gambar diunggah, pilih yang pertama untuk membukanya.
 
-1. Tahan mouse di atas objek apa pun pada gambar hingga wilayah yang terdeteksi secara otomatis ditampilkan seperti gambar di bawah ini. Kemudian pilih objek, dan jika perlu ubah ukuran wilayah untuk mengelilinginya.
+1. Tahan mouse di atas objek apa pun (pengendara sepeda atau pejalan kaki) pada gambar hingga wilayah yang terdeteksi secara otomatis ditampilkan. Kemudian pilih objek, dan jika perlu ubah ukuran wilayah untuk mengelilinginya. Atau, Anda cukup menyeret objek untuk membuat wilayah.
 
-    ![Wilayah default untuk objek](media/create-object-detection-solution/object-region.jpg)
+    Saat objek dipilih dengan erat di dalam wilayah persegi panjang, masukkan tag yang sesuai untuk objek (*Pesepeda* atau *Pejalan Kaki*) dan gunakan tombol **Wilayah tag** (**+**) untuk menambahkan tag ke proyek.
 
-    Atau, Anda cukup menyeret objek untuk membuat wilayah.
+    ![Cuplikan layar gambar dengan wilayah yang ditandai dalam kotak dialog Detaol Gambar.](media/create-object-detection-solution/tag-image.png)
 
-1. Saat wilayah mengelilingi objek, tambahkan tag baru dengan jenis objek yang sesuai (*apel*, *pisang*, atau *jeruk*) seperti yang ditunjukkan di sini:
+1. Gunakan tautan **Berikutnya** (**(>)** di sebelah kanan untuk masuk ke gambar berikutnya, dan tandai objeknya. Kemudian terus bekerja melalui seluruh koleksi gambar, menandai setiap pesepeda dan pejalan kaki.
 
-    ![Objek yang diberi tag dalam gambar](media/create-object-detection-solution/object-tag.jpg)
+    Saat Anda menandai gambar, perhatikan hal berikut:
 
-1. Pilih dan beri tag satu sama lain pada objek dalam gambar, ubah ukuran wilayah dan tambahkan tag baru sesuai kebutuhan.
+    - Beberapa gambar berisi beberapa objek, berpotensi dari berbagai jenis. Tandai masing-masing, bahkan jika tumpang tindih.
+    - Setelah tag dimasukkan sekali, Anda dapat memilihnya dari daftar saat menandai objek baru.
+    - Anda dapat kembali dan maju melalui gambar untuk menyesuaikan tag.
 
-    ![Dua objek yang diberi tag dalam gambar](media/create-object-detection-solution/object-tags.jpg)
-
-1. Gunakan tautan **>** di sebelah kanan untuk membuka gambar berikutnya, dan beri tag pada objeknya. Kemudian terus kerjakan seluruh kumpulan gambar, beri tag pada setiap apel, pisang, dan jeruk.
+    ![Cuplikan layar gambar dengan wilayah yang ditandai dalam kotak dialog Detaol Gambar.](media/create-object-detection-solution/multiple-objects.png)
 
 1. Setelah Anda selesai memberi tag pada gambar terakhir, tutup penyunting **Detail Gambar** dan pada halaman **Gambar Pelatihan**, di bawah **Tag**, pilih **Diberi Tag** untuk melihat semua gambar yang diberi tag:
 
-    ![Gambar yang diberi tag dalam proyek](media/create-object-detection-solution/tagged-images.jpg)
+    ![Cuplikan layar gambar yang diberi tag dalam proyek.](media/create-object-detection-solution/tagged-images.png)
 
-## <a name="train-and-test-a-model"></a>Latih dan uji model
+## Latih dan uji model
 
 Sekarang setelah memberi tag gambar dalam proyek, Anda siap untuk melatih model.
 
 1. Dalam proyek Custom Vision, klik **Latih** untuk melatih model deteksi objek menggunakan gambar yang diberi tag. Pilih opsi **Pelatihan Cepat**.
 
-1. Tunggu hingga pelatihan selesai (mungkin memerlukan waktu sekitar sepuluh menit), lalu tinjau metrik kinerja *Presisi*, *Recall*, dan *mAP* - ini mengukur prediksi kebaikan model deteksi objek, dan semuanya harus tinggi.
+    > **Tips**: Pelatihan mungkin memakan waktu beberapa menit. Sambil menunggu, lihat [Analitik video untuk kota pintar](https://www.microsoft.com/research/video/video-analytics-for-smart-cities/), yang menjelaskan proyek nyata untuk menggunakan visi komputer dalam inisiatif peningkatan keselamatan jalan.
 
-1. Di kanan atas halaman, klik **Uji Cepat**, lalu di kotak **URL Gambar**, masukkan `https://aka.ms/apple-orange` dan lihat prediksi yang dihasilkan. Kemudian tutup jendela **Uji Cepat**.
+2. Ketika pelatihan selesai, tinjau metrik performa *Presisi*, *Pengenalan*, dan *mAP* - ini mengukur kebaikan prediksi model deteksi objek, dan semuanya harus cukup tinggi.
 
-## <a name="publish-the-object-detection-model"></a>Terbitkan model deteksi objek
+3. Sesuaikan **Ambang Probabilitas** di sebelah kiri, tingkatkan dari 50% menjadi 90% dan amati pengaruhnya pada metrik performa. Pengaturan ini menentukan nilai probabilitas yang harus dipenuhi atau melebihi setiap evaluasi tag untuk dihitung sebagai prediksi.
+
+    ![Cuplikan layar metrik performa untuk model terlatih.](media/create-object-detection-solution/performance-metrics.png)
+
+4. Di kanan atas halaman, klik **Uji Cepat**, lalu di kotak **URL Gambar** , masukkan `https://aka.ms/pedestrian-cyclist` dan tampilkan hasilnya.
+
+    Di panel sebelah kanan, di bawah **Prediksi**, setiap objek yang terdeteksi tercantum dengan tag dan probabilitasnya. Pilih setiap objek untuk melihatnya disorot dalam gambar.
+
+    Objek yang diprediksi mungkin tidak semuanya benar - setelah semua, pesepeda dan pejalan kaki berbagi banyak fitur umum. Prediksi bahwa model paling yakin tentang memiliki nilai probabilitas tertinggi. Gunakan **penggeser Nilai Ambang** Untuk menghilangkan objek dengan probabilitas rendah. Anda harus dapat menemukan titik di mana hanya prediksi yang benar yang disertakan (mungkin sekitar 85-90%).
+
+    ![Cuplikan layar metrik performa untuk model terlatih.](media/create-object-detection-solution/test-detection.png)
+
+5. Kemudian tutup jendela **Uji Cepat**.
+
+## Terbitkan model deteksi objek
 
 Sekarang Anda siap untuk menerbitkan model terlatih dan menggunakannya dari aplikasi klien.
 
 1. Klik **&#128504; Terbitkan** untuk menerbitkan model terlatih dengan pengaturan berikut:
-    - **Nama model**: detect-produce
+    - **Nama model**: keselamatan lalu lintas
     - **Sumber daya prediksi**: *Sumber daya yang Anda buat sebelumnya*.
 
-1. Setelah menerbitkan, klik ikon *URL Prediksi* (&#127760;) untuk melihat informasi yang diperlukan untuk menggunakan model yang diterbitkan. Nanti, Anda akan memerlukan URL yang sesuai dan nilai-nilai Kunci Prediksi untuk mendapatkan prediksi dari URL Gambar, jadi biarkan kotak dialog ini tetap terbuka dan lanjutkan ke tugas berikutnya.
+1. Setelah menerbitkan, klik ikon *URL Prediksi* (&#127760;) untuk melihat informasi yang diperlukan untuk menggunakan model yang diterbitkan.
 
-## <a name="run-cloud-shell"></a>Jalankan Cloud Shell
+    ![Cuplikan layar URL prediksi.](media/create-object-detection-solution/prediction-url.png)
 
-Untuk menguji kemampuan layanan Custom Vision, kami akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell di Azure.
+Nanti, Anda akan memerlukan URL yang sesuai dan nilai-nilai Kunci Prediksi untuk mendapatkan prediksi dari URL Gambar, jadi biarkan kotak dialog ini tetap terbuka dan lanjutkan ke tugas berikutnya.
 
-1. Di portal Microsoft Azure, pilih tombol **[>_]** (*Cloud Shell*) di bagian atas halaman di sebelah kanan kotak pencarian. Tindakan ini akan membuka panel Cloud Shell di bagian bawah portal. 
+## Menyiapkan aplikasi klien
 
-    ![Mulai Cloud Shell dengan mengeklik ikon di sebelah kanan kotak pencarian di atas](media/create-object-detection-solution/powershell-portal-guide-1.png)
+Untuk menguji kemampuan layanan Custom Vision, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di cloud shell di Azure.
 
-1. Saat pertama kali membuka Cloud Shell, Anda mungkin diminta untuk memilih jenis shell yang ingin digunakan (*Bash* atau *PowerShell*). Pilih **PowerShell**. Jika Anda tidak melihat opsi ini, lewati langkah ini.  
+1. Beralih kembali ke tab browser yang berisi portal Azure, dan pilih tombol **Cloud shell** (**[>_]**) di bagian atas halaman di sebelah kanan kotak pencarian. Ini membuka panel cloud shell di bagian bawah portal.
 
-1. Jika Anda diminta membuat penyimpanan untuk Cloud Shell, pastikan langganan ditentukan dan pilih **Buat penyimpanan**. Kemudian tunggu sekitar satu menit hingga penyimpanan dibuat.
+    Saat pertama kali membuka Cloud Shell, Anda mungkin diminta untuk memilih jenis shell yang ingin digunakan (*Bash* atau *PowerShell*). Jika demikian, pilih **PowerShell**.
 
-    ![Buat penyimpanan dengan mengklik konfirmasi.](media/create-object-detection-solution/powershell-portal-guide-2.png)
+    Jika Anda diminta untuk membuat penyimpanan untuk Cloud Shell Anda, pastikan langganan Anda dipilih dan pilih **Buat penyimpanan**. Kemudian tunggu sekitar satu menit hingga penyimpanan dibuat.
 
-1. Pastikan jenis shell yang ditunjukkan di kiri atas panel Cloud Shell dialihkan ke *PowerShell*. Jika *Bash*, alihkan ke *PowerShell* dengan menggunakan menu drop-down.
+    Ketika cloud shell siap, cloud shell akan terlihat mirip dengan ini:
+    
+    ![Cuplikan layar cloud shell di portal Azure.](media/create-object-detection-solution/cloud-shell.png)
 
-    ![Cara menemukan menu drop down sebelah kiri untuk beralih ke PowerShell](media/create-object-detection-solution/powershell-portal-guide-3.png) 
+    > **Tips**: Pastikan bahwa jenis shell yang ditunjukkan di kiri atas panel Cloud Shell adalah *PowerShell*. Jika *Bash*, alihkan ke *PowerShell* dengan menggunakan menu drop-down.
 
-1. Tunggu PowerShell untuk memulai. Anda akan melihat layar berikut di portal Microsoft Azure:  
+    Perhatikan bahwa Anda dapat mengubah ukuran cloud shell dengan menyeret bilah pemisah di bagian atas panel, atau menggunakan ikon **&#8212;** , **&#9723;** , dan **X** di kanan atas panel untuk meminimalkan, memaksimalkan, dan menutup panel. Untuk informasi selengkapnya tentang menggunakan Azure Cloud Shell, lihat [dokumentasi Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
-    ![Tunggu PowerShell untuk memulai.](media/create-object-detection-solution/powershell-prompt.png) 
-
-## <a name="configure-and-run-a-client-application"></a>Konfigurasi dan jalankan aplikasi klien
-
-Sekarang setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien sederhana yang menggunakan layanan Custom Vision untuk mendeteksi objek dalam gambar.
-
-1. Di shell perintah, masukkan perintah berikut untuk mengunduh aplikasi contoh dan menyimpannya ke folder bernama ai-900.
+2. Di shell perintah, masukkan perintah berikut untuk mengunduh file untuk latihan ini dan simpan dalam folder bernama **ai-900** (setelah menghapus folder tersebut jika sudah ada)
 
     ```PowerShell
+    rm -r ai-900 -f
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
     ```
 
-    >**Catatan** Jika sudah menggunakan perintah ini di lab lain untuk menggandakan penyimpanan *ai-900*, Anda dapat melewati langkah ini.
-
-1. File diunduh ke folder bernama **ai-900**. Sekarang kami ingin melihat semua file di penyimpanan Cloud Shell Anda dan menggunakannya. Ketik perintah berikut ke dalam shell:
+3. Setelah file diunduh, masukkan perintah berikut untuk mengubah ke direktori **ai-900** dan edit file kode untuk latihan ini:
 
     ```PowerShell
-    code .
+    cd ai-900
+    code detect-objects.ps1
     ```
 
-    Perhatikan bagaimana perintah ini membuka penyunting seperti pada gambar di bawah ini: 
+    Perhatikan bagaimana ini membuka editor seperti yang ada pada gambar di bawah ini:
 
-    ![Penyunting kode.](media/create-object-detection-solution/powershell-portal-guide-4.png)
+     ![Cuplikan layar editor kode di cloud shell.](media/create-object-detection-solution/code-editor.png)
 
-1. Di panel **File** di sebelah kiri, luaskan **ai-900** dan pilih **detect-objects.ps1**. File ini berisi beberapa kode yang menggunakan layanan Custom Vision untuk mendeteksi objek gambar, seperti yang ditunjukkan di sini:
+     > **Tips**: Anda dapat menggunakan bilah pemisah antara baris perintah cloud shell dan editor kode untuk mengubah ukuran panel.
 
-    ![Penyunting yang berisi kode untuk mendeteksi item dalam gambar](media/create-object-detection-solution/detect-image-code.png)
+4. Jangan terlalu memikirkan detail kode. Yang penting adalah dimulai dengan beberapa kode untuk menentukan URL prediksi dan kunci untuk model Custom Vision Anda. Anda harus memperbaruinya sehingga kode lainnya menggunakan model Anda.
 
-1. Jangan terlalu khawatir tentang detail kode, yang penting kode tersebut memerlukan URL prediksi dan kunci untuk model Custom Vision Anda saat menggunakan URL gambar. 
+    Dapatkan *URL prediksi* dan *kunci prediksi* dari kotak dialog yang Anda tinggalkan terbuka di tab browser untuk proyek Custom Vision Anda. Anda memerlukan versi yang akan digunakan *jika Anda memiliki URL gambar*.
 
-    Dapatkan *URL prediksi* dari kotak dialog dalam proyek Custom Vision. 
-
-    >**Catatan** Ingat, Anda sudah meninjau *URL prediksi* setelah menerbitkan model klasifikasi gambar. Untuk menemukan *URL prediksi*, buka tab **Performa** di proyek Anda, lalu klik **URL Prediksi** (jika layar dikompresi, Anda mungkin hanya melihat ikon bola bumi). Kotak dialog akan muncul. Salin url untuk **Jika Anda memiliki URL gambar**. Tempelkan ke dalam penyunting kode, dengan mengganti **YOUR_PREDICTION_URL**. 
-
-    Dengan menggunakan kotak dialog yang sama, dapatkan *kunci prediksi*. Salin kunci prediksi yang ditampilkan setelah *Mengatur Header Kunci-Prediksi ke*. Tempel di penyunting kode, menggantikan nilai tempat penampung **YOUR_PREDICTION_KEY**. 
-
-    ![Cuplikan layar URL prediksi.](media/create-object-detection-solution/find-prediction-url.png)
+    Gunakan nilai-nilai ini untuk menggantikan tempat penampung **YOUR_PREDICTION_URL** dan **YOUR_PREDICTION_KEY** dalam file kode.
 
     Setelah menempelkan nilai URL Prediksi dan Kunci Prediksi, dua baris kode pertama akan terlihat seperti ini:
 
@@ -169,21 +173,36 @@ Sekarang setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien se
     $predictionKey ="1a2b3c4d5e6f7g8h9i0j...."
     ```
 
-1. Di kanan atas panel penyunting, gunakan tombol **...** untuk membuka menu dan pilih **Simpan** untuk menyimpan perubahan Anda. Kemudian buka lagi menu dan pilih **Tutup Penyunting**.
+5. Setelah membuat perubahan pada variabel dalam kode, tekan **CTRL+S** untuk menyimpan file. Kemudian tekan **CTRL+Q** untuk menutup editor kode.
 
-    Anda akan menggunakan aplikasi klien sampel untuk mendeteksi objek dalam gambar ini:
+## Menguji aplikasi klien
 
-    ![Gambar buah](media/create-object-detection-solution/produce.jpg)
+Sekarang Anda dapat menggunakan aplikasi klien sampel untuk mendeteksi pesepeda dan pejalan kaki dalam gambar.
 
 1. Di panel PowerShell, masukkan perintah berikut untuk menjalankan kode:
 
     ```PowerShell
-    cd ai-900
-    ./detect-objects.ps1 
+    ./detect-objects.ps1 1
     ```
 
-1. Tinjau prediksi, yang seharusnya berupa *pisang jeruk apel*.
+    Kode ini menggunakan model Anda untuk mendeteksi objek dalam gambar berikut:
 
-## <a name="learn-more"></a>Pelajari lebih lanjut
+    ![Foto pejalan kaki dan pesepeda.](media/create-object-detection-solution/road-safety-1.jpg)
 
-Aplikasi sederhana ini hanya menunjukkan beberapa kemampuan layanan Custom Vision. Untuk mempelajari selengkapnya tentang apa yang dapat Anda lakukan dengan layanan ini, lihat [halaman Custom Vision](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/).
+1. Tinjau prediksi, yang mencantumkan objek apa pun yang terdeteksi dengan probabilitas 90% atau lebih, bersama dengan koordinat kotak pembatas di sekitar lokasinya.
+
+1. Sekarang mari kita coba gambar lain. Jalankan perintah ini:
+
+    ```PowerShell
+    ./detect-objects.ps1 2
+    ```
+
+    Kali ini gambar berikut dianalisis:
+
+    ![Foto sekelompok pejalan kaki.](media/create-object-detection-solution/road-safety-2.jpg)
+
+Mudah-mudahan, model deteksi objek Anda melakukan pekerjaan yang baik untuk mendeteksi pejalan kaki dan pengendara sepeda dalam gambar pengujian.
+
+## Pelajari lebih lanjut
+
+Latihan ini hanya menunjukkan beberapa kemampuan layanan Custom Vision. Untuk mempelajari selengkapnya tentang apa yang dapat Anda lakukan dengan layanan ini, lihat [halaman Custom Vision](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/).

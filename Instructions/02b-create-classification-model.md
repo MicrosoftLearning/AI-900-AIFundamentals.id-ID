@@ -3,11 +3,11 @@ lab:
   title: Menjelajahi klasifikasi dengan Azure Machine Learning Designer
 ---
 
-# <a name="explore-classification-with-azure-machine-learning-designer"></a>Menjelajahi klasifikasi dengan Azure Machine Learning Designer
+# Menjelajahi klasifikasi dengan Azure Machine Learning Designer
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
-## <a name="create-an-azure-machine-learning-workspace"></a>Membuat ruang kerja Azure Machine Learning  
+## Membuat ruang kerja Azure Machine Learning  
 
 1. Masuk ke [portal Azure](https://portal.azure.com?azure-portal=true) menggunakan info masuk Microsoft Anda.
 
@@ -25,13 +25,13 @@ lab:
 
 1. Pilih **Luncurkan studio** (atau buka tab browser baru dan arahkan ke [https://ml.azure.com](https://ml.azure.com?azure-portal=true), dan masuk ke studio Azure Machine Learning menggunakan akun Microsoft Anda).
 
-1. Di studio Azure Machine Learning, Anda akan melihat ruang kerja yang baru dibuat. Jika tidak, klik **Microsoft** di menu sebelah kiri. Kemudian dari menu sebelah kiri yang baru, pilih **Ruang Kerja**, tempat semua ruang kerja yang terkait dengan langganan Anda dicantumkan. Pilih salah satu yang Anda buat untuk latihan ini. 
+1. Di studio Azure Machine Learning, Anda akan melihat ruang kerja yang baru dibuat. Jika tidak demikian, pilih direktori Azure Anda di menu sebelah kiri. Kemudian dari menu sebelah kiri baru pilih **Ruang Kerja**, tempat semua ruang kerja yang terkait dengan direktori Anda dicantumkan, dan pilih yang Anda buat untuk latihan ini.
 
 > **Catatan** Modul ini adalah salah satu dari banyak modul yang memanfaatkan ruang kerja Azure Machine Learning, termasuk modul lainnya di jalur pembelajaran [Dasar-Dasar AI Microsoft Azure: Menjelajahi alat visual untuk pembelajaran mesin](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/). Jika menggunakan langganan Azure Anda sendiri, Anda dapat mempertimbangkan untuk membuat ruang kerja sekali dan menggunakannya kembali di modul lain. Langganan Azure Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda, jadi sebaiknya hapus ruang kerja Azure Machine Learning saat tidak lagi diperlukan.
 
-## <a name="create-compute"></a>Membuat komputasi
+## Membuat komputasi
 
-1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), pilih tiga baris di kiri atas untuk melihat berbagai halaman di antarmuka (Anda mungkin perlu memaksimalkan ukuran layar). Anda dapat menggunakan halaman ini di panel sebelah kiri untuk mengelola sumber daya di ruang kerja Anda. Pilih halaman **Komputasi** (di bagian **Kelola**).
+1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), pilih ikon **&#8801;** (ikon menu yang terlihat seperti tumpukan tiga baris) di kiri atas untuk melihat berbagai halaman di antarmuka (Anda mungkin perlu memaksimalkan ukuran layar Anda). Anda dapat menggunakan halaman ini di panel sebelah kiri untuk mengelola sumber daya di ruang kerja Anda. Pilih halaman **Komputasi** (di bagian **Kelola**).
 
 1. Pada halaman **Komputasi**, pilih tab **Kluster komputasi**, dan tambahkan kluster komputasi baru dengan pengaturan berikut. Anda akan menggunakan ini untuk melatih model pembelajaran mesin:
     - **Lokasi**: *Pilih lokasi yang sama dengan ruang kerja Anda. Jika lokasi tersebut tidak terdaftar, pilih yang terdekat dengan lokasi Anda*.
@@ -52,11 +52,11 @@ lab:
 
 Kluster komputasi akan membutuhkan waktu untuk dibuat. Anda dapat melanjutkan ke langkah berikutnya sambil menunggu.
 
-## <a name="create-a-pipeline-in-designer"></a>Buat alur di Perancang
+## Buat alur di Perancang
 
 Untuk mulai menggunakan perancang Azure Machine Learning, pertama-tama Anda harus membuat alur dan menambahkan himpunan data yang ingin Anda gunakan.
 
-1. Di [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih tiga baris di kiri atas layar. Lihat halaman **Desainer** (di bagian **Pembuat**), dan pilih **+** untuk membuat alur baru.
+1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih ikon menu di kiri atas layar. Lihat halaman **Desainer** (di bagian **Pembuat**), dan pilih **+** untuk membuat alur baru.
 
 1. Di sisi kanan atas layar, pilih **Pengaturan**. Jika panel **Pengaturan** tidak terlihat, pilih ikon roda di samping nama saluran di bagian atas.
 
@@ -68,9 +68,9 @@ Untuk mulai menggunakan perancang Azure Machine Learning, pertama-tama Anda haru
 
     ![Cuplikan layar panel Studio Pembelajaran Mesin.](media/create-classification-model/create-pipeline-help.png)
 
-## <a name="create-a-dataset"></a>Buat himpunan data
+## Buat himpunan data
 
-1. Di [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih tiga baris di kiri atas layar. Lihat halaman **Data** (di bagian **Aset**). Halaman Data berisi file atau tabel data tertentu yang Anda rencanakan untuk digunakan di Azure ML. Anda juga dapat membuat himpunan data dari halaman ini.
+1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih ikon menu di kiri atas layar. Lihat halaman **Data** (di bagian **Aset**). Halaman Data berisi file atau tabel data tertentu yang Anda rencanakan untuk digunakan di Azure ML. Anda juga dapat membuat himpunan data dari halaman ini.
 
 1. Di halaman **Data**, pada tab **Aset data**, pilih **Buat**. Kemudian konfigurasikan aset data dengan pengaturan berikut:
     * **Jenis data**:
@@ -96,7 +96,7 @@ Untuk mulai menggunakan perancang Azure Machine Learning, pertama-tama Anda haru
 
 1. Setelah himpunan data dibuat, buka dan tampilkan halaman **Jelajahi** untuk melihat sampel data. Data ini menunjukkan detail dari pasien yang sudah dites untuk diabetes.
 
-### <a name="load-data-to-canvas"></a>Memuat data ke kanvas
+### Memuat data ke kanvas
 
 1. Kembali ke alur dengan memilih **Perancang** di menu sebelah kiri. Pada halaman **Desainer**, pilih alur **Pelatihan Diabetes**.
 
@@ -118,7 +118,7 @@ Untuk mulai menggunakan perancang Azure Machine Learning, pertama-tama Anda haru
 
     ![Cuplikan layar himpunan data diabetes di kanvas perancang.](media/create-classification-model/diabetes-data.png)
 
-## <a name="add-transformations"></a>Menambahkan transformasi
+## Menambahkan transformasi
 
 Sebelum dapat melatih model, biasanya Anda perlu menerapkan beberapa transformasi pra-pemrosesan ke data.
 
@@ -128,27 +128,26 @@ Sebelum dapat melatih model, biasanya Anda perlu menerapkan beberapa transformas
 
 1. Cari modul **Memilih Kolom di Himpunan Data** dan letakkan di kanvas, di bawah himpunan data **diabetes-data**. Kemudian hubungkan output dari bagian bawah himpunan data **diabetes-data** ke input di bagian atas modul **Memilih Kolom di Himpunan Data**.
 
+1. Klik dua kali pada modul **Pilih Kolom di Himpunan Data** untuk mengakses panel pengaturan di sebelah kanan. Pilih **Edit kolom**. Lalu di jendela **Pilih kolom** , pilih **Menurut nama** dan **Tambahkan semua** kolom. Kemudian hapus **PatientID** dan klik **Simpan**. 
+
 1. Cari modul **Menormalisasi Data** dan letakkan di atas kanvas, di bawah modul **Memilih Kolom di Himpunan Data**. Kemudian hubungkan output dari bagian bawah modul **Memilih Kolom di Himpunan Data** ke input di bagian atas modul **Menormalisasi Data**, seperti ini:
 
     ![Cuplikan layar alur dengan himpunan data yang terhubung untuk modul memilih kolom dan Normalisasi Data.](media/create-classification-model/dataset-normalize.png)
 
 1. Klik dua kali modul **Normalisasi Data** untuk melihat pengaturannya, perhatikan bahwa modul ini mengharuskan Anda menentukan metode transformasi dan kolom yang akan diubah. 
 
-1. Atur *Metode transformasi* ke **MinMax** dan *Gunakan 0 untuk kolom konstanta saat dicentang* ke **True**. Edit kolom untuk menyertakan kolom berikut berdasarkan nama, seperti yang ditunjukkan pada gambar:
-    - **Pregnancies**
-    - **PlasmaGlucose**
-    - **DiastolicBloodPressure**
-    - **TricepsThickness**
-    - **SerumInsulin**
-    - **BMI**
-    - **DiabetesPedigree**
-    - **Usia**
+1. Atur *Metode transformasi* ke **MinMax** dan *Gunakan 0 untuk kolom konstanta saat dicentang* ke **True**. Edit kolom untuk diubah dengan **Edit kolom**. Pilih kolom **Dengan Aturan** dan salin dan tempel daftar berikut ini di bawah sertakan nama kolom:  
 
-    ![Cuplikan layar kolom yang dipilih untuk normalisasi.](media/create-classification-model/normalize-data.png)
+```
+Pregnancies, PlasmaGlucose, DiastolicBloodPressure, TricepsThickness, SerumInsulin, BMI, DiabetesPedigree, Age
+```
+![Cuplikan layar kolom yang dipilih untuk normalisasi.](media/create-classification-model/normalize-data.png)
+
+Klik **Simpan** dan tutup kotak pilihan. 
 
 Transformasi data menormalkan kolom numerik untuk menempatkannya pada skala yang sama, yang akan membantu mencegah kolom dengan nilai yang besar mendominasi pelatihan model. Anda biasanya akan menerapkan sekelompok transformasi pemrosesan awal seperti ini guna menyiapkan data Anda untuk pelatihan, tetapi kita akan menyederhanakannya dalam latihan ini.
 
-## <a name="run-the-pipeline"></a>Menjalankan alur
+## Menjalankan alur
 
 Untuk menerapkan transformasi data Anda, Anda perlu menjalankan alur sebagai eksperimen.
 
@@ -160,7 +159,7 @@ Untuk menerapkan transformasi data Anda, Anda perlu menjalankan alur sebagai eks
 
     Perhatikan bahwa panel sebelah kiri sekarang berada di panel **Pekerjaan yang Dikirim**. Anda akan mengetahui kapan eksekusi selesai karena status pekerjaan akan berubah menjadi **Selesai**.
 
-## <a name="view-the-transformed-data"></a>Menampilkan data yang diubah
+## Menampilkan data yang diubah
 
 1. Setelah eksekusi selesai, himpunan data sekarang disiapkan untuk pelatihan model. Klik **Detail pekerjaan**. Anda akan dibawa ke tab baru.
 
@@ -172,7 +171,7 @@ Untuk menerapkan transformasi data Anda, Anda perlu menjalankan alur sebagai eks
 
 Setelah menggunakan transformasi data untuk menyiapkan data, Anda dapat menggunakannya untuk melatih model pembelajaran mesin.
 
-## <a name="add-training-modules"></a>Menambahkan modul pelatihan
+## Menambahkan modul pelatihan
 
 Melatih model menggunakan subset data, sambil menahan beberapa data untuk menguji model terlatih merupakan praktik yang umum. Ini memungkinkan Anda membandingkan label yang diprediksi model dengan label yang diketahui secara aktual dalam himpunan data asli.
 
@@ -207,7 +206,7 @@ Ikuti langkah-langkah di bawah ini, dengan menggunakan gambar di atas sebagai re
 
 1. Di **Pustaka Aset**, cari dan tempatkan modul **Nilai Model** ke kanvas, di bawah modul **Latih Model**. Selanjutnya sambungkan output modul **Train Model** ke input **model Trained** (kiri) dari modul **Score Model**; dan sambungkan output **Hasil dataset2** (kanan) dari modul **Split Data** ke input **Himpunan data** (kanan) dari modul **Score Model**.
 
-## <a name="run-the-training-pipeline"></a>Menjalankan alur pelatihan
+## Menjalankan alur pelatihan
 
 Sekarang Anda siap menjalankan alur pelatihan dan melatih model.
 
@@ -227,7 +226,7 @@ Model ini memprediksi nilai untuk label **Diabetes**, tetapi seberapa andal pred
 
 Data validasi yang Anda pegang dan yang digunakan untuk mendapatkan model menyertakan nilai yang diketahui untuk label. Jadi, untuk memvalidasi model, Anda dapat membandingkan nilai label yang benar dengan nilai yang diprediksi saat Anda mendapatkan himpunan data validasi. Berdasarkan perbandingan ini, Anda dapat menghitung berbagai metrik yang menggambarkan seberapa baik performa model.
 
-## <a name="add-an-evaluate-model-module"></a>Menambahkan modul Evaluate Model
+## Menambahkan modul Evaluate Model
 
 1. Buka alur **Pelatihan Diabetes** yang Anda buat.
 
@@ -261,9 +260,9 @@ Data validasi yang Anda pegang dan yang digunakan untuk mendapatkan model menyer
 
 Performa model ini tidak terlalu bagus, sebagian karena kita hanya melakukan rekayasa fitur minimal dan pemrosesan awal. Anda dapat mencoba algoritma klasifikasi yang berbeda, seperti **Two-Class Decision Forest**, dan membandingkan hasilnya. Anda dapat menghubungkan output modul **Split Data** ke beberapa modul **Train Model**dan **Score Model**, serta Anda dapat menghubungkan modul **Score Model** kedua ke modul **Evaluate Model** untuk melihat perbandingan secara berdampingan. Inti dari latihan ini hanya untuk memperkenalkan Anda pada klasifikasi dan antarmuka perancang Azure Machine Learning, bukan untuk melatih model yang sempurna!
 
-## <a name="create-an-inference-pipeline"></a>Membuat alur inferensi
+## Membuat alur inferensi
 
-1. Di Azure Machine Learning studio, luaskan panel sebelah kiri dengan memilih tiga baris di kiri atas layar. Klik **Pekerjaan** (di bagian **Aset**) untuk melihat semua pekerjaan yang telah Anda jalankan. Pilih eksperimen **mslearn-diabetes-training**, lalu pilih alur **Pelatihan Diabetes**.
+1. Di studio Azure Machine Learning, perluas panel sebelah kiri dengan memilih ikon menu di kiri atas layar. Klik **Pekerjaan** (di bagian **Aset**) untuk melihat semua pekerjaan yang telah Anda jalankan. Pilih eksperimen **mslearn-diabetes-training**, lalu pilih alur **Pelatihan Diabetes**.
 
 1. Cari menu di atas kanvas dan klik **Buat alur inferensi**. Anda mungkin perlu memperluas layar hingga penuh dan mengeklik ikon tiga titik **...** di sudut kanan atas layar untuk menemukan **Buat alur inferensi** di menu.  
 
@@ -283,7 +282,7 @@ Performa model ini tidak terlalu bagus, sebagian karena kita hanya melakukan rek
     - Hapus modul **Evaluate Model**.
     - Masukkan modul **Execute Python Script** sebelum output layanan web hanya mengembalikan ID pasien, nilai label yang diprediksi, dan peluang.
 
-1. Alur tidak secara otomatis menyertakan komponen **Input Layanan Web** untuk model yang dibuat dari himpunan data kustom. Cari komponen **Input Layanan Web** dari pustaka aset dan tempatkan di bagian atas alur. Hubungkan output komponen **Input Layanan Web** ke input sisi kanan komponen **Terapkan Transformasi** yang sudah ada di kanvas.
+1. Alur tidak secara otomatis menyertakan komponen **Input Layanan Web** untuk model yang dibuat dari himpunan data kustom. Cari komponen **Input Layanan Web** dari pustaka aset dan tempatkan di bagian atas alur. Sambungkan output komponen **Input Layanan Web** ke komponen **Pilih Kolom di Himpunan Data** yang sudah ada di kanvas.
 
 1. Alur inferensi menganggap data baru akan cocok dengan skema data pelatihan asli, sehingga himpunan data **diabetes-data** dari alur pelatihan disertakan. Namun, data input ini menyertakan label **Diabetes** yang diprediksi oleh model, yang tidak disertakan dalam data pasien baru yang prediksi diabetesnya belum dibuat. Hapus modul ini dan ganti dengan modul **Masukkan Data Secara Manual**, yang berisi data CSV berikut, yang menyertakan nilai fitur tanpa label untuk tiga pengamatan pasien baru:
 
@@ -294,7 +293,7 @@ Performa model ini tidak terlalu bagus, sebagian karena kita hanya melakukan rek
     1228510,4,115,50,29,243,34.69215364,0.741159926,59
     ```
 
-1. Hubungkan modul **Enter Data Manually** baru ke input **Himpunan data** yang sama dari modul **Apply Transformation** sebagai **Web Service Input**.
+1. Sambungkan modul **Masukkan Data Secara Manual** baru ke input **Himpunan Data** yang sama dari modul **Pilih Kolom di Himpunan Data** sebagai **Input Layanan Web**.
 
 1. Edit modul **Memilih Kolom di Himpunan Data**. Hapus **Diabetes** dari *Kolom Terpilih*. 
 
@@ -332,7 +331,7 @@ Setelah membuat dan menguji alur inferensi untuk inferensi real-time, Anda dapat
 
 > **Catatan** Dalam latihan ini, Anda akan menyebarkan layanan web ke Azure Container Instance (ACI). Jenis komputasi ini dibuat secara dinamis, serta berguna untuk pengembangan dan pengujian. Untuk produksi, Anda harus membuat *kluster inferensi*, yang menyediakan kluster Azure Kubernetes Service (AKS) yang memberikan skalabilitas dan keamanan yang lebih baik.
 
-## <a name="deploy-a-service"></a>Menyebarkan layanan
+## Menyebarkan layanan
 
 1. Lihat alur inferensi **Prediksi Diabetes** yang Anda buat di unit sebelumnya.
 
@@ -351,7 +350,7 @@ Setelah membuat dan menguji alur inferensi untuk inferensi real-time, Anda dapat
 
 1. Tunggu hingga layanan web disebarkan - ini bisa memakan waktu beberapa menit. Status penyebaran ditampilkan di kiri atas antarmuka perancang.
 
-## <a name="test-the-service"></a>Menguji layanan
+## Menguji layanan
 
 1. Di halaman **Titik akhir**, buka titik akhir real-time **predict-diabetes**.
 
@@ -387,15 +386,15 @@ Setelah membuat dan menguji alur inferensi untuk inferensi real-time, Anda dapat
 
     Anda baru saja menguji layanan yang siap untuk dihubungkan ke aplikasi klien menggunakan kredensial di tab **Konsumsi**. Kami akan mengakhiri lab di sini. Anda dipersilakan untuk terus bereksperimen dengan layanan yang baru saja Anda sebarkan.
 
-## <a name="clean-up"></a>Pembersihan
+## Pembersihan
 
-Layanan web yang Anda buat dihosting dalam *Azure Container Instance*. Jika tidak berniat untuk bereksperimen dengan ini lebih lanjut, Anda harus menghapus titik akhir untuk menghindari mengumpulkan penggunaan Azure yang tidak perlu.
+Layanan web yang Anda buat dihosting dalam *Azure Container Instance*. Jika tidak berniat untuk bereksperimen dengan ini lebih lanjut, Anda harus menghapus titik akhir untuk menghindari mengumpulkan penggunaan Azure yang tidak perlu. Anda juga harus menghapus kluster komputasi.
 
 1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), pada tab **Titik Akhir**, pilih titik akhir **predict-diabetes**. Kemudian pilih **Hapus** dan konfirmasi bahwa Anda ingin menghapus titik akhir.
 
 1. Pada halaman **Komputasi**, pada tab **Kluster komputasi**, pilih kluster komputasi Anda, lalu pilih **Hapus**.
 
->**Catatan** Menghentikan komputasi memastikan langganan Anda tidak akan dikenakan biaya untuk sumber daya komputasi. Namun Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait. Namun, jika berencana untuk menyelesaikan laboratorium lain dalam seri ini, Anda harus membuatnya kembali.
+>**Catatan** Menghapus komputasi Anda memastikan langganan Anda tidak akan dikenakan biaya untuk sumber daya komputasi. Namun Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait. Namun, jika berencana untuk menyelesaikan laboratorium lain dalam seri ini, Anda harus membuatnya kembali.
 >
 > Untuk menghapus ruang kerja Anda:
 >
