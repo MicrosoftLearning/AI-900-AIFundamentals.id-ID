@@ -3,7 +3,7 @@ lab:
   title: Menjelajahi pendalaman pengetahuan
 ---
 
-# <a name="explore-knowledge-mining"></a>Menjelajahi pendalaman pengetahuan
+# Menjelajahi pendalaman pengetahuan
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
@@ -18,7 +18,7 @@ Di lab ini Anda akan:
 - Mengkueri indeks pencarian
 - Meninjau hasil yang disimpan ke Penyimpanan Pengetahuan
 
-## <a name="azure-resources-needed"></a>Sumber daya Azure yang dibutuhkan
+## Sumber daya Azure yang dibutuhkan
 
 Solusi yang akan Anda buat untuk Fourth Coffee memerlukan sumber daya berikut dalam langganan Azure Anda:
 
@@ -29,7 +29,7 @@ Solusi yang akan Anda buat untuk Fourth Coffee memerlukan sumber daya berikut da
 
 - **Akun penyimpanan** dengan kontainer blob, yang akan menyimpan dokumen mentah dan kumpulan tabel, objek, atau file lainnya.
 
-### <a name="create-an-azure-cognitive-search-resource"></a>Membuat sumber daya *Azure Cognitive Search*
+### Membuat sumber daya *Azure Cognitive Search*
 
 1. Masuk ke [Portal Microsoft Azure](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true).
 
@@ -45,7 +45,7 @@ Solusi yang akan Anda buat untuk Fourth Coffee memerlukan sumber daya berikut da
 
 1. Setelah penyebaran selesai, pilih **Buka sumber daya**. Pada halaman gambaran umum Azure Cognitive Search, Anda dapat menambahkan indeks, mengimpor data, dan mencari indeks yang dibuat.
 
-### <a name="create-a-cognitive-services-resource"></a>Membuat sumber daya Cognitive Services
+### Membuat sumber daya Cognitive Services
 
 Anda harus memprovisikan sumber daya **Cognitive Services** yang berada di lokasi yang sama dengan sumber daya Azure Cognitive Search Anda. Solusi pencarian Anda akan menggunakan sumber daya ini untuk memperkaya data di datastore dengan wawasan yang dihasilkan AI.
 
@@ -61,7 +61,7 @@ Anda harus memprovisikan sumber daya **Cognitive Services** yang berada di lokas
 
 1. Tunggu hingga penyebaran selesai, lalu lihat detail penyebaran.
 
-### <a name="create-a-storage-account"></a>Buat akun penyimpanan
+### Buat akun penyimpanan
 
 1. Kembali ke beranda portal Microsoft Azure, lalu pilih tombol **+ Buat sumber daya**.
 
@@ -75,7 +75,7 @@ Anda harus memprovisikan sumber daya **Cognitive Services** yang berada di lokas
 
 1. Klik **Tinjau** lalu klik **Buat**. Tunggu hingga penyebaran selesai, lalu buka sumber daya yang disebarkan.
 
-## <a name="upload-documents-to-azure-storage"></a>Mengunggah Dokumen ke Azure Storage
+## Mengunggah Dokumen ke Azure Storage
 
 1. Di akun Azure Storage yang Anda buat, di panel menu sebelah kiri, pilih **Kontainer**.
 
@@ -102,7 +102,7 @@ Anda harus memprovisikan sumber daya **Cognitive Services** yang berada di lokas
 
 1. Setelah pengunggahan selesai, Anda dapat menutup panel **Unggah blob**. Dokumen Anda sekarang ada di kontainer penyimpanan *ulasan kopi* Anda.
 
-## <a name="index-the-documents"></a>Mengindeks dokumen
+## Mengindeks dokumen
 
 Setelah Anda menyimpan dokumen, Anda dapat menggunakan Azure Cognitive Search untuk mengekstrak wawasan dari dokumen. Portal Microsoft Azure menyediakan *Wizard Impor data*. Dengan wizard ini, Anda dapat secara otomatis membuat indeks dan pengindeks untuk sumber data yang didukung. Anda akan menggunakan wizard untuk membuat indeks, dan mengimpor dokumen pencarian Anda dari penyimpanan ke dalam indeks Azure Cognitive Search.
 
@@ -190,7 +190,7 @@ Setelah Anda menyimpan dokumen, Anda dapat menggunakan Azure Cognitive Search un
 
     ![Cuplikan layar yang menampilkan Pengindeks coffee-indexer berhasil dibuat.](media/create-cognitive-search-solution/6a-search-indexer-success.png)
 
-## <a name="query-the-index"></a>Mengkueri indeks
+## Mengkueri indeks
 
 Gunakan penjelajah Pencarian untuk menulis dan menguji kueri. Search explorer adalah alat yang disertakan dalam portal Microsoft Azure yang memberi Anda cara mudah untuk memvalidasi kualitas indeks pencarian Anda. Anda dapat menggunakan Penjelajah pencarian untuk menulis kueri dan meninjau hasil di JSON.
 
@@ -206,15 +206,15 @@ Gunakan penjelajah Pencarian untuk menulis dan menguji kueri. Search explorer ad
 
     > **Catatan** Jika muncul pesan **Untuk mencari di portal, izinkan asal portal di pengaturan CORS indeks Anda**, pilih **Izinkan portal**, lalu pilih **Cari**.
 
-1. Sekarang mari kita filter berdasarkan lokasi. `search=$filter=locations eq 'Chicago'`Di bidang **String kueri**, masukkan, lalu pilih **Cari**. Kueri mencari semua dokumen dalam indeks dan menyaring tinjauan dengan lokasi Chicago.
+1. Sekarang mari kita filter berdasarkan lokasi. `search=locations:'Chicago'`Di bidang **String kueri**, masukkan, lalu pilih **Cari**. Kueri mencari semua dokumen dalam indeks dan menyaring tinjauan dengan lokasi Chicago.
 
-1. Sekarang mari kita filter berdasarkan sentimen. `search=$filter=sentiment eq 'negative'`Di bidang **String kueri**, masukkan, lalu pilih **Cari**. Kueri mencari semua dokumen dalam indeks dan menyaring tinjauan dengan sentimen negatif.
+1. Sekarang mari kita filter berdasarkan sentimen. `search=sentiment:'negative'`Di bidang **String kueri**, masukkan, lalu pilih **Cari**. Kueri mencari semua dokumen dalam indeks dan menyaring tinjauan dengan sentimen negatif.
 
    > **Catatan** Lihat bagaimana hasil diurutkan berdasarkan `@search.score`. Ini adalah skor yang diberikan oleh mesin pencari untuk menunjukkan seberapa dekat hasil cocok dengan kueri yang diberikan.
 
 1. Salah satu masalah yang mungkin perlu kita pecahkan adalah mengapa mungkin ada ulasan tertentu. Mari kita lihat frasa kunci yang terkait dengan ulasan negatif. Menurut Anda apa yang mungkin menjadi penyebab peninjauan?
 
-## <a name="review-the-knowledge-store"></a>Tinjau penyimpanan pengetahuan
+## Tinjau penyimpanan pengetahuan
 
 Mari kita lihat kekuatan penyimpanan pengetahuan saat digunakan. Saat Anda menjalankan *Wizard Impor data*, Anda juga membuat penyimpanan pengetahuan. Di dalam penyimpanan pengetahuan, Anda akan menemukan data yang diperkaya yang diekstrak oleh keterampilan AI yang tetap ada dalam bentuk proyeksi dan tabel.
 
@@ -250,6 +250,6 @@ Mari kita lihat kekuatan penyimpanan pengetahuan saat digunakan. Saat Anda menja
 
     Lihat frasa kunci yang dapat diambil oleh penyimpanan pengetahuan dari konten di ulasan. Banyak bidang adalah kunci, sehingga Anda dapat menautkan tabel seperti database hubungan. Bidang terakhir menunjukkan frase kunci yang diekstrak oleh kumpulan keterampilan.
 
-## <a name="learn-more"></a>Pelajari lebih lanjut
+## Pelajari lebih lanjut
 
 Indeks pencarian sederhana ini hanya beberapa contoh dari kemampuan layanan Azure Cognitive Search. Untuk mempelajari selengkapnya tentang apa yang dapat Anda lakukan dengan layanan ini, lihat [halaman layanan Azure Cognitive Search](/azure/search/search-what-is-azure-search).
