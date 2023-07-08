@@ -3,13 +3,13 @@ lab:
   title: Menjelajahi regresi dengan Azure Machine Learning Designer
 ---
 
-# <a name="explore-regression-with-azure-machine-learning-designer"></a>Menjelajahi regresi dengan Azure Machine Learning Designer
+# Menjelajahi regresi dengan Azure Machine Learning Designer
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
 Dalam latihan ini, Anda akan melatih model regresi yang memprediksi harga mobil berdasarkan karakteristiknya.
 
-## <a name="create-an-azure-machine-learning-workspace"></a>Membuat ruang kerja Azure Machine Learning  
+## Membuat ruang kerja Azure Machine Learning  
 
 1. Masuk ke [portal Azure](https://portal.azure.com?azure-portal=true) menggunakan info masuk Microsoft Anda.
 
@@ -27,13 +27,13 @@ Dalam latihan ini, Anda akan melatih model regresi yang memprediksi harga mobil 
 
 1. Pilih **Luncurkan studio** (atau buka tab browser baru dan arahkan ke [https://ml.azure.com](https://ml.azure.com?azure-portal=true), dan masuk ke studio Azure Machine Learning menggunakan akun Microsoft Anda).
 
-1. Di studio Azure Machine Learning, Anda akan melihat ruang kerja yang baru dibuat. Jika tidak, klik **Microsoft** di menu sebelah kiri. Kemudian dari menu sebelah kiri yang baru, pilih **Ruang Kerja**, tempat semua ruang kerja yang terkait dengan langganan Anda dicantumkan. Pilih salah satu yang Anda buat untuk latihan ini. 
+1. Di studio Azure Machine Learning, Anda akan melihat ruang kerja yang baru dibuat. Jika tidak demikian, pilih direktori Azure Anda di menu sebelah kiri. Kemudian dari menu sebelah kiri baru pilih **Ruang Kerja**, tempat semua ruang kerja yang terkait dengan direktori Anda dicantumkan, dan pilih yang Anda buat untuk latihan ini.
 
 > **Catatan** Modul ini adalah salah satu dari banyak modul yang memanfaatkan ruang kerja Azure Machine Learning, termasuk modul lainnya di jalur pembelajaran [Dasar-Dasar AI Microsoft Azure: Menjelajahi alat visual untuk pembelajaran mesin](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/). Jika menggunakan langganan Azure Anda sendiri, Anda dapat mempertimbangkan untuk membuat ruang kerja sekali dan menggunakannya kembali di modul lain. Langganan Azure Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda, jadi sebaiknya hapus ruang kerja Azure Machine Learning saat tidak lagi diperlukan.
 
-## <a name="create-compute"></a>Membuat komputasi
+## Membuat komputasi
 
-1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), pilih tiga baris di kiri atas untuk melihat berbagai halaman di antarmuka (Anda mungkin perlu memaksimalkan ukuran layar). Anda dapat menggunakan halaman ini di panel sebelah kiri untuk mengelola sumber daya di ruang kerja Anda. Pilih halaman **Komputasi** (di bagian **Kelola**).
+1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), pilih ikon **&#8801;** (ikon menu yang terlihat seperti tumpukan tiga baris) di kiri atas untuk melihat berbagai halaman di antarmuka (Anda mungkin perlu memaksimalkan ukuran layar Anda). Anda dapat menggunakan halaman ini di panel sebelah kiri untuk mengelola sumber daya di ruang kerja Anda. Pilih halaman **Komputasi** (di bagian **Kelola**).
 
 1. Pada halaman **Komputasi**, pilih tab **Kluster komputasi**, dan tambahkan kluster komputasi baru dengan pengaturan berikut untuk melatih model pembelajaran mesin:
     - **Lokasi**: *Pilih lokasi yang sama dengan ruang kerja Anda. Jika lokasi tersebut tidak terdaftar, pilih yang terdekat dengan lokasi Anda*.
@@ -54,9 +54,9 @@ Dalam latihan ini, Anda akan melatih model regresi yang memprediksi harga mobil 
 
 Kluster komputasi akan membutuhkan waktu untuk dibuat. Anda dapat melanjutkan ke langkah berikutnya sambil menunggu.
 
-## <a name="create-a-pipeline-in-designer"></a>Membuat alur di Perancang 
+## Buat alur di Perancang 
 
-1. Di [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih ikon tiga garis di kiri atas layar. Lihat halaman **Desainer** (di bagian **Pembuat**), dan pilih **+** untuk membuat alur baru.
+1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih ikon menu di kiri atas layar. Lihat halaman **Desainer** (di bagian **Pembuat**), dan pilih **+** untuk membuat alur baru.
 
 1. Di sisi kanan atas layar, pilih **Pengaturan**. Jika panel **Pengaturan** tidak terlihat, pilih ikon roda di samping nama saluran di bagian atas.
 
@@ -64,11 +64,11 @@ Kluster komputasi akan membutuhkan waktu untuk dibuat. Anda dapat melanjutkan ke
 
 1. Di **Pengaturan**, pada **Detail draf**, ubah nama draf (**Pipeline-Created-on-* date***) menjadi **Pelatihan Harga Otomatis**.
 
-1. Pilih *ikon tutup* di kanan atas panel **Pengaturan** untuk menutup panel. 
+1. Pilih ikon *tutup* di kanan atas panel **Pengaturan** untuk menutup panel. 
 
 ![Cuplikan layar panel Studio Pembelajaran Mesin.](media/create-regression-model/create-pipeline-help.png)
 
-## <a name="add-and-explore-a-dataset"></a>Menambahkan dan menjelajahi himpunan data
+## Menambahkan dan menjelajahi himpunan data
 
 Azure Machine Learning menyertakan himpunan data sampel yang dapat Anda gunakan untuk model regresi Anda.
 
@@ -90,7 +90,7 @@ Azure Machine Learning menyertakan himpunan data sampel yang dapat Anda gunakan 
 
     ![Cuplikan layar himpunan data harga mobil di kanvas perancang.](media/create-regression-model/dataset.png)
 
-## <a name="add-data-transformations"></a>Menambahkan transformasi data
+## Menambahkan transformasi data
 
 Anda biasanya menerapkan transformasi data guna menyiapkan data untuk pemodelan. Dalam hal data harga mobil, Anda menambahkan transformasi untuk mengatasi masalah yang Anda identifikasi saat menjelajahi data.
 
@@ -147,7 +147,7 @@ Ikuti langkah selanjutnya, gunakan gambar untuk referensi saat Anda menambahkan 
 
     >**Tips** Jika Anda membandingkan nilai dalam kolom **stroke**, **peak-rpm**, dan **city-mpg**, semuanya diukur dengan skala yang berbeda, dan mungkin saja nilai yang lebih besar untuk **rpm-puncak** dapat membiaskan algoritma pelatihan dan membuat dependensi berlebih pada kolom ini dibandingkan dengan kolom dengan nilai yang lebih rendah, seperti **stroke**. Biasanya, ilmuwan data mengurangi kemungkinan bias ini dengan *menormalkan* kolom numerik agar skalanya sama.
 
-## <a name="run-the-pipeline"></a>Menjalankan alur
+## Menjalankan alur
 
 Untuk menerapkan transformasi data, Anda harus menjalankan alur.
 
@@ -169,7 +169,7 @@ Untuk menerapkan transformasi data, Anda harus menjalankan alur.
 
 Himpunan data sekarang disiapkan untuk pelatihan model. Tutup tab Detail pekerjaan untuk kembali ke alur.
 
-## <a name="create-training-pipeline"></a>Membuat alur pelatihan
+## Membuat alur pelatihan
 
 Setelah menggunakan transformasi data untuk menyiapkan data, Anda dapat menggunakannya untuk melatih model pembelajaran mesin. Lakukan langkah-langkah berikut untuk memperluas jalur **Pelatihan Harga Otomatis**.
 
@@ -204,7 +204,7 @@ Setelah menggunakan transformasi data untuk menyiapkan data, Anda dapat mengguna
 
     ![Cuplikan layar cara membagi data, kemudian melatih dengan regresi linier dan skor.](media/create-regression-model/train-score.png)
 
-## <a name="run-the-training-pipeline"></a>Menjalankan alur pelatihan
+## Menjalankan alur pelatihan
 
 Sekarang Anda siap menjalankan alur pelatihan dan melatih model.
 
@@ -220,7 +220,7 @@ Sekarang Anda siap menjalankan alur pelatihan dan melatih model.
 
 Model ini memprediksi nilai untuk label **harga**, tetapi seberapa andal prediksinya? Untuk menilai itu, Anda perlu mengevaluasi model.
 
-## <a name="evaluate-model"></a>Mengevaluasi model
+## Mengevaluasi model
 
 Salah satu cara untuk mengevaluasi model regresi adalah dengan membandingkan label yang diprediksi dengan label aktual dalam himpunan data validasi yang akan ditahan selama pelatihan. Cara lain adalah dengan membandingkan performa beberapa model.
 
@@ -252,9 +252,9 @@ Salah satu cara untuk mengevaluasi model regresi adalah dengan membandingkan lab
 
 Saat mengidentifikasi model dengan metrik evaluasi yang memenuhi kebutuhan Anda, Anda dapat bersiap menggunakan model tersebut dengan data baru.
 
-## <a name="create-and-run-an-inference-pipeline"></a>Membuat dan menjalankan alur inferensi
+## Membuat dan menjalankan alur inferensi
 
-1. Di Azure Machine Learning studio, luaskan panel sebelah kiri dengan memilih tiga baris di kiri atas layar. Klik **Pekerjaan** (di bagian **Aset**) untuk melihat semua pekerjaan yang telah Anda jalankan. Pilih eksperimen **mslearn-auto-training**, lalu pilih alur **mslearn-auto-training**. 
+1. Di studio Azure Machine Learning, perluas panel sebelah kiri dengan memilih ikon menu di kiri atas layar. Klik **Pekerjaan** (di bagian **Aset**) untuk melihat semua pekerjaan yang telah Anda jalankan. Pilih eksperimen **mslearn-auto-training**, lalu pilih alur **mslearn-auto-training**. 
 
     ![Cuplikan layar pekerjaan di menu sebelah kiri. Pilih pekerjaan, lalu pilih nama eksperimen Anda.](media/create-regression-model/jobs-tab.png)
 
@@ -304,7 +304,7 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     return scored_results
 ```
 
-    - Hubungkan output dari modul **Score Model** ke input **Dataset1** (paling kiri) dari **Execute Python Script**, dan hubungkan output dari modul **Execute Python Script** ke **Web Service Output**.
+1. Hubungkan output dari modul **Score Model** ke input **Dataset1** (paling kiri) dari **Execute Python Script**, dan hubungkan output dari modul **Execute Python Script** ke **Web Service Output**.
 
 1. Verifikasi bahwa alur Anda terlihat mirip dengan gambar berikut:
 
@@ -318,13 +318,13 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 Alur inferensi Anda memprediksi harga untuk mobil berdasarkan fiturnya. Sekarang Anda siap menerbitkan alur agar aplikasi klien dapat menggunakannya.
 
-## <a name="deploy-model"></a>Menyebarkan model
+## Menyebarkan model
 
 Setelah membuat dan menguji alur inferensi untuk inferensi real-time, Anda dapat menerbitkannya sebagai layanan untuk digunakan oleh aplikasi klien.
 
 > **Catatan** Dalam latihan ini, Anda akan menyebarkan layanan web ke Azure Container Instance (ACI). Jenis komputasi ini dibuat secara dinamis, serta berguna untuk pengembangan dan pengujian. Untuk produksi, Anda harus membuat *kluster inferensi*, yang menyediakan kluster Azure Kubernetes Service (AKS) yang memberikan skalabilitas dan keamanan yang lebih baik.
 
-## <a name="deploy-a-service"></a>Menyebarkan layanan
+## Menyebarkan layanan
 
 1. Lihat alur inferensi **Prediksi Harga Otomatis** yang Anda buat di unit sebelumnya.
 
@@ -343,7 +343,7 @@ Setelah membuat dan menguji alur inferensi untuk inferensi real-time, Anda dapat
 
 1. Tunggu beberapa menit hingga layanan web disebarkan. Status penyebaran ditampilkan di kiri atas antarmuka perancang.
 
-## <a name="test-the-service"></a>Menguji layanan
+## Menguji layanan
 
 1. Di halaman **Titik akhir**, buka titik akhir real-time **predict-auto-price**.
 
@@ -397,15 +397,15 @@ Mari kita tinjau yang telah Anda lakukan. Anda membersihkan dan mengubah himpuna
 
 Anda juga menguji layanan yang siap dihubungkan ke aplikasi klien menggunakan kredensial di tab **Konsumsi**. Kami akan mengakhiri lab sampai di sini. Anda dipersilakan untuk terus bereksperimen dengan layanan yang baru saja Anda sebarkan.
 
-## <a name="clean-up"></a>Pembersihan
+## Pembersihan
 
-Layanan web yang Anda buat dihosting dalam *Azure Container Instance*. Jika tidak berniat untuk bereksperimen dengan ini lebih lanjut, Anda harus menghapus titik akhir untuk menghindari mengumpulkan penggunaan Azure yang tidak perlu. Anda juga harus menghentikan instans komputasi hingga Anda memerlukannya lagi.
+Layanan web yang Anda buat dihosting dalam *Azure Container Instance*. Jika tidak berniat untuk bereksperimen dengan ini lebih lanjut, Anda harus menghapus titik akhir untuk menghindari mengumpulkan penggunaan Azure yang tidak perlu. Anda juga harus menghapus kluster komputasi.
 
 1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), pada tab **Titik Akhir**, pilih titik akhir **predict-auto-price**. Kemudian pilih **Hapus** dan konfirmasikan bahwa Anda ingin menghapus titik akhir.
 
 1. Pada halaman **Komputasi**, pada tab **Kluster komputasi**, pilih kluster komputasi Anda, lalu pilih **Hapus**.
 
->**Catatan** Menghentikan komputasi memastikan langganan Anda tidak akan dikenakan biaya untuk sumber daya komputasi. Namun Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait. Namun, jika berencana untuk menyelesaikan laboratorium lain dalam seri ini, Anda harus membuatnya kembali.
+>**Catatan** Menghapus komputasi Anda memastikan langganan Anda tidak akan dikenakan biaya untuk sumber daya komputasi. Namun Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait. Namun, jika berencana untuk menyelesaikan laboratorium lain dalam seri ini, Anda harus membuatnya kembali.
 >
 > Untuk menghapus ruang kerja Anda:
 >

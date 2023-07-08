@@ -3,13 +3,13 @@ lab:
   title: Menjelajahi Pembelajaran Mesin Otomatis di Azure ML
 ---
 
-# <a name="explore-automated-machine-learning-in-azure-ml"></a>Menjelajahi Pembelajaran Mesin Otomatis di Azure ML
+# Menjelajahi Pembelajaran Mesin Otomatis di Azure ML
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
 Dalam latihan ini, Anda akan menggunakan himpunan data detail persewaan sepeda historis untuk melatih model yang memprediksi jumlah persewaan sepeda yang diharapkan pada hari tertentu, berdasarkan fitur musiman dan meteorologi.
 
-## <a name="create-an-azure-machine-learning-workspace"></a>Membuat ruang kerja Azure Machine Learning  
+## Membuat ruang kerja Azure Machine Learning  
 
 1. Masuk ke [portal Azure](https://portal.azure.com?azure-portal=true) menggunakan info masuk Microsoft Anda.
 
@@ -27,17 +27,15 @@ Dalam latihan ini, Anda akan menggunakan himpunan data detail persewaan sepeda h
 
 1. Pilih **Luncurkan studio** (atau buka tab browser baru dan arahkan ke [https://ml.azure.com](https://ml.azure.com?azure-portal=true), dan masuk ke studio Azure Machine Learning menggunakan akun Microsoft Anda).
 
-1. Jika pesan **Apa target pembelajaran mesin Anda hari ini?** muncul, pilih **Batalkan**.
+1. Tutup semua pesan yang ditampilkan.
 
-1. Jika pesan **Selamat datang di studio!** muncul, pilih **X**.
-
-1. Di studio Azure Machine Learning, Anda akan melihat ruang kerja yang baru dibuat. Jika tidak, klik **Microsoft** di menu sebelah kiri. Kemudian dari menu sebelah kiri yang baru, pilih **Ruang Kerja**, tempat semua ruang kerja yang terkait dengan langganan Anda dicantumkan. Pilih salah satu yang Anda buat untuk latihan ini. 
+1. Di studio Azure Machine Learning, Anda akan melihat ruang kerja yang baru dibuat. Jika tidak demikian, pilih direktori Azure Anda di menu sebelah kiri. Kemudian dari menu sebelah kiri baru pilih **Ruang Kerja**, tempat semua ruang kerja yang terkait dengan direktori Anda dicantumkan, dan pilih yang Anda buat untuk latihan ini.
 
 > **Catatan** Modul ini adalah salah satu dari banyak modul yang memanfaatkan ruang kerja Azure Machine Learning, termasuk modul lainnya di jalur pembelajaran [Dasar-Dasar AI Microsoft Azure: Menjelajahi alat visual untuk pembelajaran mesin](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/). Jika menggunakan langganan Azure Anda sendiri, Anda dapat mempertimbangkan untuk membuat ruang kerja sekali dan menggunakannya kembali di modul lain. Langganan Azure Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda, jadi sebaiknya hapus ruang kerja Azure Machine Learning saat tidak lagi diperlukan.
 
-## <a name="create-compute"></a>Membuat komputasi
+## Membuat komputasi
 
-1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), pilih tiga baris di kiri atas untuk melihat berbagai halaman di antarmuka (Anda mungkin perlu memaksimalkan ukuran layar). Anda dapat menggunakan halaman ini di panel sebelah kiri untuk mengelola sumber daya di ruang kerja Anda. Pilih halaman **Komputasi** (di bagian **Kelola**).
+1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), pilih ikon **&#8801;** (ikon menu yang terlihat seperti tumpukan tiga baris) di kiri atas untuk melihat berbagai halaman di antarmuka (Anda mungkin perlu memaksimalkan ukuran layar Anda). Anda dapat menggunakan halaman ini di panel sebelah kiri untuk mengelola sumber daya di ruang kerja Anda. Pilih halaman **Komputasi** (di bagian **Kelola**).
 
 1. Pada halaman **Komputasi**, pilih tab **Kluster komputasi**, dan tambahkan kluster komputasi baru dengan pengaturan berikut. Anda akan menggunakan ini untuk melatih model pembelajaran mesin:
     - **Lokasi**: *Pilih lokasi yang sama dengan ruang kerja Anda. Jika lokasi tersebut tidak terdaftar, pilih yang terdekat dengan lokasi Anda*.
@@ -51,18 +49,18 @@ Dalam latihan ini, Anda akan menggunakan himpunan data detail persewaan sepeda h
     - **Jumlah minimum node**: 0
     - **Jumlah maksimum node**: 2
     - **Detik menganggur sebelum menurunkan skala**: 120
-    - **Aktifkan akses SSH**: Hapus
+    - **Aktifkan akses SSH**: Jangan aktifkan
     - Pilih **Buat**
 
 > **Catatan** Instans dan kluster Komputasi didasarkan pada gambar mesin virtual Azure standar. Untuk modul ini, gambar *Standard_DS11_v2* disarankan untuk mencapai keseimbangan biaya dan performa yang optimal. Jika langganan Anda memiliki kuota yang tidak menyertakan gambar ini, pilih gambar alternatif; tetapi perlu diingat bahwa gambar yang lebih besar dapat dikenakan biaya yang lebih tinggi dan gambar yang lebih kecil mungkin tidak cukup untuk menyelesaikan tugas. Atau, minta administrator Azure Anda memperpanjang kuota Anda.
 
 Kluster komputasi akan membutuhkan waktu untuk dibuat. Anda dapat melanjutkan ke langkah berikutnya sambil menunggu.
 
-## <a name="create-a-dataset"></a>Membuat himpunan data
+## Membuat aset data
 
 1. Lihat data yang dipisahkan koma di [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals?azure-portal=true) di browser web Anda.
 
-1. Di [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih tiga baris di kiri atas layar. Lihat halaman **Data** (di bagian **Aset**). Halaman Data berisi file atau tabel data tertentu yang Anda rencanakan untuk digunakan di Azure ML. Anda juga dapat membuat himpunan data dari halaman ini.
+1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih ikon menu di kiri atas layar. Lihat halaman **Data** (di bagian **Aset**). Halaman Data berisi file atau tabel data tertentu yang Anda rencanakan untuk digunakan di Azure ML. Anda juga dapat membuat himpunan data dari halaman ini.
 
 1. Di halaman **Data**, pada tab **Aset data**, pilih **Buat**. Kemudian konfigurasikan aset data dengan pengaturan berikut:
     * **Jenis data**:
@@ -90,11 +88,11 @@ Kluster komputasi akan membutuhkan waktu untuk dibuat. Anda dapat melanjutkan ke
 
 > **Kutipan**: *Data ini berasal dari [Capital Bikeshare](https://www.capitalbikeshare.com/system-data) dan digunakan sesuai dengan [perjanjian lisensi](https://www.capitalbikeshare.com/data-license-agreement)* data yang diterbitkan.
 
-## <a name="run-an-automated-machine-learning-job"></a>Menjalankan tugas pembelajaran mesin otomatis
+## Menjalankan tugas pembelajaran mesin otomatis
 
 Ikuti langkah selanjutnya untuk menjalankan tugas yang menggunakan pembelajaran mesin otomatis untuk melatih model regresi yang memprediksi persewaan sepeda.
 
-1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), lihat halaman **ML Otomatis** (di bawah **Penulis**).
+1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), lihat halaman **ML Otomatis** (di bawah **Penulisan**).
 
 1. Buat tugas ML Otomatis dengan pengaturan berikut:
     - **Pilih aset data**:
@@ -136,13 +134,12 @@ Ikuti langkah selanjutnya untuk menjalankan tugas yang menggunakan pembelajaran 
 
 1. Tunggu pekerjaan selesai. Mungkin perlu waktu — sekarang mungkin saat yang tepat untuk istirahat sejenak!
 
-## <a name="review-the-best-model"></a>Meninjau model terbaik
+## Meninjau model terbaik
 
 1. Di tab **Ringkasan** tugas pembelajaran mesin otomatis, perhatikan ringkasan model terbaik.
     ![Cuplikan layar ringkasan model terbaik dari tugas pembelajaran mesin otomatis dengan kotak di sekitar nama algoritma.](media/use-automated-machine-learning/complete-run.png)
 
-    >[!NOTE]
-    > Anda mungkin melihat pesan di bawah status "Peringatan: Skor keluar yang ditentukan pengguna tercapai...". Ini adalah pesan yang diharapkan. Lanjutkan ke langkah berikutnya.  
+    > **Catatan** Anda mungkin melihat pesan di bawah status "Peringatan: Skor keluar yang ditentukan pengguna tercapai...". Ini adalah pesan yang diharapkan. Lanjutkan ke langkah berikutnya.  
 1. Pilih teks di bawah **Nama algoritma** untuk model terbaik guna melihat detailnya.
 
 1. Di samping nilai *Kesalahan kuadrat rata-rata akar yang dinormalkan*, pilih **Tampilkan semua metrik lainnya** untuk melihat nilai metrik evaluasi lain yang mungkin untuk model regresi.
@@ -158,7 +155,7 @@ Ikuti langkah selanjutnya untuk menjalankan tugas yang menggunakan pembelajaran 
 
     ![Cuplikan layar bagan kepentingan fitur di tab Penjelasan.](media/use-automated-machine-learning/feature-importance.png)
 
-## <a name="deploy-a-predictive-service"></a>Menyebarkan layanan prediktif
+## Menyebarkan layanan prediktif
 
 1. Di [Studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), pada halaman **ML Otomatis**, pilih tugas pembelajaran mesin otomatis Anda.
 
@@ -177,7 +174,7 @@ Ikuti langkah selanjutnya untuk menjalankan tugas yang menggunakan pembelajaran 
 1. Di studio Azure Machine Learning, di menu sebelah kiri, pilih **Titik akhir**.
     ![Cuplikan layar lokasi Titik Akhir di menu sebelah kiri.](media/use-automated-machine-learning/find-endpoints.png)
 
-## <a name="test-the-deployed-service"></a>Menguji layanan yang disebarkan
+## Menguji layanan yang disebarkan
 
 Sekarang Anda dapat menguji layanan yang disebarkan.
 
@@ -221,15 +218,14 @@ Mari kita tinjau yang telah Anda lakukan. Anda menggunakan himpunan data tentang
 
 Anda baru saja menguji layanan yang siap untuk dihubungkan ke aplikasi klien menggunakan kredensial di tab **Konsumsi**. Kami akan mengakhiri lab di sini. Anda dipersilakan untuk terus bereksperimen dengan layanan yang baru saja Anda sebarkan.
 
-## <a name="clean-up"></a>Pembersihan
+## Pembersihan
 
-Layanan web yang Anda buat dihosting dalam *Azure Container Instance*. Jika tidak berniat untuk bereksperimen dengan ini lebih lanjut, Anda harus menghapus titik akhir untuk menghindari mengumpulkan penggunaan Azure yang tidak perlu. Anda juga harus menghentikan instans komputasi hingga membutuhkannya lagi.
+Layanan web yang Anda buat dihosting dalam *Azure Container Instance*. Jika tidak berniat untuk bereksperimen dengan ini lebih lanjut, Anda harus menghapus titik akhir untuk menghindari mengumpulkan penggunaan Azure yang tidak perlu. Anda juga harus menghapus kluster komputasi.
 
 1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), di tab **Titik Akhir**, pilih titik akhir **predict-rentals**. Kemudian pilih **Hapus** dan konfirmasikan bahwa Anda ingin menghapus titik akhir.
-2. Di halaman **Komputasi**, di tab **Instans Komputasi**, pilih instans komputasi Anda lalu pilih **Hentikan**.
+2. Pada halaman **Komputasi** , pada tab **Kluster komputasi, pilih instans** komputasi Anda lalu pilih **Hapus**.
 
->[!NOTE]
-> Menghentikan komputasi memastikan langganan Anda tidak akan ditagih untuk sumber daya komputasi. Namun Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait. Namun, jika berencana untuk menyelesaikan laboratorium lain dalam seri ini, Anda harus membuatnya kembali.
+> **Catatan** Menghapus komputasi Anda memastikan langganan Anda tidak akan dikenakan biaya untuk sumber daya komputasi. Namun Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait. Namun, jika berencana untuk menyelesaikan laboratorium lain dalam seri ini, Anda harus membuatnya kembali.
 >
 > Untuk menghapus ruang kerja Anda:
 > 1. Di [portal Azure](https://portal.azure.com?azure-portal=true), di halaman **Grup sumber daya**, buka grup sumber daya yang Anda tentukan saat membuat ruang kerja Azure Machine Learning Anda.
