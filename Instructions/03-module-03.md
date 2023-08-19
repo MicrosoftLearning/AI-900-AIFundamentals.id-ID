@@ -3,7 +3,7 @@ lab:
   title: Jelajahi Computer Vision
 ---
 
-# <a name="explore-computer-vision"></a>Jelajahi Computer Vision
+# Jelajahi Computer Vision
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
@@ -13,7 +13,7 @@ Contoh, misalkan perusahaan ritel *Northwind Traders* fiktif memutuskan untuk me
 
 Di lab ini, Anda akan menggunakan aplikasi baris perintah sederhana untuk melihat cara kerja layanan Computer Vision. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
 
-## <a name="create-a-cognitive-services-resource"></a>Membuat sumber daya *Cognitive Services*
+## Membuat sumber daya *Cognitive Services*
 
 Anda dapat menggunakan layanan Computer Vision dengan membuat sumber daya **Computer Vision** atau sumber daya **Cognitive Services**.
 
@@ -31,9 +31,9 @@ Jika Anda belum melakukannya, buat sumber daya **Cognitive Services** di langgan
 
 1. Tinjau dan buat sumber daya, dan tunggu hingga penyebaran selesai. Lalu pergi ke sumber daya yang disebarkan.
 
-1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Cognitive Services Anda. Anda akan membutuhkan titik akhir dan kunci untuk terhubung dari aplikasi klien.
+1. Lihat halaman **Kunci dan Titik Akhir** untuk mengetahui sumber daya Cognitive Services Anda. Anda akan membutuhkan titik akhir dan kunci untuk terhubung dari aplikasi klien.
 
-## <a name="run-cloud-shell"></a>Menjalankan Cloud Shell
+## Menjalankan Cloud Shell
 
 Untuk menguji kemampuan layanan Computer Vision, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell di Azure.
 
@@ -55,7 +55,7 @@ Untuk menguji kemampuan layanan Computer Vision, kita akan menggunakan aplikasi 
 
     ![Tunggu PowerShell untuk memulai.](media/analyze-images-computer-vision-service/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Mengonfigurasi dan menjalankan aplikasi klien
+## Mengonfigurasi dan menjalankan aplikasi klien
 
 Setelah memiliki lingkungan Cloud Shell, Anda dapat menjalankan aplikasi sederhana yang menggunakan layanan Computer Vision untuk menganalisis gambar.
 
@@ -134,6 +134,6 @@ Setelah memiliki lingkungan Cloud Shell, Anda dapat menjalankan aplikasi sederha
 
 1. Tinjau hasil analisis gambar untuk gambar ketiga.
 
-## <a name="learn-more"></a>Pelajari lebih lanjut
+## Pelajari lebih lanjut
 
-Aplikasi sederhana ini hanya menunjukkan beberapa kemampuan layanan Computer Vision. Untuk mempelajari lebih lanjut tindakan yang dapat Anda lakukan dengan layanan ini, lihat [Halaman Computer Vision](https://azure.microsoft.com/services/cognitive-services/computer-vision/).
+Aplikasi sederhana ini hanya menunjukkan beberapa kemampuan layanan Computer Vision. Untuk mempelajari lebih lanjut tindakan yang dapat Anda lakukan dengan layanan ini, lihat [Halaman Computer Vision](https://azure.microsoft.com/products/ai-services?activetab=pivot:visiontab).
