@@ -62,7 +62,7 @@ Kluster komputasi akan membutuhkan waktu untuk dibuat. Anda dapat melanjutkan ke
 
 1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih ikon menu di kiri atas layar. Lihat halaman **Data** (di bagian **Aset**). Halaman Data berisi file atau tabel data tertentu yang Anda rencanakan untuk digunakan di Azure ML. Anda juga dapat membuat himpunan data dari halaman ini.
 
-1. Di halaman **Data**, pada tab **Aset data**, pilih **Buat**. Kemudian konfigurasikan aset data dengan pengaturan berikut:
+1. Pada halaman **Data** , di bawah tab **Aset data** , pilih **+ Buat**. Kemudian konfigurasikan aset data dengan pengaturan berikut:
     * **Jenis data**:
         * **Nama**: bike-rentals
         * **Deskripsi**: Data penyewaan sepeda
@@ -128,9 +128,7 @@ Ikuti langkah selanjutnya untuk menjalankan tugas yang menggunakan pembelajaran 
         - **Jenis validasi**: Otomatis
         - **Aset data pengujian (pratinjau)** : Tidak perlu aset data pengujian
 
-1. Setelah Anda selesai mengirimkan detail pekerjaan pembelajaran mesin otomatis, pekerjaan ini akan dimulai secara otomatis. Tunggu hingga status berubah dari *Menyiapkan* menjadi *Menjalankan*.
-
-1. Saat status berubah menjadi *Menjalankan*, lihat tab **Model** dan amati apakah kemungkinan kombinasi algoritma pelatihan dan langkah pra-pemrosesan telah dicoba dan performa model yang dihasilkan telah dievaluasi. Halaman direfresh secara otomatis secara berkala, namun Anda juga dapat memilih **Refresh**. Mungkin diperlukan sekitar 10 menit sebelum model mulai muncul, karena node kluster harus diinisialisasi sebelum pelatihan dapat dimulai.
+1. Setelah Anda selesai mengirimkan detail pekerjaan pembelajaran mesin otomatis, pekerjaan ini akan dimulai secara otomatis.
 
 1. Tunggu pekerjaan selesai. Mungkin perlu waktu — sekarang mungkin saat yang tepat untuk istirahat sejenak!
 
@@ -163,26 +161,24 @@ Ikuti langkah selanjutnya untuk menjalankan tugas yang menggunakan pembelajaran 
 
     ![Cuplikan layar ringkasan model terbaik dengan kotak di sekitar nama algoritma pada tab detail.](media/use-automated-machine-learning/deploy-detail-tab.png)
 
-1. Pada tab **Model**, pilih tombol **Sebarkan** dan gunakan opsi **Sebarkan ke layanan web** untuk menyebarkan model dengan pengaturan berikut:
+1. Pada tab **Model** , pilih tombol **Sebarkan** dan gunakan opsi **Layanan web** untuk menyebarkan model dengan pengaturan berikut:
     - **Nama**: predict-rentals
     - **Deskripsi**: Memprediksi penyewaan sepeda
     - **Jenis komputasi**: Azure Container Instance
     - **Aktifkan autentikasi**: Dipilih
 
-1. Tunggu penyebaran dimulai - ini mungkin memakan waktu beberapa detik. Kemudian, di bagian **Ringkasan model**, amati **status Penyebaran** untuk layanan **predict-rentals**, yang seharusnya **Berjalan**. Tunggu hingga status ini berubah menjadi **Berhasil**, yang mungkin memerlukan waktu beberapa menit. Anda mungkin perlu memilih **Refresh** secara berkala.
+1. Tunggu penyebaran dimulai - ini mungkin memakan waktu beberapa detik.
 
-1. Di studio Azure Machine Learning, di menu sebelah kiri, pilih **Titik akhir**.
-    ![Cuplikan layar lokasi Titik Akhir di menu sebelah kiri.](media/use-automated-machine-learning/find-endpoints.png)
+1. Di studio Azure Machine Learning, di menu sebelah kiri, pilih **Titik akhir** dan buka titik akhir real time **predict-rentals** .
+1. Tunggu status **Penyebaran** berubah menjadi **Sehat** - ini mungkin memakan waktu beberapa menit.
 
 ## Menguji layanan yang disebarkan
 
 Sekarang Anda dapat menguji layanan yang disebarkan.
 
-1. Pada laman **Titik Akhir**, buka titik akhir waktu nyata **predict-rentals**.
+1. Pada halaman titik akhir real-time **predict-rentals** hapus tab **Uji** .
 
-1. Saat titik akhir **predict-rentals** terbuka, lihat tab **Uji**.
-
-1. Di panel **Input data ke titik akhir real time pengujian**, ganti template JSON dengan data input berikut:
+1. Di panel **Input data untuk menguji titik akhir** , ganti templat JSON dengan data input berikut:
 
     ```JSON
     {
