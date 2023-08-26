@@ -52,61 +52,50 @@ lab:
 
 Kluster komputasi akan membutuhkan waktu untuk dibuat. Anda dapat melanjutkan ke langkah berikutnya sambil menunggu.
 
-## Buat alur di Perancang
 
-Untuk mulai menggunakan perancang Azure Machine Learning, pertama-tama Anda harus membuat alur dan menambahkan himpunan data yang ingin Anda gunakan.
+## Membuat himpunan data
 
-1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih ikon menu di kiri atas layar. Lihat halaman **Desainer** (di bagian **Pembuat**), dan pilih **+** untuk membuat alur baru.
+1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih ikon menu di kiri atas layar. Pilih halaman **Data** (di bawah **Aset**). Halaman Data berisi file atau tabel data tertentu yang Anda rencanakan untuk digunakan di Azure ML. Anda juga dapat membuat himpunan data dari halaman ini.
 
-1. Di sisi kanan atas layar, pilih **Pengaturan**. Jika panel **Pengaturan** tidak terlihat, pilih ikon roda di samping nama saluran di bagian atas.
-
-1. Di **Pengaturan**, Anda harus menentukan target komputasi untuk menjalankan alur. Di bagian **Pilih jenis komputasi**, pilih **Kluster komputasi**. Kemudian di bagian **Pilih kluster komputasi Azure ML**, pilih kluster komputasi yang Anda buat sebelumnya.
-
-1. Di **Pengaturan**, pada **Detail Draf**, ubah nama draf (**Pipeline-Created-on-* date***) menjadi **Pelatihan Diabetes**.
-
-1. Pilih ikon tutup di kanan atas panel **Pengaturan** untuk menutup panel, lalu pilih **Simpan**.
-
-    ![Cuplikan layar panel Studio Pembelajaran Mesin.](media/create-classification-model/create-pipeline-help.png)
-
-## Buat himpunan data
-
-1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih ikon menu di kiri atas layar. Lihat halaman **Data** (di bagian **Aset**). Halaman Data berisi file atau tabel data tertentu yang Anda rencanakan untuk digunakan di Azure ML. Anda juga dapat membuat himpunan data dari halaman ini.
-
-1. Di halaman **Data**, pada tab **Aset data**, pilih **Buat**. Kemudian konfigurasikan aset data dengan pengaturan berikut:
-    * **Jenis data**:
-        * **Nama**: diabetes-data
-        * **Deskripsi**: Data diabetes
-        * **Jenis himpunan data**: Tabular
-    * **Sumber data**: Dari File Web
-    * **URL Web**: 
-        * **URL Web**: https://aka.ms/diabetes-data
-        * **Lewati validasi data**: *jangan pilih*
-    * **Pengaturan**:
-        * **Format file**: Dibatasi
-        * **Pemisah**: Koma
-        * **Pengodean**: UTF-8
-        * **Header kolom**: Hanya file pertama yang memiliki header
-        * **Lewati baris**: Tidak ada
-        * **Himpunan data berisi data multi-baris**: *jangan pilih*
-    * **Skema**:
-        * Sertakan semua kolom selain **Jalur**
-        * Meninjau jenis yang terdeteksi secara otomatis
-    * **Tinjau**
-        * Pilih **Buat**
+1. Pada halaman **Data** , di bawah tab **Aset data** , pilih **+ Buat**. Kemudian konfigurasikan aset data dengan pengaturan berikut:
+    - **Jenis data**:
+        - **Nama**: diabetes-data
+        - **Deskripsi**: Data diabetes
+        - **Jenis himpunan data**: Tabular
+    - **Sumber data**: Dari file web
+    - **URL Web**: 
+        - **URL Web**: https://aka.ms/diabetes-data
+        - **Lewati validasi data**: *jangan pilih*
+    - **Pengaturan**:
+        - **Format file**: Dibatasi
+        - **Pemisah**: Koma
+        - **Pengodean**: UTF-8
+        - **Header kolom**: Hanya file pertama yang memiliki header
+        - **Lewati baris**: Tidak ada
+        - **Himpunan data berisi data multi-baris**: *jangan pilih*
+    - **Skema**:
+        - Sertakan semua kolom selain **Jalur**
+        - Meninjau jenis yang terdeteksi secara otomatis
+    - **Tinjau**
+        - Pilih **Buat**
 
 1. Setelah himpunan data dibuat, buka dan tampilkan halaman **Jelajahi** untuk melihat sampel data. Data ini menunjukkan detail dari pasien yang sudah dites untuk diabetes.
 
-### Memuat data ke kanvas
+## Membuat alur di Designer dan memuat data ke kanvas
 
-1. Kembali ke alur dengan memilih **Perancang** di menu sebelah kiri. Pada halaman **Desainer**, pilih alur **Pelatihan Diabetes**.
+Untuk mulai menggunakan perancang Azure Machine Learning, pertama-tama Anda harus membuat alur dan menambahkan himpunan data yang ingin Anda gunakan.
+
+1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), di panel kiri pilih item **Designer** (di bawah **Penulisan**), lalu pilih **+** untuk membuat alur baru.
+
+1. Ubah nama draf dari **Pipeline-Created-on-*date*** menjadi **Pelatihan Diabetes**.
 
 1. Kemudian di proyek, di sebelah kiri nama alur, pilih ikon panah untuk memperluas panel jika belum diperluas. Panel akan terbuka secara default ke panel **Pustaka aset**, yang ditunjukkan dengan ikon buku di bagian atas panel. Perhatikan bahwa terdapat bilah pencarian untuk menemukan aset. Perhatikan dua tombol, **Data** dan **Komponen**.
 
     ![Cuplikan layar lokasi pustaka, bilah pencarian, dan ikon data aset perancang.](media/create-classification-model/designer-asset-library-data.png)
 
-1. Klik **Data**. Cari dan letakkan himpunan **data diabetes-data** ke kanvas.
+1. Pilih **Data**. Cari dan letakkan himpunan **data diabetes-data** ke kanvas.
 
-1. Klik kanan (Ctrl+klik pada Mac) himpunan data **diabetes-data** di kanvas, dan klik **Pratinjau data**.
+1. Klik kanan (Ctrl+klik pada Mac) himpunan data **diabetes-data** di kanvas, dan pilih **Pratinjau data**.
 
 1. Tinjau skema data di tab *Profil*, perhatikan bahwa Anda dapat melihat distribusi berbagai kolom sebagai histogram.
 
@@ -114,7 +103,7 @@ Untuk mulai menggunakan perancang Azure Machine Learning, pertama-tama Anda haru
 
 1. Gulir kembali ke atas dan tinjau kolom lain, yang mewakili *fitur* yang akan digunakan untuk memprediksi label. Perhatikan bahwa sebagian besar kolom ini adalah numerik, tetapi setiap fitur berada pada skalanya sendiri. Misalnya, nilai **Usia** berkisar antara 21 hingga 77, sedangkan nilai **DiabetesPedigree** berkisar antara 0,078 hingga 2,3016. Saat melatih model pembelajaran mesin, terkadang nilai yang lebih besar dapat mendominasi fungsi prediktif yang dihasilkan, mengurangi pengaruh fitur dalam skala yang lebih kecil. Biasanya, ilmuwan data mengurangi kemungkinan bias ini dengan *menormalkan* kolom numerik agar skalanya sama.
 
-1. Tutup tab **visualisasi hasil data diabetes** sehingga Anda dapat melihat himpunan data di kanvas seperti ini:
+1. Tutup tab **DataOutput** sehingga Anda bisa melihat himpunan data di kanvas seperti ini:
 
     ![Cuplikan layar himpunan data diabetes di kanvas perancang.](media/create-classification-model/diabetes-data.png)
 
@@ -122,19 +111,19 @@ Untuk mulai menggunakan perancang Azure Machine Learning, pertama-tama Anda haru
 
 Sebelum dapat melatih model, biasanya Anda perlu menerapkan beberapa transformasi pra-pemrosesan ke data.
 
-1. Di panel **Pustaka aset** di sebelah kiri, klik **Komponen**, yang berisi berbagai modul yang dapat Anda gunakan untuk transformasi data dan pelatihan model. Anda juga dapat menggunakan bilah pencarian untuk menemukan modul dengan cepat.
+1. Di panel **Pustaka aset** di sebelah kiri, pilih **Komponen**, yang berisi berbagai modul yang dapat Anda gunakan untuk transformasi data dan pelatihan model. Anda juga dapat menggunakan bilah pencarian untuk menemukan modul dengan cepat.
 
     ![Cuplikan layar lokasi pustaka, bilah pencarian, dan ikon komponen aset perancang.](media/create-classification-model/designer-asset-library-components.png)
 
-1. Cari modul **Memilih Kolom di Himpunan Data** dan letakkan di kanvas, di bawah himpunan data **diabetes-data**. Kemudian hubungkan output dari bagian bawah himpunan data **diabetes-data** ke input di bagian atas modul **Memilih Kolom di Himpunan Data**.
+1. Temukan modul **Pilih Kolom di Himpunan Data** dan letakkan di kanvas di bawah **himpunan data diabetes-data** . Kemudian hubungkan output dari bagian bawah himpunan data **diabetes-data** ke input di bagian atas modul **Memilih Kolom di Himpunan Data**.
 
-1. Klik dua kali pada modul **Pilih Kolom di Himpunan Data** untuk mengakses panel pengaturan di sebelah kanan. Pilih **Edit kolom**. Lalu di jendela **Pilih kolom** , pilih **Menurut nama** dan **Tambahkan semua** kolom. Kemudian hapus **PatientID** dan klik **Simpan**. 
+1. Klik dua kali pada modul **Pilih Kolom di Himpunan Data** untuk mengakses panel pengaturan di sebelah kanan. Pilih **Edit kolom**. Lalu di jendela **Pilih kolom** , pilih **Menurut nama** dan **Tambahkan semua** kolom. Kemudian hapus **PatientID** dan klik **Simpan**.
 
-1. Cari modul **Menormalisasi Data** dan letakkan di atas kanvas, di bawah modul **Memilih Kolom di Himpunan Data**. Kemudian hubungkan output dari bagian bawah modul **Memilih Kolom di Himpunan Data** ke input di bagian atas modul **Menormalisasi Data**, seperti ini:
+1. Temukan modul **Normalisasi Data dan letakkan** di kanvas di bawah modul **Pilih Kolom di Himpunan Data** . Kemudian hubungkan output dari bagian bawah modul **Memilih Kolom di Himpunan Data** ke input di bagian atas modul **Menormalisasi Data**, seperti ini:
 
     ![Cuplikan layar alur dengan himpunan data yang terhubung untuk modul memilih kolom dan Normalisasi Data.](media/create-classification-model/dataset-normalize.png)
 
-1. Klik dua kali modul **Normalisasi Data** untuk melihat pengaturannya, perhatikan bahwa modul ini mengharuskan Anda menentukan metode transformasi dan kolom yang akan diubah. 
+1. Klik dua kali modul **Normalisasi Data** untuk melihat pengaturannya, perhatikan bahwa modul ini mengharuskan Anda menentukan metode transformasi dan kolom yang akan diubah.
 
 1. Atur *Metode transformasi* ke **MinMax** dan *Gunakan 0 untuk kolom konstanta saat dicentang* ke **True**. Edit kolom untuk diubah dengan **Edit kolom**. Pilih kolom **Dengan Aturan** dan salin dan tempel daftar berikut ini di bawah sertakan nama kolom:  
 
@@ -143,7 +132,7 @@ Pregnancies, PlasmaGlucose, DiastolicBloodPressure, TricepsThickness, SerumInsul
 ```
 ![Cuplikan layar kolom yang dipilih untuk normalisasi.](media/create-classification-model/normalize-data.png)
 
-Klik **Simpan** dan tutup kotak pilihan. 
+Klik **Simpan** dan tutup kotak pilihan.
 
 Transformasi data menormalkan kolom numerik untuk menempatkannya pada skala yang sama, yang akan membantu mencegah kolom dengan nilai yang besar mendominasi pelatihan model. Anda biasanya akan menerapkan sekelompok transformasi pemrosesan awal seperti ini guna menyiapkan data Anda untuk pelatihan, tetapi kita akan menyederhanakannya dalam latihan ini.
 
@@ -151,19 +140,23 @@ Transformasi data menormalkan kolom numerik untuk menempatkannya pada skala yang
 
 Untuk menerapkan transformasi data Anda, Anda perlu menjalankan alur sebagai eksperimen.
 
-1. Pilih **Kirim**, dan jalankan alur sebagai eksperimen baru bernama **mslearn-diabetes-training** pada kluster komputasi Anda.
+1. Pilih **Konfigurasikan & Kirim** di bagian atas halaman untuk membuka dialog **Siapkan pekerjaan alur** .
 
-1. Tunggu beberapa menit hingga eksekusi selesai.
+1. Pada halaman **Dasar pilih** **Buat baru** dan atur nama eksperimen ke **mslearn-diabetes-training** lalu pilih **Berikutnya** .
 
-    ![Cuplikan layar pustaka aset perancang dengan tombol detail pekerjaan dan pekerjaan yang telah selesai di bawah.](media/create-classification-model/completed-job.png)
+1. Pada halaman **Input & output** pilih **Berikutnya** tanpa membuat perubahan apa pun.
 
-    Perhatikan bahwa panel sebelah kiri sekarang berada di panel **Pekerjaan yang Dikirim**. Anda akan mengetahui kapan eksekusi selesai karena status pekerjaan akan berubah menjadi **Selesai**.
+1. Pada halaman **Pengaturan runtime** kesalahan muncul karena Anda tidak memiliki komputasi default untuk menjalankan alur. Di menu drop-down **Pilih jenis komputasi** pilih *Kluster komputasi* dan di menu drop-down **Pilih kluster komputasi Azure ML** pilih kluster komputasi yang baru dibuat.
+
+1. Pilih **Tinjau + Kirim** untuk meninjau pekerjaan alur lalu pilih **Kirim** untuk menjalankan alur pelatihan.
+
+1. Tunggu beberapa menit hingga eksekusi selesai. Anda dapat memeriksa status pekerjaan dengan memilih **Pekerjaan** di bawah **Aset**. Dari sana, pilih eksperimen **mslearn-diabetes-training** lalu pekerjaan **Pelatihan Diabetes** .
 
 ## Menampilkan data yang diubah
 
-1. Setelah eksekusi selesai, himpunan data sekarang disiapkan untuk pelatihan model. Klik **Detail pekerjaan**. Anda akan dibawa ke tab baru.
+Setelah eksekusi selesai, himpunan data sekarang disiapkan untuk pelatihan model.
 
-1. Klik kanan (Ctrl+klik pada Mac) modul **Normalisasi Data** pada kanvas, dan klik **Pratinjau data**. Pilih **Himpunan data yang ditransformasi**.
+1. Klik kanan (Ctrl+klik pada Mac) modul **Normalisasi Data** pada kanvas, dan pilih **Pratinjau data**. Pilih **Himpunan data yang ditransformasi**.
 
 1. Tampilkan data, perhatikan bahwa kolom numerik yang Anda pilih sudah dinormalkan ke skala umum.
 
@@ -181,18 +174,18 @@ Dalam latihan ini, Anda akan mengerjakan melalui langkah-langkah untuk memperlua
 
 Ikuti langkah-langkah di bawah ini, dengan menggunakan gambar di atas sebagai referensi saat Anda menambahkan dan mengonfigurasi modul yang diperlukan.
 
-1. Buka alur **Pelatihan Diabetes** yang Anda buat di unit sebelumnya jika belum dibuka.
+1. Kembali ke halaman **Designer** dan pilih alur **Pelatihan Diabetes**.
 
 1. Di panel **Pustaka aset** di sebelah kiri, di **Komponen**, cari dan tempatkan modul **Pisahkan Data** ke kanvas di bawah modul **Normalisasi Data**. Selanjutnya sambungkan output *Himpunan Data yang Diubah* (kiri) dari modul **Normalize Data** ke input modul **Split Data**.
 
     >**Tips** Gunakan bilah pencarian untuk menemukan modul dengan cepat.
 
 1. Pilih modul **Split Data**, dan konfigurasikan pengaturannya sebagai berikut:
-    * **Mode pemisahan**: Pisahkan Baris
-    * **Pecahan baris dalam himpunan data output pertama**: 0,7
-    * **Pemisahan secara acak**: Benar
-    * **Nilai awal acak**: 123
-    * **Pemisahan bertingkat**: False
+    - **Mode pemisahan**: Pisahkan Baris
+    - **Pecahan baris dalam himpunan data output pertama**: 0,7
+    - **Pemisahan secara acak**: Benar
+    - **Nilai awal acak**: 123
+    - **Pemisahan bertingkat**: False
 
 1. Di **Pustaka Aset**, cari dan tempatkan modul **Latih Model** ke kanvas, di bawah modul **Pisahkan Data**. Kemudian hubungkan output *Hasil dataset1* (kiri) dari modul **Pisahkan Data** ke input *Himpunan data* (kanan) dari modul **Latih Model**.
 
@@ -200,27 +193,27 @@ Ikuti langkah-langkah di bawah ini, dengan menggunakan gambar di atas sebagai re
 
     Label **Diabetes** yang akan diprediksi model adalah kelas (0 atau 1), jadi, kita harus melatih model menggunakan algoritma *klasifikasi*. Secara khusus, ada dua kemungkinan kelas, jadi, kita memerlukan algoritma *klasifikasi biner*.
 
-1. Di **Pustaka aset**, cari dan tempatkan modul **Regresi Logistik Dua Kelas** ke kanvas, di sebelah kiri modul **Pisahkan Data** dan di atas **Modul Kereta Api**. Selanjutnya sambungkan output-nya ke input **model Untrained** (kiri) dari modul **Train Model**.
+1. Di **Pustaka aset**, cari dan tempatkan modul **Regresi Logistik Dua Kelas** ke kanvas, di sebelah kiri modul **Pisahkan Data** dan di atas **Modul Kereta Api**. Selanjutnya sambungkan output-nya ke input *model Untrained* (kiri) dari modul **Train Model**.
 
    Untuk menguji model terlatih, kita perlu menggunakannya untuk *mengevaluasi* himpunan data validasi yang kita pertahankan ketika membagi data asli - dengan kata lain, prediksi fitur label dalam himpunan data validasi.
 
-1. Di **Pustaka Aset**, cari dan tempatkan modul **Nilai Model** ke kanvas, di bawah modul **Latih Model**. Selanjutnya sambungkan output modul **Train Model** ke input **model Trained** (kiri) dari modul **Score Model**; dan sambungkan output **Hasil dataset2** (kanan) dari modul **Split Data** ke input **Himpunan data** (kanan) dari modul **Score Model**.
+1. Di **Pustaka Aset**, cari dan tempatkan modul **Nilai Model** ke kanvas, di bawah modul **Latih Model**. Selanjutnya sambungkan output modul **Train Model** ke input *model Trained* (kiri) dari modul **Score Model**; dan sambungkan output *Hasil dataset2* (kanan) dari modul **Split Data** ke input *Himpunan data* (kanan) dari modul **Score Model**.
 
 ## Menjalankan alur pelatihan
 
 Sekarang Anda siap menjalankan alur pelatihan dan melatih model.
 
-1. Pilih **Kirim**, dan jalankan alur menggunakan eksperimen yang ada bernama **mslearn-diabetes-training**.
+1. Pilih **Konfigurasikan & Kirim, dan jalankan** alur menggunakan eksperimen yang ada bernama **mslearn-diabetes-training**.
 
 1. Tunggu hingga eksekusi eksperimen selesai. Eksekusi eksperimen dapat memakan waktu 5 menit atau lebih.
 
-1. Setelah percobaan selesai, pilih **Detail pekerjaan**. Anda akan diarahkan ke tab baru.
+1. Periksa status pekerjaan dengan memilih **Pekerjaan** di bawah **Aset**. Dari sana, pilih eksperimen **mslearn-diabetes-training** lalu pilih pekerjaan **Pelatihan Diabetes** terbaru.
 
-1. Pada tab baru, klik kanan (Ctrl+klik pada Mac) modul **Nilai Model** pada kanvas, dan klik **Lihat pratinjau data**. Pilih **Himpunan data yang dinilai** untuk melihat hasilnya.
+1. Pada tab baru, klik kanan (Ctrl+klik pada Mac) modul **Model Skor** di kanvas, pilih **Pratinjau data** lalu pilih **Himpunan data skor** untuk melihat hasilnya.
 
 1. Gulir ke kanan, dan perhatikan bahwa di sebelah kolom **Diabetes** (yang berisi nilai sebenarnya dari label yang diketahui) ada kolom baru bernama **Label Skor**, yang berisi label prediksi nilai, dan kolom **Probabilitas Diberi Skor** yang berisi nilai probabilitas antara 0 dan 1. Ini menunjukkan kemungkinan prediksi *positif*, jadi probabilitas yang lebih besar dari 0,5 menghasilkan label prediksi ***1*** (diabetes), sedangkan probabilitas antara 0 dan 0,5 menghasilkan dalam label prediksi ***0*** (bukan diabetes).
 
-1. Tutup tab **visualisasi hasil Nilai Model**.
+1. Tutup tab **Scored_dataset** .
 
 Model ini memprediksi nilai untuk label **Diabetes**, tetapi seberapa andal prediksinya? Untuk menilai itu, Anda perlu mengevaluasi model.
 
@@ -228,21 +221,21 @@ Data validasi yang Anda pegang dan yang digunakan untuk mendapatkan model menyer
 
 ## Menambahkan modul Evaluate Model
 
-1. Buka alur **Pelatihan Diabetes** yang Anda buat.
+1. Kembali ke **Designer** dan buka alur **Pelatihan Diabetes** yang Anda buat.
 
-1. Di **Pustaka Aset**, cari dan tempatkan modul **Evaluasi Model** ke kanvas, di bawah modul **Nilai Model**, dan hubungkan output dari modul **Nilai Model** ke input **Himpunan data yang dinilai** (kiri) dari modul **Evaluasi Model**.
+1. Di **Pustaka Aset**, cari dan tempatkan modul **Evaluasi Model** ke kanvas, di bawah modul **Nilai Model**, dan hubungkan output dari modul **Nilai Model** ke input *Himpunan data yang dinilai* (kiri) dari modul **Evaluasi Model**.
 
 1. Pastikan alur Anda terlihat seperti ini:
 
     ![Cuplikan layar modul Evaluasi Model ditambahkan ke modul Model Skor.](media/create-classification-model/evaluate-pipeline.png)
 
-1. Pilih **Kirim**, dan jalankan alur menggunakan eksperimen yang ada bernama **mslearn-diabetes-training**.
+1. Pilih **Konfigurasikan & Kirim, dan jalankan** alur menggunakan eksperimen yang ada bernama **mslearn-diabetes-training**.
 
 1. Tunggu hingga eksekusi eksperimen selesai.
 
-1. Setelah percobaan selesai, pilih **Detail pekerjaan**. Anda akan diarahkan ke tab baru.
+1. Periksa status pekerjaan dengan memilih **Pekerjaan** di bawah **Aset**. Dari sana, pilih eksperimen **mslearn-diabetes-training** lalu pilih pekerjaan **Pelatihan Diabetes** terbaru.
 
-1. Pada tab baru, klik kanan (Ctrl+klik pada Mac) modul **Evaluasi Model** pada kanvas, dan klik **Lihat pratinjau data**. Pilih **Hasil evaluasi** untuk melihat metrik performa. Metrik ini dapat membantu ilmuwan data menilai seberapa baik model memprediksi berdasarkan data validasi.
+1. Pada tab baru, klik kanan (Ctrl+klik pada Mac) modul **Evaluasi Model** pada kanvas, pilih **Pratinjau data** lalu pilih **Hasil evaluasi** untuk melihat metrik performa. Metrik ini dapat membantu ilmuwan data menilai seberapa baik model memprediksi berdasarkan data validasi.
 
 1. Gulir ke bawah untuk melihat *confusion matrix* untuk model tersebut. Amati jumlah nilai yang diprediksi dan aktual untuk setiap kelas yang memungkinkan. 
 
@@ -256,26 +249,24 @@ Data validasi yang Anda pegang dan yang digunakan untuk mendapatkan model menyer
 
 1. Lihat di atas penggeser Ambang pada metrik **kurva ROC** dan **AUC** yang tercantum bersama metrik lainnya di bawah. Untuk mendapatkan gambaran tentang bagaimana area ini mewakili performa model, bayangkan garis diagonal lurus mulai dari kiri bawah ke kanan atas bagan ROC. Ini mewakili performa yang diharapkan jika Anda hanya menebak atau membalik koin untuk setiap pasien - Anda bisa berharap untuk mendapatkan nilai yang benar sekitar setengahnya, dan setengahnya salah, sehingga area di bawah garis diagonal mewakili AUC 0,5. Jika AUC untuk model Anda lebih tinggi dari ini untuk model klasifikasi biner, model memiliki performa yang lebih baik daripada tebakan acak.
 
-1. Tutup tab **Evaluasi visualisasi hasil Model**.
+1. Tutup tab **Evaluation_results** .
 
 Performa model ini tidak terlalu bagus, sebagian karena kita hanya melakukan rekayasa fitur minimal dan pemrosesan awal. Anda dapat mencoba algoritma klasifikasi yang berbeda, seperti **Two-Class Decision Forest**, dan membandingkan hasilnya. Anda dapat menghubungkan output modul **Split Data** ke beberapa modul **Train Model**dan **Score Model**, serta Anda dapat menghubungkan modul **Score Model** kedua ke modul **Evaluate Model** untuk melihat perbandingan secara berdampingan. Inti dari latihan ini hanya untuk memperkenalkan Anda pada klasifikasi dan antarmuka perancang Azure Machine Learning, bukan untuk melatih model yang sempurna!
 
 ## Membuat alur inferensi
 
-1. Di studio Azure Machine Learning, perluas panel sebelah kiri dengan memilih ikon menu di kiri atas layar. Klik **Pekerjaan** (di bagian **Aset**) untuk melihat semua pekerjaan yang telah Anda jalankan. Pilih eksperimen **mslearn-diabetes-training**, lalu pilih alur **Pelatihan Diabetes**.
-
-1. Cari menu di atas kanvas dan klik **Buat alur inferensi**. Anda mungkin perlu memperluas layar hingga penuh dan mengeklik ikon tiga titik **...** di sudut kanan atas layar untuk menemukan **Buat alur inferensi** di menu.  
+1. Temukan menu di atas kanvas dan pilih **Buat alur inferensi**. Anda mungkin perlu memperluas layar hingga penuh dan mengeklik ikon tiga titik **...** di sudut kanan atas layar untuk menemukan **Buat alur inferensi** di menu.  
 
     ![Cuplikan layar lokasi pembuatan alur inferensi.](media/create-classification-model/create-inference-pipeline.png)
 
-1. Di daftar drop-down **Buat alur masuk**, klik **Alur inferensi real-time**. Setelah beberapa detik, versi baru alur Anda yang bernama **Inferensi real-time Pelatihan Diabetes** akan terbuka.
+1. Di daftar drop-down **Buat alur inferensi** , pilih **Alur inferensi real time**. Setelah beberapa detik, versi baru alur Anda yang bernama **Inferensi real-time Pelatihan Diabetes** akan terbuka.
 
-1. Navigasi ke **Pengaturan** pada menu kanan atas. Di bawah **Detail draf**, ganti nama saluran baru menjadi **Prediksi Diabetes**, lalu tinjau saluran baru. Beberapa langkah transformasi dan pelatihan adalah bagian dari alur ini. Model yang dilatih akan digunakan untuk menilai data baru. Alur juga berisi output layanan web untuk menampilkan hasil. 
+1. Ganti nama alur baru menjadi **Prediksi Diabetes**, lalu tinjau alur baru. Beberapa langkah transformasi dan pelatihan adalah bagian dari alur ini. Model yang dilatih akan digunakan untuk menilai data baru. Alur juga berisi output layanan web untuk menampilkan hasil.
 
     Anda akan membuat perubahan berikut pada alur inferensi:
 
     ![Cuplikan layar alur inferensi dengan perubahan yang ditunjukkan.](media/create-classification-model/inference-changes.png)
-    
+
     - Tambahkan komponen **input layanan web** agar data baru dapat dikirimkan.
     - Ganti himpunan data **diabetes-data** dengan modul **Masukkan Data Secara Manual** yang tidak menyertakan kolom label (**Diabetik**).
     - Edit kolom yang dipilih dalam modul **Memilih Kolom di Himpunan Data**.
@@ -293,9 +284,9 @@ Performa model ini tidak terlalu bagus, sebagian karena kita hanya melakukan rek
     1228510,4,115,50,29,243,34.69215364,0.741159926,59
     ```
 
-1. Sambungkan modul **Masukkan Data Secara Manual** baru ke input **Himpunan Data** yang sama dari modul **Pilih Kolom di Himpunan Data** sebagai **Input Layanan Web**.
+1. Sambungkan modul **Enter Data Manually** baru ke input **Himpunan Data** yang sama dari modul **Pilih Kolom di Himpunan Data** sebagai **Input Layanan Web**.
 
-1. Edit modul **Memilih Kolom di Himpunan Data**. Hapus **Diabetes** dari *Kolom Terpilih*. 
+1. Edit modul **Memilih Kolom di Himpunan Data**. Hapus **Diabetes** dari *Kolom Terpilih*.
 
 1. Alur inferensi menyertakan modul **Evaluasi Model**, yang tidak berguna saat memprediksi dari data baru, jadi hapus modul ini.
 
@@ -303,19 +294,19 @@ Performa model ini tidak terlalu bagus, sebagian karena kita hanya melakukan rek
     - Hapus koneksi antara modul **Score Model** dan **Web Service Output**.
     - Tambahkan modul **Mengeksekusi Skrip Python**, ganti semua skrip python default dengan kode berikut (yang hanya memilih kolom **PatientID**, **Label Skor** dan **Probabilitas Terukur** dan ganti namanya dengan tepat):
 
-```Python
-import pandas as pd
+    ```Python
+    import pandas as pd
+    
+    def azureml_main(dataframe1 = None, dataframe2 = None):
+    
+        scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
+        scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
+                                    'Scored Probabilities':'Probability'},
+                            inplace=True)
+        return scored_results
+    ```
 
-def azureml_main(dataframe1 = None, dataframe2 = None):
-
-    scored_results = dataframe1[['Scored Labels', 'Scored Probabilities']]
-    scored_results.rename(columns={'Scored Labels':'DiabetesPrediction',
-                                'Scored Probabilities':'Probability'},
-                        inplace=True)
-    return scored_results
-```
-
-1. Hubungkan output dari modul **Score Model** ke input **Dataset1** (paling kiri) dari **Execute Python Script**, dan hubungkan output dari modul **Execute Python Script** ke **Web Service Output**.
+1. Sambungkan output dari modul **Score Model** ke input *Dataset1* (paling kiri) dari **Execute Python Script**, dan sambungkan output *Result dataset* (kiri) dari modul **Execute Python Script** ke **Output Layanan Web**.
 
 1. Verifikasi bahwa alur Anda terlihat mirip dengan gambar berikut:
 
@@ -323,7 +314,9 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
 
 1. Jalankan alur sebagai eksperimen baru bernama **mslearn-diabetes-inference** di kluster komputasi Anda. Eksperimen mungkin memerlukan beberapa saat untuk dijalankan.
 
-1. Setelah alur selesai, pilih **Detail pekerjaan**. Di tab baru, klik kanan modul **Jalankan Skrip Python**. Pilih **Lihat pratinjau data** dan pilih **Himpunan data hasil** untuk melihat label prediksi dan probabilitas untuk tiga observasi pasien dalam data input.
+1. Kembali ke tab  **Pekerjaan** . Dari sana, pilih eksperimen **mslearn-diabetes-inference** lalu pilih **pekerjaan Predict Diabetes** .
+
+1. Setelah alur selesai, pilih modul **Jalankan Skrip Python** . Pilih **Lihat pratinjau data** dan pilih **Himpunan data hasil** untuk melihat label prediksi dan probabilitas untuk tiga observasi pasien dalam data input.
 
 Alur inferensi Anda memprediksi apakah pasien berisiko terkena diabetes atau tidak berdasarkan fitur mereka. Sekarang Anda siap menerbitkan alur agar aplikasi klien dapat menggunakannya.
 
@@ -333,22 +326,16 @@ Setelah membuat dan menguji alur inferensi untuk inferensi real-time, Anda dapat
 
 ## Menyebarkan layanan
 
-1. Lihat alur inferensi **Prediksi Diabetes** yang Anda buat di unit sebelumnya.
-
-1. Pilih **Detail pekerjaan** di panel sebelah kiri. Panel akan membuka jendela lain.
-
-    ![Cuplikan layar detail pekerjaan di samping pekerjaan yang telah diselesaikan.](media/create-classification-model/completed-job-inference.png)
-
-1. Di jendela baru, pilih **Sebarkan**.
+1. Di bagian atas jendela pekerjaan **Prediksi Diabetes** , pilih **Sebarkan**.
 
     ![Cuplikan layar tombol penyebaran untuk alur inferensi Prediksi Harga Otomatis Anda.](media/create-classification-model/deploy-screenshot.png)
 
-1. Di kanan atas, pilih **Sebarkan**, dan sebarkan **titik akhir real time baru**, menggunakan pengaturan berikut: 
-    -  **Nama**: predict-diabetes
-    -  **Deskripsi**: Mengklasifikasikan diabetes
+1. Di **titik akhir Siapkan real-time** pilih **Sebarkan titik akhir real-time baru** dan gunakan pengaturan berikut:
+    - **Nama**: predict-diabetes
+    - **Deskripsi**: Mengklasifikasikan diabetes
     - **Jenis komputasi**: Azure Container Instance
 
-1. Tunggu hingga layanan web disebarkan - ini bisa memakan waktu beberapa menit. Status penyebaran ditampilkan di kiri atas antarmuka perancang.
+1. Pilih **Sebarkan** dan tunggu hingga layanan web disebarkan - ini bisa memakan waktu beberapa menit.
 
 ## Menguji layanan
 
