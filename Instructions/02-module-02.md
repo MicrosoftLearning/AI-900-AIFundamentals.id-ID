@@ -33,29 +33,6 @@ Dalam latihan ini, Anda akan menggunakan himpunan data detail persewaan sepeda h
 
 > **Catatan** Modul ini adalah salah satu dari banyak modul yang memanfaatkan ruang kerja Azure Machine Learning, termasuk modul lainnya di jalur pembelajaran [Dasar-Dasar AI Microsoft Azure: Menjelajahi alat visual untuk pembelajaran mesin](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/). Jika menggunakan langganan Azure Anda sendiri, Anda dapat mempertimbangkan untuk membuat ruang kerja sekali dan menggunakannya kembali di modul lain. Langganan Azure Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda, jadi sebaiknya hapus ruang kerja Azure Machine Learning saat tidak lagi diperlukan.
 
-## Membuat komputasi
-
-1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), pilih ikon **&#8801;** (ikon menu yang terlihat seperti tumpukan tiga baris) di kiri atas untuk melihat berbagai halaman di antarmuka (Anda mungkin perlu memaksimalkan ukuran layar Anda). Anda dapat menggunakan halaman ini di panel sebelah kiri untuk mengelola sumber daya di ruang kerja Anda. Pilih halaman **Komputasi** (di bagian **Kelola**).
-
-1. Pada halaman **Komputasi**, pilih tab **Kluster komputasi**, dan tambahkan kluster komputasi baru dengan pengaturan berikut. Anda akan menggunakan ini untuk melatih model pembelajaran mesin:
-    - **Lokasi**: *Pilih lokasi yang sama dengan ruang kerja Anda. Jika lokasi tersebut tidak terdaftar, pilih yang terdekat dengan lokasi Anda*.
-    - **Tingkatan mesin virtual**: Khusus
-    - **Jenis mesin virtual**: CPU
-    - **Ukuran mesin virtual**:
-        - Pilih opsi **Pilih dari semua opsi**
-        - Cari dan pilih **Standard_DS11_v2**
-    - Pilih **Selanjutnya**
-    - **Nama komputasi**: *masukkan nama unik*.
-    - **Jumlah minimum node**: 0
-    - **Jumlah maksimum node**: 2
-    - **Detik menganggur sebelum menurunkan skala**: 120
-    - **Aktifkan akses SSH**: Jangan aktifkan
-    - Pilih **Buat**
-
-> **Catatan** Instans dan kluster Komputasi didasarkan pada gambar mesin virtual Azure standar. Untuk modul ini, gambar *Standard_DS11_v2* disarankan untuk mencapai keseimbangan biaya dan performa yang optimal. Jika langganan Anda memiliki kuota yang tidak menyertakan gambar ini, pilih gambar alternatif; tetapi perlu diingat bahwa gambar yang lebih besar dapat dikenakan biaya yang lebih tinggi dan gambar yang lebih kecil mungkin tidak cukup untuk menyelesaikan tugas. Atau, minta administrator Azure Anda memperpanjang kuota Anda.
-
-Kluster komputasi akan membutuhkan waktu untuk dibuat. Anda dapat melanjutkan ke langkah berikutnya sambil menunggu.
-
 ## Membuat aset data
 
 1. Lihat data yang dipisahkan koma di [https://aka.ms/bike-rentals](https://aka.ms/bike-rentals?azure-portal=true) di browser web Anda.
@@ -88,6 +65,16 @@ Kluster komputasi akan membutuhkan waktu untuk dibuat. Anda dapat melanjutkan ke
 
 > **Kutipan**: *Data ini berasal dari [Capital Bikeshare](https://www.capitalbikeshare.com/system-data) dan digunakan sesuai dengan [perjanjian lisensi](https://www.capitalbikeshare.com/data-license-agreement)* data yang diterbitkan.
 
+## Aktifkan Komputasi Tanpa Server
+
+1. Di Azure Machine Learning Studio, klik **kelola fitur pratinjau** (ikon speaker keras).
+
+![Cuplikan layar tombol kelola fitur pratinjau pada menu.](../instructions/media/use-automated-machine-learning/severless-compute-1.png)
+
+1. Aktifkan fitur "Pengalaman terpandu untuk mengirimkan pekerjaan pelatihan dengan komputasi tanpa server".
+
+![Cuplikan layar fitur komputasi tanpa server aktif.](../instructions/media/use-automated-machine-learning/enable-serverless-compute.png)
+
 ## Menjalankan tugas pembelajaran mesin otomatis
 
 Ikuti langkah selanjutnya untuk menjalankan tugas yang menggunakan pembelajaran mesin otomatis untuk melatih model regresi yang memprediksi persewaan sepeda.
@@ -115,19 +102,12 @@ Ikuti langkah selanjutnya untuk menjalankan tugas yang menggunakan pembelajaran 
         - **Model yang diizinkan**: *Pilih hanya **RandomForest** dan **LightGBM** — biasanya Anda ingin mencoba sebanyak mungkin, tetapi setiap model yang ditambahkan akan menambah waktu yang dibutuhkan untuk menjalankan pekerjaan.*
 
         ![Cuplikan layar konfigurasi tambahan dengan kotak di sekitar model yang diizinkan.](media/use-automated-machine-learning/allowed-models.png)
-        - **Kriteria keluar**:
-            - **Waktu tugas pelatihan (jam)** : 0,5 — *mengakhiri tugas setelah maksimal 30 menit.*
-            - **Ambang skor metrik**: 0,085 — *jika model mencapai skor metrik root mean squared error yang dinormalisasi sebesar 0,085 atau kurang, pekerjaan akan berakhir.*
-        - **Konkurensi**: *jangan ubah*
-    - **Pengaturan fiturisasi:**
-        - **Aktifkan fitur**: Dipilih — *memproses fitur secara otomatis sebelum pelatihan.*
-
-    Klik **Berikutnya** untuk membuka panel pemilihan selanjutnya.
-
-    - **Pilih validasi dan jenis pengujian**
-        - **Jenis validasi**: Otomatis
-        - **Aset data pengujian (pratinjau)** : Tidak perlu aset data pengujian
-
+Perhatikan di bawah *Tampilkan pengaturan konfigurasi tambahan* adalah bagian *Batas* . Perluas bagian untuk mengonfigurasi pengaturan:
+        - **Waktu habis (menit)**: 30 — *mengakhiri pekerjaan setelah maksimal 30 menit.*
+        - **Ambang skor metrik**: 0,085 — *jika model mencapai skor metrik root mean squared error yang dinormalisasi sebesar 0,085 atau kurang, pekerjaan akan berakhir.*
+        - Klik **Berikutnya**
+        - **Komputasi**: tidak ada perubahan yang diperlukan di sini
+        - Klik **Berikutnya**
 1. Setelah Anda selesai mengirimkan detail pekerjaan pembelajaran mesin otomatis, pekerjaan ini akan dimulai secara otomatis.
 
 1. Tunggu pekerjaan selesai. Mungkin perlu waktu — sekarang mungkin saat yang tepat untuk istirahat sejenak!
@@ -219,7 +199,6 @@ Anda baru saja menguji layanan yang siap untuk dihubungkan ke aplikasi klien men
 Layanan web yang Anda buat dihosting dalam *Azure Container Instance*. Jika tidak berniat untuk bereksperimen dengan ini lebih lanjut, Anda harus menghapus titik akhir untuk menghindari mengumpulkan penggunaan Azure yang tidak perlu. Anda juga harus menghapus kluster komputasi.
 
 1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), di tab **Titik Akhir**, pilih titik akhir **predict-rentals**. Kemudian pilih **Hapus** dan konfirmasikan bahwa Anda ingin menghapus titik akhir.
-2. Pada halaman **Komputasi** , pada tab **Kluster komputasi, pilih instans** komputasi Anda lalu pilih **Hapus**.
 
 > **Catatan** Menghapus komputasi Anda memastikan langganan Anda tidak akan dikenakan biaya untuk sumber daya komputasi. Namun Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait. Namun, jika berencana untuk menyelesaikan laboratorium lain dalam seri ini, Anda harus membuatnya kembali.
 >
