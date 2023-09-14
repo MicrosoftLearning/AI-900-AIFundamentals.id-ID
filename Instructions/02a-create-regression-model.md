@@ -147,23 +147,23 @@ Untuk menerapkan transformasi data, Anda harus menjalankan alur.
 
 1. Pilih **Konfigurasikan & Kirim** di bagian atas halaman untuk membuka dialog **Siapkan pekerjaan alur** .
 
-1. Pada halaman **Dasar** pilih **Buat baru** dan atur nama eksperimen ke **mslearn-auto-training** lalu pilih **Berikutnya** .
+1. Pada halaman **Dasar** pilih **Buat baru** dan atur nama eksperimen ke **pelatihan mslearn-auto** lalu pilih **Berikutnya** .
 
 1. Pada halaman **Input & output** pilih **Berikutnya** tanpa membuat perubahan apa pun.
 
-1. Pada halaman **Pengaturan runtime** muncul kesalahan karena Anda tidak memiliki komputasi default untuk menjalankan alur. Di menu drop-down **Pilih jenis komputasi** pilih *Kluster komputasi* dan di menu drop-down **Pilih kluster komputasi Azure ML** pilih kluster komputasi yang baru dibuat.
+1. Pada halaman **Pengaturan runtime** kesalahan muncul karena Anda tidak memiliki komputasi default untuk menjalankan alur. Di menu drop-down **Pilih jenis komputasi** pilih *Kluster komputasi* dan di menu drop-down **Pilih kluster komputasi Azure ML** pilih kluster komputasi yang baru dibuat.
 
 1. Pilih **Berikutnya** untuk meninjau pekerjaan alur lalu pilih **Kirim** untuk menjalankan alur pelatihan.
 
-1. Tunggu beberapa menit hingga eksekusi selesai. Anda dapat memeriksa status pekerjaan dengan memilih **Pekerjaan** di bawah **Aset**. Dari sana, pilih pekerjaan **Pelatihan Harga Otomatis** .
+1. Tunggu beberapa menit hingga eksekusi selesai. Anda dapat memeriksa status pekerjaan dengan memilih **Pekerjaan** di bawah **Aset**. Dari sana, pilih pekerjaan **Pelatihan Harga Otomatis** . Dari sini, Anda dapat melihat kapan pekerjaan selesai. Setelah pekerjaan selesai, himpunan data sekarang disiapkan untuk pelatihan model.
 
-Himpunan data sekarang disiapkan untuk pelatihan model. Tutup tab Detail pekerjaan untuk kembali ke alur.
+1. Buka menu sebelah kiri. Di bawah **Penulisan** pilih **Designer**. Kemudian pilih alur *Pelatihan Harga Otomatis* Anda dari daftar **Alur**.
 
 ## Membuat alur pelatihan
 
 Setelah menggunakan transformasi data untuk menyiapkan data, Anda dapat menggunakannya untuk melatih model pembelajaran mesin. Lakukan langkah-langkah berikut untuk memperluas jalur **Pelatihan Harga Otomatis**.
 
-1. Kembali ke jalur **Pelatihan Harga Otomatis** yang Anda buat di unit sebelumnya jika belum dibuka.
+1. Pastikan menu sebelah kiri telah **Designer** dipilih dan Anda telah kembali ke alur **Pelatihan Harga Otomatis**.
 
 1. Di panel **Pustaka aset** di sebelah kiri, cari dan tempatkan modul **Pisahkan Data** ke kanvas di bawah modul **Normalisasi Data**. Selanjutnya sambungkan output *Himpunan Data yang Diubah* (kiri) dari modul **Normalize Data** ke input modul **Split Data**.
 
@@ -198,11 +198,11 @@ Setelah menggunakan transformasi data untuk menyiapkan data, Anda dapat mengguna
 
 Sekarang Anda siap menjalankan alur pelatihan dan melatih model.
 
-1. Pilih **Konfigurasikan & Kirim, dan jalankan** alur menggunakan eksperimen yang ada bernama **mslearn-auto-training**.
+1. Pilih **Konfigurasikan & Kirim**, dan jalankan alur menggunakan eksperimen yang ada bernama **mslearn-auto-training**.
 
-1. Eksperimen ini akan memerlukan waktu 5 menit atau lebih untuk selesai. Kembali ke halaman **Pekerjaan** dan pilih pekerjaan **Pelatihan Harga Otomatis** terbaru yang dijalankan.
+1. Eksperimen ini akan memerlukan waktu 5 menit atau lebih untuk selesai. Kembali ke halaman **Pekerjaan** dan pilih eksekusi pekerjaan **Pelatihan Harga Otomatis** terbaru.
 
-1. Ketika eksekusi eksperimen telah selesai, klik kanan pada modul **Model Skor** dan pilih **Pratinjau data** lalu **Himpunan data** skor untuk melihat hasilnya.
+1. Setelah eksekusi eksperimen selesai, klik kanan pada modul **Model Skor** dan pilih **Pratinjau data** lalu **Himpunan data skor** untuk melihat hasilnya.
 
 1. Gulir ke kanan, dan perhatikan bahwa di samping kolom **harga** (yang berisi nilai sebenarnya dari label yang diketahui) terdapat kolom baru bernama **Label yang Dinilai**, yang berisi nilai label yang diprediksi.
 
@@ -222,11 +222,9 @@ Salah satu cara untuk mengevaluasi model regresi adalah dengan membandingkan lab
 
     ![Cuplikan layar penambahan modul Evaluasi Model ke modul Nilai Model.](media/create-regression-model/evaluate.png)
 
-1. Pilih **Konfigurasikan & Kirim, dan jalankan** alur menggunakan eksperimen yang ada bernama **mslearn-auto-training**.
+1. Pilih **Konfigurasikan & Kirim**, dan jalankan alur menggunakan eksperimen yang ada bernama **mslearn-auto-training**.
 
-1. Eksekusi eksperimen akan memakan waktu beberapa menit untuk diselesaikan. Kembali ke halaman **Pekerjaan** dan pilih pekerjaan **Pelatihan Harga Otomatis** terbaru yang dijalankan.
-
-1. Ketika eksekusi eksperimen telah selesai, klik kanan pada modul **Evaluasi Model** dan pilih **Pratinjau data** lalu **Hasil evaluasi**.
+1. Eksekusi eksperimen akan memakan waktu beberapa menit untuk diselesaikan. Kembali ke halaman **Pekerjaan** dan pilih eksekusi pekerjaan **Pelatihan Harga Otomatis** terbaru.
 
 1. Setelah percobaan selesai, pilih **Detail pekerjaan**, yang akan membuka tab lain. Temukan dan klik kanan pada modul **Evaluasi Model**. Pilih **Pratinjau data** lalu **Hasil evaluasi**.
 
@@ -288,6 +286,7 @@ Saat mengidentifikasi model dengan metrik evaluasi yang memenuhi kebutuhan Anda,
                         inplace=True)
      return scored_results
     ```
+>**Catatan**: Penyalinan dan penempelan dapat memperkenalkan spasi ke dalam skrip Python yang seharusnya tidak ada di sana. Periksa kembali apakah tidak ada spasi sebelum *impor* atau *def* atau *pengembalian*. Pastikan ada satu inden tab sebelum *scored_results* dan *scored_results.rename()*.
 
 1. Sambungkan output dari modul **Score Model** ke input **Dataset1** (paling kiri) dari **Execute Python Script**.
 
