@@ -13,15 +13,15 @@ Contoh, misalkan perusahaan ritel *Northwind Traders* fiktif memutuskan untuk me
 
 Di lab ini, Anda akan menggunakan aplikasi baris perintah sederhana untuk melihat cara kerja layanan Computer Vision. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
 
-## Membuat sumber daya *Cognitive Services*
+## Membuat sumber daya *layanan Azure AI*
 
-Anda dapat menggunakan layanan Computer Vision dengan membuat sumber daya **Computer Vision** atau sumber daya **Cognitive Services**.
+Anda dapat menggunakan layanan Computer Vision dengan membuat sumber daya **Computer Vision** atau sumber daya **layanan Azure AI** .
 
-Jika Anda belum melakukannya, buat sumber daya **Cognitive Services** di langganan Azure Anda.
+Jika Anda belum melakukannya, buat sumber daya **layanan Azure AI** di langganan Azure Anda.
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. Klik tombol **&#65291;Buat sumber daya**, cari *Cognitive Services*, dan buat sumber daya **Cognitive Services** dengan pengaturan berikut:
+1. Klik tombol **&#65291;Buat sumber daya** dan cari *Cognitive Services*. Pilih **buat** paket **Cognitive Services** . Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: *Pilih wilayah yang tersedia*.
@@ -31,7 +31,7 @@ Jika Anda belum melakukannya, buat sumber daya **Cognitive Services** di langgan
 
 1. Tinjau dan buat sumber daya, dan tunggu hingga penyebaran selesai. Lalu pergi ke sumber daya yang disebarkan.
 
-1. Lihat halaman **Kunci dan Titik Akhir** untuk mengetahui sumber daya Cognitive Services Anda. Anda akan membutuhkan titik akhir dan kunci untuk terhubung dari aplikasi klien.
+1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya layanan Azure AI Anda. Anda akan membutuhkan titik akhir dan kunci untuk terhubung dari aplikasi klien.
 
 ## Menjalankan Cloud Shell
 
