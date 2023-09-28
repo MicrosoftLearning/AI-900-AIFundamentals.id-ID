@@ -3,7 +3,7 @@ lab:
   title: Menjelajahi pengenalan formulir
 ---
 
-# <a name="explore-form-recognition"></a>Menjelajahi pengenalan formulir
+# Menjelajahi pengenalan formulir
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
@@ -15,15 +15,15 @@ Form Recognizer menggunakan model pembelajaran mesin yang dilatih untuk mengekst
 
 Untuk menguji kemampuan layanan Form Recognizer, kita akan menggunakan aplikasi baris perintah sederhana yang dijalankan di Cloud Shell. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
 
-## <a name="create-a-cognitive-services-resource"></a>Membuat sumber daya *Cognitive Services*
+## Membuat sumber daya *layanan Azure AI*
 
-Anda dapat menggunakan layanan Form Recognizer dengan membuat sumber daya **Form Recognizer** atau sumber daya **Cognitive Services**.
+Anda dapat menggunakan layanan Form Recognizer dengan membuat sumber daya **Form Recognizer** atau sumber daya **layanan Azure AI**.
 
-Jika Anda belum melakukannya, buat sumber daya **Cognitive Services** di langganan Azure Anda.
+Jika Anda belum melakukannya, buat sumber daya **layanan Azure AI** di langganan Azure Anda.
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. Klik tombol **&#65291;Buat sumber daya**, cari *Cognitive Services*, dan buat sumber daya **Cognitive Services** dengan pengaturan berikut:
+1. Klik tombol **&#65291;Buat sumber daya** dan cari *layanan Azure AI*. Pilih **buat** paket **layanan Azure AI** . Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: *Pilih wilayah yang tersedia*.
@@ -33,9 +33,9 @@ Jika Anda belum melakukannya, buat sumber daya **Cognitive Services** di langgan
 
 1. Tinjau dan buat sumber daya, dan tunggu hingga penyebaran selesai. Lalu pergi ke sumber daya yang disebarkan.
 
-1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Cognitive Services Anda. Anda akan membutuhkan titik akhir dan kunci untuk terhubung dari aplikasi klien.
+1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya layanan Azure AI Anda. Anda akan membutuhkan titik akhir dan kunci untuk terhubung dari aplikasi klien.
 
-## <a name="run-cloud-shell"></a>Menjalankan Cloud Shell
+## Menjalankan Cloud Shell
 
 Untuk menguji kemampuan layanan Form Recognizer, kita akan menggunakan aplikasi baris perintah sederhana yang dijalankan di Cloud Shell di Azure. 
 
@@ -57,7 +57,7 @@ Untuk menguji kemampuan layanan Form Recognizer, kita akan menggunakan aplikasi 
 
     ![Tunggu PowerShell untuk memulai.](media/analyze-receipts/powershell-prompt.png) 
 
-## <a name="configure-and-run-a-client-application"></a>Mengonfigurasi dan menjalankan aplikasi klien
+## Mengonfigurasi dan menjalankan aplikasi klien
 
 Setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien sederhana yang menggunakan layanan Form Recognizer.
 
@@ -83,7 +83,7 @@ Setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien sederhana y
 
     ![Editor yang berisi kode untuk menganalisis bidang dalam tanda terima.](media/analyze-receipts/recognize-receipt-code.png)
 
-1. Jangan terlalu khawatir dengan detail kode, yang penting adalah bahwa kode ini memerlukan URL titik akhir dan salah satu kunci untuk sumber Cognitive Services Anda. Salin ini dari halaman **Kunci dan Titik Akhir** untuk sumber daya Anda dari portal Azure dan tempelkan ke dalam editor kode, dengan mengganti nilai tempat penampung **YOUR_KEY** dan **YOUR_ENDPOINT** masing-masing.
+1. Jangan terlalu khawatir tentang detail kode, yang penting adalah bahwa kode memerlukan URL titik akhir dan salah satu kunci untuk sumber daya layanan Azure AI Anda. Salin ini dari halaman **Kunci dan Titik Akhir** untuk sumber daya Anda dari portal Azure dan tempelkan ke dalam editor kode, dengan mengganti nilai tempat penampung **YOUR_KEY** dan **YOUR_ENDPOINT** masing-masing.
 
     > **Tips** Anda mungkin perlu menggunakan bilah pemisah untuk menyesuaikan area layar saat bekerja dengan panel **Tombol dan Titik Akhir** serta **Editor**.
 
@@ -109,6 +109,6 @@ Setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien sederhana y
 
 1. Tinjau hasil yang ditampilkan. Perhatikan bahwa Form Recognizer dapat menafsirkan data dalam formulir, mengidentifikasi alamat pedagang dan nomor telepon dengan benar, serta tanggal dan waktu transaksi, serta item baris, subtotal, pajak, dan jumlah total.
 
-## <a name="learn-more"></a>Pelajari lebih lanjut
+## Pelajari lebih lanjut
 
 Aplikasi sederhana ini hanya menunjukkan beberapa kemampuan Form Recognizer layanan Computer Vision. Untuk mempelajari lebih lanjut tindakan yang dapat Anda lakukan dengan layanan ini, lihat [halaman Form Recognizer](https://docs.microsoft.com/azure/applied-ai-services/form-recognizer/overview).

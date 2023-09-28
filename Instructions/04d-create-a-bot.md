@@ -30,7 +30,7 @@ Fitur jawaban atas pertanyaan kustom layanan Bahasa memungkinkan Anda membuat pa
     - **Tingkat harga pencarian Azure**: F Gratis (3 Indeks) - (*Jika tingkat ini tidak tersedia, pilih Standar S (50 Indeks)* )
     - **Dengan mencentang kotak ini, saya menyatakan bahwa saya telah meninjau dan menyetujui persyaratan dalam Pemberitahuan AI yang Bertanggung Jawab**: *Dipilih*.
 
-    > **Catatan** Jika telah menyediakan sumber daya **Azure Cognitive Search** tingkat gratis, kemungkinan, kuota Anda tidak memungkinkan membuat yang lain. Dalam hal ini, pilih tingkat selain **F Gratis**.
+    > **Catatan** Jika Anda telah menyediakan sumber daya **Azure Cognitive Search** tingkat gratis, kuota Anda mungkin tidak memungkinkan Anda untuk membuat sumber daya lain. Dalam hal ini, pilih tingkat selain **F Gratis**.
 
 1. Klik **Tinjau dan Buat**, lalu klik **Buat**. Tunggu penyebaran layanan Bahasa yang akan mendukung pangkalan pengetahuan jawaban atas pertanyaan kustom Anda.
 
@@ -122,7 +122,7 @@ Pangkalan Pengetahuan menyediakan layanan back-end yang dapat digunakan aplikasi
     - **ID Aplikasi Microsoft**
         - **Jenis pembuatan**: *Pilih Buat identitas terkelola yang ditetapkan pengguna baru* 
 
-5. Pilih **Berikutnya: >Aplikasi Web ** untuk terus memperbarui pengaturan. 
+5. Pilih **Berikutnya: Aplikasi Web >** untuk terus memperbarui pengaturan. 
     - **App Service**
         - **Nama aplikasi**: *Sama seperti **Handle bot** dengan **.azurewebsites.net** yang ditambahkan secara otomatis*
         - **Bahasa SDK**: *Pilih C# atau Node.js*
@@ -137,7 +137,7 @@ Pangkalan Pengetahuan menyediakan layanan back-end yang dapat digunakan aplikasi
         - **Nama proyek bahasa**: MargiesTravel
         - **Nama host titik akhir layanan bahasa**: *Telah diisi sebelumnya dengan titik akhir layanan bahasa Anda*
     - **Detail layanan bahasa**
-        - **Id Langganan**: *Telah diisi sebelumnya dengan ID langganan Anda*
+        - **ID Langganan**: *Telah diisi sebelumnya dengan ID langganan Anda*
         - **Nama Grup Sumber Daya**: *Telah diisi sebelumnya dengan nama grup sumber daya Anda*
         - **Nama Akun**: *Telah diisi sebelumnya dengan nama sumber daya Anda*
 

@@ -7,7 +7,7 @@ lab:
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
-Layanan kognitif *Computer Vision* menggunakan model pembelajaran mesin yang dilatih sebelumnya untuk menganalisis gambar dan mengekstrak informasi tentang gambar tersebut.
+Layanan *Computer Vision* menggunakan model pembelajaran mesin yang telah dilatih sebelumnya untuk menganalisis gambar dan mengekstrak informasi tentangnya.
 
 Contoh, misalkan perusahaan ritel *Northwind Traders* fiktif memutuskan untuk menerapkan "toko pintar", di mana layanan AI memantau toko untuk mengidentifikasi pelanggan yang memerlukan bantuan, dan mengarahkan karyawan untuk membantu mereka. Dengan menggunakan layanan Computer Vision, gambar yang diambil oleh kamera di seluruh toko dapat dianalisis untuk memberikan deskripsi yang berguna tentang yang dilukiskan dalam gambar.
 
@@ -21,7 +21,7 @@ Jika Anda belum melakukannya, buat sumber daya **layanan Azure AI** di langganan
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. Klik tombol **&#65291;Buat sumber daya** dan cari *Cognitive Services*. Pilih **buat** paket **Cognitive Services** . Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
+1. Klik tombol **&#65291;Buat sumber daya** dan cari *layanan Azure AI*. Pilih **buat** paket **layanan Azure AI** . Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: *Pilih wilayah yang tersedia*.
@@ -81,7 +81,7 @@ Setelah memiliki lingkungan Cloud Shell, Anda dapat menjalankan aplikasi sederha
 
     ![Editor yang berisi kode untuk menganalisis gambar](media/analyze-images-computer-vision-service/analyze-image-code.png)
 
-1. Jangan terlalu khawatir dengan kode, yang penting adalah bahwa kode ini memerlukan URL titik akhir dan salah satu kunci untuk sumber daya Cognitive Services Anda. Salin ini dari halaman **Kunci dan Titik Akhir** untuk sumber daya Anda dari portal Azure dan tempelkan ke dalam editor kode, dengan mengganti nilai tempat penampung **YOUR_KEY** dan **YOUR_ENDPOINT** masing-masing.
+1. Jangan terlalu khawatir tentang kode, yang penting adalah bahwa kode memerlukan URL titik akhir dan salah satu kunci untuk sumber daya layanan Azure AI Anda. Salin ini dari halaman **Kunci dan Titik Akhir** untuk sumber daya Anda dari portal Azure dan tempelkan ke dalam editor kode, dengan mengganti nilai tempat penampung **YOUR_KEY** dan **YOUR_ENDPOINT** masing-masing.
 
     > **Tips** Anda mungkin perlu menggunakan bilah pemisah untuk menyesuaikan area layar saat bekerja dengan panel **Tombol dan Titik Akhir** serta **Editor**.
 

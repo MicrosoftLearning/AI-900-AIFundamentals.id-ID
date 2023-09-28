@@ -3,25 +3,25 @@ lab:
   title: Menjelajahi ucapan
 ---
 
-# <a name="explore-speech"></a>Menjelajahi ucapan
+# Menjelajahi ucapan
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
-Untuk membangun perangkat lunak yang dapat menafsirkan ucapan yang dapat didengar dan merespons dengan tepat, Anda dapat menggunakan layanan kognitif **Ucapan**, yang menyediakan cara sederhana untuk mentranskripsikan bahasa lisan ke dalam teks dan sebaliknya.
+Untuk membangun perangkat lunak yang dapat menafsirkan ucapan yang dapat didengar dan merespons dengan tepat, Anda dapat menggunakan layanan **Azure AI Speech** , yang menyediakan cara sederhana untuk mentranskripsikan bahasa lisan ke dalam teks dan sebaliknya.
 
 Misalnya, Anda ingin membuat perangkat pintar yang dapat merespons pertanyaan lisan secara lisan, seperti "Jam berapa sekarang?" Responsnya harus waktu setempat.
 
 Untuk menguji kemampuan layanan Ucapan, kami akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsionalitas yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi telepon.
 
-## <a name="create-a-cognitive-services-resource"></a>Buat sumber daya *Cognitive Services*
+## Membuat sumber daya *layanan Azure AI*
 
-Anda dapat menggunakan layanan Ucapan dengan membuat sumber daya **Ucapan** atau sumber daya **Cognitive Services**.
+Anda dapat menggunakan layanan Ucapan dengan membuat sumber daya **Ucapan** atau sumber daya **layanan Azure AI** .
 
-Jika belum melakukannya, buat sumber daya **Cognitive Services** di langganan Azure Anda.
+Jika Anda belum melakukannya, buat sumber daya **layanan Azure AI** di langganan Azure Anda.
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. Klik tombol **&#65291;Buat sumber daya**, cari *Cognitive Services*, dan buat sumber daya **Cognitive Services** dengan pengaturan berikut:
+1. Klik tombol **&#65291;Buat sumber daya** dan cari *layanan Azure AI*. Pilih **buat** paket **layanan Azure AI** . Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: *Pilih wilayah yang tersedia*.
@@ -31,13 +31,13 @@ Jika belum melakukannya, buat sumber daya **Cognitive Services** di langganan Az
 
 1. Tinjau dan buat sumber daya.
 
-### <a name="get-the-key-and-location-for-your-cognitive-services-resource"></a>Mendapatkan Kunci dan Lokasi untuk sumber daya Cognitive Services Anda
+### Mendapatkan Kunci dan Lokasi untuk sumber daya layanan Azure AI Anda
 
-1. Tunggu hingga penerapan selesai. Kemudian buka sumber daya Cognitive Services Anda, dan pada halaman **Gambaran umum**, klik tautan untuk mengelola kunci layanan. Anda akan memerlukan titik akhir dan kunci untuk terhubung ke sumber daya Cognitive Services dari aplikasi klien.
+1. Tunggu hingga penerapan selesai. Lalu buka sumber daya layanan Azure AI Anda, dan pada halaman **Gambaran Umum** , klik tautan untuk mengelola kunci layanan. Anda akan memerlukan titik akhir dan kunci untuk menyambungkan ke sumber daya layanan Azure AI Anda dari aplikasi klien.
 
 1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Anda. Anda memerlukan **lokasi/wilayah** dan **kunci** untuk terhubung dari aplikasi klien.
 
-## <a name="run-cloud-shell"></a>Jalankan Cloud Shell
+## Jalankan Cloud Shell
 
 Untuk menguji kemampuan layanan Ucapan, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell di Azure.
 
@@ -59,7 +59,7 @@ Untuk menguji kemampuan layanan Ucapan, kita akan menggunakan aplikasi baris per
 
     ![Tunggu PowerShell untuk memulai.](media/recognize-synthesize-speech/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Konfigurasi dan jalankan aplikasi klien
+## Konfigurasi dan jalankan aplikasi klien
 
 Sekarang setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien sederhana yang menggunakan layanan Ucapan.
 
@@ -85,7 +85,7 @@ Sekarang setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien se
 
     ![Penyunting yang berisi kode untuk menggunakan layanan Ucapan](media/recognize-synthesize-speech/speaking-clock-code.png)
 
-1. Jangan terlalu khawatir tentang detail kode, yang penting kode tersebut membutuhkan wilayah/lokasi dan salah satu kunci untuk sumber daya Cognitive Services Anda. Salin ini dari halaman **Kunci dan Titik Akhir** untuk sumber daya Anda dari portal Microsoft Azure dan tempel ke penyunting kode, menggantikan nilai tempat penampung **YOUR_KEY** dan **YOUR_LOCATION** masing-masing.
+1. Jangan terlalu khawatir tentang detail kode, yang penting adalah memerlukan wilayah/lokasi dan salah satu kunci untuk sumber daya layanan Azure AI Anda. Salin ini dari halaman **Kunci dan Titik Akhir** untuk sumber daya Anda dari portal Microsoft Azure dan tempel ke penyunting kode, menggantikan nilai tempat penampung **YOUR_KEY** dan **YOUR_LOCATION** masing-masing.
 
     > **Tips** Anda mungkin perlu menggunakan bilah pemisah untuk menyesuaikan area layar saat bekerja dengan panel **Tombol dan Titik Akhir** serta **Editor**.
 
@@ -117,6 +117,6 @@ Sekarang setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien se
 
     <div class="embeddedvideo"><iframe src="https://www.microsoft.com/videoplayer/embed/RWMSIU" frameborder="0" allowfullscreen="true" data-linktype="external"></iframe></div>
 
-## <a name="learn-more"></a>Pelajari lebih lanjut
+## Pelajari lebih lanjut
 
 Aplikasi sederhana ini hanya menunjukkan beberapa kemampuan layanan Ucapan. Untuk mempelajari selengkapnya tentang apa yang dapat Anda lakukan dengan layanan ini, lihat [halaman Ucapan](https://azure.microsoft.com/services/cognitive-services/speech-services/).
