@@ -1,21 +1,21 @@
 ---
 lab:
-  title: Jelajahi Cognitive Services
+  title: Menjelajahi layanan Azure AI
 ---
 
-# <a name="explore-cognitive-services"></a>Jelajahi Cognitive Services
+# Menjelajahi layanan Azure AI
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
-Azure Cognitive Services merangkum fungsionalitas AI umum yang dapat dikategorikan ke dalam empat pilar utama: layanan penglihatan, ucapan, bahasa, dan keputusan. Dalam latihan ini, Anda akan melihat salah satu layanan keputusan untuk mendapatkan gambaran umum tentang cara menyediakan dan menggunakan sumber daya cognitive services dalam aplikasi perangkat lunak.
+Layanan Azure AI merangkum fungsionalitas AI umum yang dapat dikategorikan ke dalam empat pilar utama: layanan visi, ucapan, bahasa, dan keputusan. Dalam latihan ini Anda akan melihat salah satu layanan keputusan untuk mendapatkan pengertian umum tentang cara menyediakan dan menggunakan sumber daya layanan Azure AI dalam aplikasi perangkat lunak.
 
-Cognitive services khusus yang akan Anda jelajahi dalam latihan ini adalah *Detektor Anomali*. Detektor Anomali digunakan untuk menganalisis nilai data dari waktu ke waktu, dan untuk mendeteksi nilai yang tidak biasa yang mungkin mengindikasikan persoalan atau masalah untuk penyelidikan lebih lanjut. Misalnya, sensor di fasilitas penyimpanan yang dikontrol suhu dapat memantau suhu setiap menit dan mencatat nilai yang diukur. Anda dapat menggunakan layanan Detektor Anomali untuk menganalisis nilai suhu yang dicatat dan menandai apa pun yang berada jauh di luar kisaran normal suhu yang diperkirakan.
+Layanan Azure AI tertentu yang akan Anda jelajahi dalam latihan ini adalah *Detektor Anomali*. Detektor Anomali digunakan untuk menganalisis nilai data dari waktu ke waktu, dan untuk mendeteksi nilai yang tidak biasa yang mungkin mengindikasikan persoalan atau masalah untuk penyelidikan lebih lanjut. Misalnya, sensor di fasilitas penyimpanan yang dikontrol suhu dapat memantau suhu setiap menit dan mencatat nilai yang diukur. Anda dapat menggunakan layanan Detektor Anomali untuk menganalisis nilai suhu yang dicatat dan menandai apa pun yang berada jauh di luar kisaran normal suhu yang diperkirakan.
 
 Untuk menguji kemampuan layanan Pendeteksi Anomali, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsionalitas yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi telepon.
 
-> **Catatan** Tujuan dari latihan ini adalah untuk mendapatkan gambaran umum tentang bagaimana cognitive services disediakan dan digunakan. Detektor Anomali digunakan sebagai contoh, tetapi Anda tidak diharapkan untuk memperoleh pengetahuan komprehensif tentang deteksi anomali dalam latihan ini!
+> **Catatan** Tujuan dari latihan ini adalah untuk mendapatkan rasa umum tentang bagaimana layanan Azure AI disediakan dan digunakan. Detektor Anomali digunakan sebagai contoh, tetapi Anda tidak diharapkan untuk memperoleh pengetahuan komprehensif tentang deteksi anomali dalam latihan ini!
 
-## <a name="create-an-anomaly-detector-resource"></a>Membuat sumber daya *Pendeteksi Anomali*
+## Membuat sumber daya *Pendeteksi Anomali*
 
 Mari kita mulai dengan membuat sumber daya **Pendeteksi Anomali** di langganan Azure Anda:
 
@@ -32,7 +32,7 @@ Mari kita mulai dengan membuat sumber daya **Pendeteksi Anomali** di langganan A
 
 1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Pendeteksi Anomali Anda. Anda akan membutuhkan titik akhir dan kunci untuk terhubung dari aplikasi klien.
 
-## <a name="run-cloud-shell"></a>Menjalankan Cloud Shell
+## Menjalankan Cloud Shell
 
 Untuk menguji kemampuan layanan Pendeteksi Anomali, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell di Azure.
 
@@ -54,7 +54,7 @@ Untuk menguji kemampuan layanan Pendeteksi Anomali, kita akan menggunakan aplika
 
     ![Tunggu PowerShell untuk memulai.](media/anomaly-detector/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Mengonfigurasi dan menjalankan aplikasi klien
+## Mengonfigurasi dan menjalankan aplikasi klien
 
 Setelah memiliki lingkungan Cloud Shell, Anda dapat menjalankan aplikasi sederhana yang menggunakan layanan Detektor Anomali untuk menganalisis data.
 
@@ -104,11 +104,7 @@ Setelah memiliki lingkungan Cloud Shell, Anda dapat menjalankan aplikasi sederha
 
 1. Tinjau hasilnya, perhatikan bahwa kolom terakhir dalam hasil adalah **True** atau **False** untuk menunjukkan apakah nilai yang dicatat pada setiap tanggal/waktu dianggap sebagai anomali atau tidak. Pertimbangkan cara kita dapat menggunakan informasi ini dalam situasi kehidupan nyata. Tindakan apa yang dapat dipicu oleh aplikasi jika nilai suhu lemari es atau tekanan darah lalu terdeteksi adanya anomali?  
 
-## <a name="learn-more"></a>Pelajari lebih lanjut
-
-Aplikasi sederhana ini hanya menunjukkan beberapa kemampuan layanan Pendeteksi Anomali. Untuk mempelajari selengkapnya tentang apa yang dapat Anda lakukan dengan layanan ini, lihat [halaman Pendeteksi Anomali](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/).
-
-## <a name="clean-up"></a>Pembersihan
+## Pembersihan
 
 Ada baiknya di akhir proyek untuk mengidentifikasi apakah Anda masih membutuhkan sumber daya yang Anda buat. Sumber daya yang dibiarkan beroperasi dapat dikenakan biaya. 
 

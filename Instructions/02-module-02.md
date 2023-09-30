@@ -118,7 +118,7 @@ Pembelajaran mesin otomatis memungkinkan Anda mencoba beberapa algoritma dan par
 
     - **Pilih jenis komputasi**: Tanpa server
     - **Jenis mesin virtual**: CPU
-    - **Tingkat komputer virtual**: Prioritas rendah
+    - **Tingkatan mesin virtual**: Khusus
     - **Ukuran komputer virtual**: Standard_DS3_V2
     - **Jumlah instans**: 1
 
@@ -139,7 +139,7 @@ Ketika pekerjaan pembelajaran mesin otomatis telah selesai, Anda dapat meninjau 
 
 1. Pilih tab **Metrik** dan pilih bagan **residuals** dan **predicted_true** jika belum dipilih. 
 
-    Tinjau grafik yang menunjukkan performa model. Bagan **residu** memperlihatkan *residu* (perbedaan antara nilai yang diprediksi dan aktual) sebagai histogram. Bagan **predicted_true** membandingkan nilai yang diprediksi dengan nilai yang benar. 
+    Tinjau grafik yang menunjukkan performa model. Bagan **residu** menunjukkan *residu* (perbedaan antara nilai yang diprediksi dan aktual) sebagai histogram. Bagan **predicted_true** membandingkan nilai yang diprediksi dengan nilai sebenarnya. 
 
 ## Terapkan dan uji model
 
@@ -150,13 +150,13 @@ Ketika pekerjaan pembelajaran mesin otomatis telah selesai, Anda dapat meninjau 
     - **Aktifkan autentikasi**: *Dipilih*
 
 1. Tunggu penyebaran dimulai - ini mungkin memakan waktu beberapa detik. **Status Sebarkan** untuk titik akhir **predict-rentals** akan ditunjukkan di bagian utama halaman sebagai *Berjalan*.
-1. Tunggu hingga **status Sebarkan** berubah menjadi *Berhasil*. Ini mungkin memakan waktu 5-10 menit.
+1. Tunggu hingga **status Sebarkan** berubah menjadi *Berhasil*. Proses ini mungkin memakan waktu 5-10 menit.
 
 ## Menguji layanan yang disebarkan
 
 Sekarang Anda dapat menguji layanan yang disebarkan.
 
-1. Di studio Azure Machine Learning, di menu sebelah kiri, pilih **Titik akhir** dan buka titik akhir real time **predict-rentals** .
+1. Di studio Azure Machine Learning, di menu sebelah kiri, pilih **Titik Akhir** dan buka titik akhir real time **predict-rentals** .
 
 1. Pada halaman titik akhir real-time **predict-rentals** , lihat tab **Uji** .
 
@@ -200,16 +200,15 @@ Sekarang Anda dapat menguji layanan yang disebarkan.
 
     Panel pengujian mengambil data input dan menggunakan model yang Anda latih untuk menampilkan perkiraan jumlah persewaan.
 
-
 Mari kita tinjau yang telah Anda lakukan. Anda menggunakan himpunan data tentang data penyewaan sepeda historis untuk melatih model. Model ini memprediksi jumlah penyewaan sepeda yang diharapkan pada hari tertentu, berdasarkan *fitur* musiman dan meteorologi.
 
 ## Pembersihan
 
-Layanan web yang Anda buat dihosting dalam *Azure Container Instance*. Jika tidak berniat untuk bereksperimen dengan ini lebih lanjut, Anda harus menghapus titik akhir untuk menghindari mengumpulkan penggunaan Azure yang tidak perlu. Anda juga harus menghapus kluster komputasi.
+Layanan web yang Anda buat dihosting dalam *Azure Container Instance*. Jika tidak berniat untuk bereksperimen dengan ini lebih lanjut, Anda harus menghapus titik akhir untuk menghindari mengumpulkan penggunaan Azure yang tidak perlu.
 
 1. Di [studio Azure Machine Learning](https://ml.azure.com?azure-portal=true), di tab **Titik Akhir**, pilih titik akhir **predict-rentals**. Kemudian pilih **Hapus** dan konfirmasikan bahwa Anda ingin menghapus titik akhir.
 
-    Menghapus komputasi Anda memastikan langganan Anda tidak akan dikenakan biaya untuk sumber daya komputasi. Namun Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait.
+    Menghapus komputasi memastikan langganan Anda tidak akan dikenakan biaya untuk sumber daya komputasi. Namun Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait.
 
 Untuk menghapus ruang kerja Anda:
 

@@ -13,7 +13,7 @@ Untuk menguji kemampuan layanan Face, kita akan menggunakan aplikasi baris perin
 
 ## Membuat sumber daya *Face API*
 
-Anda dapat menggunakan layanan Face dengan membuat sumber daya **Face** . (Face API tidak lagi tersedia di Cognitive Services)
+Anda dapat menggunakan layanan Face dengan membuat sumber daya **Face** .
 
 Jika Anda belum melakukannya, buat sumber daya **Face API** di langganan Azure Anda.
 

@@ -11,21 +11,21 @@ lab:
 
 Misalnya, inisiatif keselamatan jalan mungkin mengidentifikasi pejalan kaki dan pengendara sepeda sebagai pengguna jalan yang paling rentan di persimpangan lalu lintas. Dengan menggunakan kamera untuk memantau persimpangan, gambar pengguna jalan dapat dianalisis untuk mendeteksi pejalan kaki dan pengendara sepeda untuk memantau jumlah mereka atau bahkan mengubah perilaku sinyal lalu lintas.
 
-Layanan kognitif **Custom Vision** di Microsoft Azure menyediakan solusi berbasis cloud untuk membuat dan menerbitkan model deteksi objek kustom. Di Azure, Anda dapat menggunakan layanan Custom Vision untuk melatih model deteksi objek berdasarkan gambar yang ada. Ada dua elemen untuk membuat solusi deteksi objek. Pertama, Anda harus melatih model untuk mendeteksi lokasi dan kelas objek menggunakan gambar berlabel. Kemudian, saat model dilatih, Anda harus menerbitkannya sebagai layanan yang dapat digunakan oleh aplikasi.
+Layanan **Custom Vision** di Microsoft Azure menyediakan solusi berbasis cloud untuk membuat dan menerbitkan model deteksi objek kustom. Di Azure, Anda dapat menggunakan layanan Custom Vision untuk melatih model deteksi objek berdasarkan gambar yang ada. Ada dua elemen untuk membuat solusi deteksi objek. Pertama, Anda harus melatih model untuk mendeteksi lokasi dan kelas objek menggunakan gambar berlabel. Kemudian, saat model dilatih, Anda harus menerbitkannya sebagai layanan yang dapat digunakan oleh aplikasi.
 
 Untuk menguji kemampuan layanan Custom Vision guna mendeteksi objek dalam gambar, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsionalitas yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi seluler.
 
-## Buat sumber daya *Cognitive Services*
+## Membuat sumber daya *layanan Azure AI*
 
-Anda dapat menggunakan layanan Custom Vision dengan membuat sumber daya **Custom Vision** atau sumber daya **Cognitive Services**.
+Anda dapat menggunakan layanan Custom Vision dengan membuat sumber daya **Custom Vision** atau sumber daya **layanan Azure AI**.
 
-> **Catatan** Tidak semua sumber daya tersedia di setiap wilayah. Baik Anda membuat sumber daya Custom Vision atau Cognitive Services, hanya sumber daya yang dibuat di [wilayah tertentu](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) yang dapat digunakan untuk mengakses layanan Custom Vision. Demi kemudahan, wilayah telah dipilih sebelumnya untuk Anda dalam instruksi konfigurasi di bawah ini.
+> **Catatan** Tidak semua sumber daya tersedia di setiap wilayah. Baik Anda membuat sumber daya layanan Custom Vision atau Azure AI, hanya sumber daya yang dibuat di [wilayah tertentu yang](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) dapat digunakan untuk mengakses layanan Custom Vision. Demi kemudahan, wilayah telah dipilih sebelumnya untuk Anda dalam instruksi konfigurasi di bawah ini.
 
-Buat sumber daya **Cognitive Services** di langganan Azure Anda.
+Buat sumber daya **layanan Azure AI** di langganan Azure Anda.
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. Klik tombol **&#65291;Buat sumber daya**, cari *Cognitive Services*, dan buat sumber daya **Cognitive Services** dengan pengaturan berikut:
+1. Klik tombol **&#65291;Buat sumber daya** dan cari *layanan Azure AI*. Pilih **buat** paket **layanan Azure AI** . Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: US Timur
@@ -35,7 +35,7 @@ Buat sumber daya **Cognitive Services** di langganan Azure Anda.
 
 1. Tinjau dan buat sumber daya, dan tunggu hingga penyebaran selesai. Lalu pergi ke sumber daya yang disebarkan.
 
-1. Lihat halaman **Kunci dan Titik Akhir** untuk mengetahui sumber daya Cognitive Services Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
+1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya layanan Azure AI Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
 
 ## Membuat proyek Visual Kustom
 
@@ -154,7 +154,7 @@ Untuk menguji kemampuan layanan Custom Vision, kita akan menggunakan aplikasi ba
     code detect-objects.ps1
     ```
 
-    Perhatikan bagaimana ini membuka editor seperti yang ada pada gambar di bawah ini:
+    Perhatikan bagaimana ini membuka editor seperti pada gambar di bawah ini:
 
      ![Cuplikan layar editor kode di cloud shell.](media/create-object-detection-solution/code-editor.png)
 
@@ -164,7 +164,7 @@ Untuk menguji kemampuan layanan Custom Vision, kita akan menggunakan aplikasi ba
 
     Dapatkan *URL prediksi* dan *kunci prediksi* dari kotak dialog yang Anda tinggalkan terbuka di tab browser untuk proyek Custom Vision Anda. Anda memerlukan versi yang akan digunakan *jika Anda memiliki URL gambar*.
 
-    Gunakan nilai-nilai ini untuk menggantikan tempat penampung **YOUR_PREDICTION_URL** dan **YOUR_PREDICTION_KEY** dalam file kode.
+    Gunakan nilai-nilai ini untuk mengganti tempat penampung **YOUR_PREDICTION_URL** dan **YOUR_PREDICTION_KEY** dalam file kode.
 
     Setelah menempelkan nilai URL Prediksi dan Kunci Prediksi, dua baris kode pertama akan terlihat seperti ini:
 
@@ -173,11 +173,11 @@ Untuk menguji kemampuan layanan Custom Vision, kita akan menggunakan aplikasi ba
     $predictionKey ="1a2b3c4d5e6f7g8h9i0j...."
     ```
 
-5. Setelah membuat perubahan pada variabel dalam kode, tekan **CTRL+S** untuk menyimpan file. Kemudian tekan **CTRL+Q** untuk menutup editor kode.
+5. Setelah membuat perubahan pada variabel dalam kode, tekan **CTRL+S** untuk menyimpan file. Lalu tekan **CTRL+Q** untuk menutup editor kode.
 
 ## Menguji aplikasi klien
 
-Sekarang Anda dapat menggunakan aplikasi klien sampel untuk mendeteksi pesepeda dan pejalan kaki dalam gambar.
+Sekarang Anda dapat menggunakan aplikasi klien sampel untuk mendeteksi pengendara sepeda dan pejalan kaki dalam gambar.
 
 1. Di panel PowerShell, masukkan perintah berikut untuk menjalankan kode:
 
@@ -187,7 +187,7 @@ Sekarang Anda dapat menggunakan aplikasi klien sampel untuk mendeteksi pesepeda 
 
     Kode ini menggunakan model Anda untuk mendeteksi objek dalam gambar berikut:
 
-    ![Foto pejalan kaki dan pesepeda.](media/create-object-detection-solution/road-safety-1.jpg)
+    ![Foto pejalan kaki dan pengendara sepeda.](media/create-object-detection-solution/road-safety-1.jpg)
 
 1. Tinjau prediksi, yang mencantumkan objek apa pun yang terdeteksi dengan probabilitas 90% atau lebih, bersama dengan koordinat kotak pembatas di sekitar lokasinya.
 
@@ -203,6 +203,3 @@ Sekarang Anda dapat menggunakan aplikasi klien sampel untuk mendeteksi pesepeda 
 
 Mudah-mudahan, model deteksi objek Anda melakukan pekerjaan yang baik untuk mendeteksi pejalan kaki dan pengendara sepeda dalam gambar pengujian.
 
-## Pelajari lebih lanjut
-
-Latihan ini hanya menunjukkan beberapa kemampuan layanan Custom Vision. Untuk mempelajari selengkapnya tentang apa yang dapat Anda lakukan dengan layanan ini, lihat [halaman Custom Vision](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/).
