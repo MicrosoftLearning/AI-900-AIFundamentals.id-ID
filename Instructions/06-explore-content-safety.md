@@ -1,3 +1,8 @@
+---
+lab:
+  title: Jelajahi Content Safety Studio
+---
+
 Content Safety Studio memungkinkan Anda menjelajahi bagaimana konten teks dan gambar dapat dimoderasi. Anda dapat menjalankan pengujian pada sampel teks atau gambar dan mendapatkan skor tingkat keparahan mulai dari aman hingga tinggi untuk setiap kategori. Anda dapat dengan cepat mengetahui cara kerja layanan AI Keamanan Konten, dan kemampuannya. 
 
 Dalam latihan lab ini Anda akan membuat sumber daya Azure AI Services multi-layanan di portal Azure dan memeriksa titik akhir dan kuncinya. Anda kemudian akan menggunakan Content Safety Studio untuk menjelajahi fungsionalitas layanan Content Safety AI. 
