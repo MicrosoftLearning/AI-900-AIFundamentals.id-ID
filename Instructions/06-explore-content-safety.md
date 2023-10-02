@@ -7,6 +7,8 @@ Content Safety Studio memungkinkan Anda menjelajahi bagaimana konten teks dan ga
 
 Dalam latihan lab ini Anda akan membuat sumber daya Azure AI Services multi-layanan di portal Azure dan memeriksa titik akhir dan kuncinya. Anda kemudian akan menggunakan Content Safety Studio untuk menjelajahi fungsionalitas layanan Content Safety AI. 
 
+> **Catatan** Tujuan dari latihan ini adalah untuk mendapatkan rasa umum tentang bagaimana layanan Azure AI disediakan dan digunakan. Keamanan Konten digunakan sebagai contoh, tetapi Anda tidak diharapkan untuk mendapatkan pengetahuan komprehensif tentang keamanan konten dalam latihan ini!
+
 ## Membuat sumber daya AI Services
 
 1.  Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
@@ -20,6 +22,8 @@ Dalam latihan lab ini Anda akan membuat sumber daya Azure AI Services multi-laya
 
 ## Mengaitkan sumber daya ke Content Safety Studio 
 Di tab browser terpisah, buka Content Safety Studio dan masuk. Layar Memulai ditampilkan.
+
+![Cuplikan layar halaman arahan content safety studio.](./media/content-safety/content-safety-getting-started.png)
 
 1.  Klik cog Pengaturan di menu kanan atas.
 2.  Pilih sumber daya layanan Azure AI yang baru saja Anda buat, lalu klik Gunakan sumber daya.
