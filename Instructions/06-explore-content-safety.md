@@ -1,31 +1,72 @@
-Content Safety Studio memungkinkan Anda menjelajahi bagaimana konten teks dan gambar dapat dimoderasi. Anda dapat menjalankan pengujian pada sampel teks atau gambar dan mendapatkan skor tingkat keparahan mulai dari aman hingga tinggi untuk setiap kategori. Anda dapat dengan cepat mengetahui cara kerja layanan AI Keamanan Konten, dan kemampuannya. 
+---
+lab:
+  title: Menjelajahi Content Safety Studio
+---
 
-Dalam latihan lab ini Anda akan membuat sumber daya Azure AI Services multi-layanan di portal Azure dan memeriksa titik akhir dan kuncinya. Anda kemudian akan menggunakan Content Safety Studio untuk menjelajahi fungsionalitas layanan Content Safety AI. 
+Layanan Azure AI membantu pengguna membuat aplikasi AI dengan API dan model yang siap pakai dan dapat disesuaikan. Dalam latihan ini Anda akan melihat salah satu layanan, Azure AI Content Safety, di Content Safety Studio. 
 
-## Membuat sumber daya AI Services
+Content Safety Studio memungkinkan Anda menjelajahi bagaimana konten teks dan gambar dapat dimoderasi. Anda dapat menjalankan pengujian pada teks sampel atau gambar dan mendapatkan skor tingkat keparahan mulai dari aman hingga tinggi untuk setiap kategori. Dalam latihan lab ini Anda akan membuat sumber daya layanan tunggal di Content Safety Studio dan menguji fungsionalitasnya. 
 
-1.  Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
-1.  Klik tombol **&#65291;Buat sumber daya** dan cari *layanan Azure AI*. Pilih **buat** paket **layanan Azure AI** . Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
-- **Langganan**: Langganan Azure Anda.
-- **Grup sumber daya**: Pilih atau buat grup sumber daya yang sesuai.
-- **Wilayah**: Pilih wilayah yang tersedia.
-- **Nama**: Masukkan nama yang unik.
-- **Tingkatan harga**: F0 
-2.  Tinjau dan buat sumber daya dan tunggu hingga penyebaran selesai. 
+> **Catatan** Tujuan dari latihan ini adalah untuk mendapatkan rasa umum tentang bagaimana layanan Azure AI disediakan dan digunakan. Keamanan Konten digunakan sebagai contoh, tetapi Anda tidak diharapkan untuk mendapatkan pengetahuan komprehensif tentang keamanan konten dalam latihan ini!
 
-## Mengaitkan sumber daya ke Content Safety Studio 
-Di tab browser terpisah, buka Content Safety Studio dan masuk. Layar Memulai ditampilkan.
+## Menavigasi Content Safety Studio 
 
-1.  Klik cog Pengaturan di menu kanan atas.
-2.  Pilih sumber daya layanan Azure AI yang baru saja Anda buat, lalu klik Gunakan sumber daya.
-3.  Lihat titik akhir dan kunci untuk sumber daya Anda, menggulir jika perlu. Jika Anda memeriksa di Portal Microsoft Azure, Anda akan melihat bahwa ini adalah titik akhir dan kunci untuk sumber daya Anda yang menunjukkan bahwa Anda telah berhasil mengaitkan sumber daya Anda dengan studio Keamanan Konten.
-4.  Klik Content Safety Studio untuk kembali ke halaman beranda. Di bawah Konten teks moderasi, klik Cobalah.
-5.  Di bawah jalankan pengujian sederhana, klik Konten Aman. Perhatikan bahwa teks ditampilkan dalam kotak di bawah ini. 
-6.  Klik Jalankan pengujian. 
-7.  Di panel Hasil, periksa hasilnya. Ada empat tingkat keparahan dari aman ke tinggi, dan empat jenis konten berbahaya. Apakah layanan Content Safety AI menganggap sampel ini dapat diterima atau tidak? 
-8.  Sekarang coba sampel lain. Pilih teks di bawah Konten kekerasan dengan kesalahan ejaan. Periksa apakah konten ditampilkan dalam kotak di bawah ini.
-9.  Klik Jalankan pengujian dan periksa hasilnya di panel Hasil di bawah ini. Apakah sampel ini dapat diterima? Jika tidak, mengapa tidak?
+![Cuplikan layar halaman arahan content safety studio.](./media/content-safety/content-safety-getting-started.png)
+
+
+1. Buka [Content Safety Studio](https://contentsafety.cognitive.azure.com?azure-portal=true). Jika Anda tidak masuk, Anda harus masuk. Pilih **Masuk** di kanan atas layar. Gunakan email dan kata sandi yang terkait dengan langganan Azure Anda untuk masuk. 
+
+1. Content Safety Studio disiapkan seperti banyak studio lain untuk layanan Azure AI. Pada menu di bagian atas layar, klik ikon di sebelah kiri *Azure AI*. Anda akan melihat daftar drop-down studio lain yang dirancang untuk pengembangan dengan layanan Azure AI. Anda dapat mengklik ikon lagi untuk menyembunyikan daftar.
+
+![Cuplikan layar menu Content Safety Studio dengan pilihan pengalih terbuka untuk beralih ke studio lain.](./media/content-safety/studio-toggle-icon.png)  
+
+## Mengaitkan sumber daya dengan studio 
+
+Sebelum menggunakan studio, Anda perlu mengaitkan sumber daya layanan Azure AI dengan studio. Bergantung pada studio, Anda mungkin menemukan bahwa Anda memerlukan sumber daya layanan tunggal tertentu, atau dapat menggunakan sumber daya multi-layanan umum. Dalam kasus Content Safety Studio, Anda dapat menggunakan layanan dengan membuat sumber daya *Content Safety* layanan tunggal atau sumber daya multi-layanan umum *layanan Azure AI* . Pada langkah-langkah di bawah ini, kami akan membuat sumber daya Content Safety layanan tunggal. 
+
+1. Di kanan atas layar, klik ikon **Pengaturan** . 
+
+![Cuplikan layar ikon pengaturan di kanan atas layar, di samping bel, tanda tanya, dan ikon senyum.](./media/content-safety/settings-toggle.png)
+
+1. Pada halaman **Pengaturan** , Anda akan melihat tab *Direktori* dan tab *Sumber Daya* . Pada tab *Sumber Daya* , pilih **Buat sumber daya baru**. Ini akan membawa Anda ke halaman untuk membuat sumber daya di Portal Microsoft Azure.
+
+> **Catatan** Tab *Direktori* memungkinkan pengguna untuk memilih direktori yang berbeda untuk membuat sumber daya. Anda tidak perlu mengubah pengaturannya kecuali Anda ingin menggunakan direktori yang berbeda. 
+
+![Cuplikan layar tempat memilih buat sumber daya baru dari halaman pengaturan Content Safety Studio.](./media/content-safety/create-new-resource-from-studio.png)
+
+1. Pada halaman *Buat Keamanan Konten* di [Portal Microsoft Azure](https://portal.azure.com?auzre-portal=true), Anda perlu mengonfigurasi beberapa detail untuk membuat sumber daya Anda. Konfigurasikan dengan pengaturan berikut:
+    - **Langganan**: *Langganan Azure Anda*.
+    - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
+    - **Wilayah**: *Pilih wilayah yang tersedia*.
+    - **Nama**: *Masukkan nama unik*.
+    - **Tingkat harga**: Gratis F0
+
+1. Pilih **Tinjau + Buat** dan tinjau konfigurasi. Kemudian pilih **Buat**. Layar akan menunjukkan kapan penyebaran selesai. 
+
+*Congrats! Anda baru saja membuat, atau menyediakan sumber daya layanan Azure AI. Yang Anda sediakan khususnya adalah sumber daya layanan Content Safety layanan tunggal.*
+
+1. Setelah penyebaran selesai, buka tab baru dan kembali ke [Content Safety Studio](https://contentsafety.cognitive.azure.com?azure-portal=true). 
+
+1. Pilih ikon **Pengaturan** di kanan atas layar lagi. Kali ini Anda akan melihat bahwa sumber daya yang baru dibuat telah ditambahkan ke daftar.  
+
+1. Pada halaman Pengaturan Content Safety Studio, pilih sumber daya layanan Azure AI yang baru saja Anda buat dan klik **Gunakan sumber daya** di bagian bawah layar. Anda akan dibawa kembali ke halaman beranda studio. Sekarang Anda dapat mulai menggunakan studio dengan sumber daya yang baru dibuat.
+
+## Mencoba moderasi teks di Content Safety Studio
+
+1. Pada beranda Content Safety Studio, di bawah *Jalankan pengujian moderasi*, navigasikan ke kotak **Konten teks sedang** dan klik **Coba**.
+1. Di bawah jalankan pengujian sederhana, klik **Konten Aman**. Perhatikan bahwa teks ditampilkan dalam kotak di bawah ini. 
+1. Klik **Jalankan pengujian**. Menjalankan pengujian memanggil model pembelajaran mendalam Content Safety Service. Model pembelajaran mendalam telah dilatih untuk mengenali konten yang tidak aman.
+1. Di panel *Hasil* , periksa hasilnya. Ada empat tingkat keparahan dari aman ke tinggi, dan empat jenis konten berbahaya. Apakah layanan AI Keamanan Konten menganggap sampel ini dapat diterima atau tidak? Yang penting untuk dicatat adalah bahwa hasilnya berada dalam interval keyakinan. Model yang terlatih dengan baik, seperti salah satu model siap pakai Azure AI, dapat mengembalikan hasil yang memiliki probabilitas tinggi untuk mencocokkan apa yang akan dilabeli manusia hasilnya. Setiap kali Anda menjalankan pengujian, Anda memanggil model lagi. 
+1. Sekarang coba sampel lain. Pilih teks di bawah Konten kekerasan dengan salah eja. Periksa apakah konten ditampilkan dalam kotak di bawah ini.
+1. Klik **Jalankan pengujian** dan periksa hasilnya di panel Hasil lagi. 
 
 Anda dapat menjalankan pengujian pada semua sampel yang disediakan, lalu memeriksa hasilnya.
 
-Setelah selesai, hapus sumber daya layanan Azure AI di Portal Microsoft Azure. 
+## Lihat kunci dan titik akhir
+
+Kemampuan yang Anda uji ini dapat diprogram ke dalam semua jenis aplikasi. Kunci dan titik akhir yang digunakan untuk pengembangan aplikasi dapat ditemukan baik di Content Safety Studio maupun Portal Microsoft Azure. 
+
+1. Di Content Safety Studio, navigasi kembali ke halaman **Pengaturan** , dengan tab *Sumber Daya* dipilih. Cari sumber daya yang Anda gunakan. Gulir ke seluruh untuk melihat titik akhir dan kunci untuk sumber daya Anda. 
+1. Di Portal Microsoft Azure, Anda akan melihat bahwa ini adalah titik akhir *yang sama* dan kunci *yang berbeda* untuk sumber daya Anda. Untuk memeriksanya, buka [Portal Microsoft Azure](https://portal.azure.com?auzre-portal=true). Cari *Keamanan Konten* di bilah pencarian atas. Temukan sumber daya Anda dan klik sumber daya tersebut. Di menu sebelah kiri, lihat di bawah *Manajemen Sumber Daya* untuk *Kunci dan Titik Akhir*. Pilih **Kunci dan Titik Akhir** untuk melihat titik akhir dan kunci untuk sumber daya Anda. 
+
+Setelah selesai, Anda dapat menghapus sumber daya Keamanan Konten dari Portal Microsoft Azure. Menghapus sumber daya adalah cara untuk mengurangi biaya yang bertambah ketika sumber daya ada dalam langganan. Untuk melakukan ini, navigasikan ke halaman **Gambaran Umum** sumber daya Keamanan Konten Anda. Pilih **Hapus** di bagian atas layar. 
