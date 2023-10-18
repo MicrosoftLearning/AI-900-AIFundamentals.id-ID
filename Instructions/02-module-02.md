@@ -33,7 +33,7 @@ Untuk menggunakan Azure Machine Learning, Anda perlu memprovisikan ruang kerja A
 
 1. Pilih **Luncurkan studio** (atau buka tab browser baru dan arahkan ke [https://ml.azure.com](https://ml.azure.com?azure-portal=true), dan masuk ke studio Azure Machine Learning menggunakan akun Microsoft Anda). Tutup semua pesan yang ditampilkan.
 
-1. Di studio Azure Machine Learning, Anda akan melihat ruang kerja yang baru dibuat. Jika tidak, pilih **Semua ruang kerja** di menu sebelah kiri dan pilih ruang kerja yang baru saja Anda buat.
+1. Di studio Azure Machine Learning, Anda akan melihat ruang kerja yang baru dibuat. Jika tidak, pilih **Semua ruang kerja** di menu sebelah kiri lalu pilih ruang kerja yang baru saja Anda buat.
 
 ## Mengaktifkan fitur untuk pratinjau
 
