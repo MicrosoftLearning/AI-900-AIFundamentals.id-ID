@@ -27,10 +27,10 @@ Fitur jawaban atas pertanyaan kustom layanan Bahasa memungkinkan Anda membuat pa
     - **Nama**: *Nama unik untuk sumber daya Bahasa Anda*.
     - **Tingkat harga**: S (1K Panggilan per menit)
     - **Wilayah pencarian Azure**: *Lokasi apa pun yang tersedia*.
-    - **Tingkat harga pencarian Azure**: F Gratis (3 Indeks) - (*Jika tingkat ini tidak tersedia, pilih Standar S (50 Indeks)* )
+    - **Tingkat harga pencarian Azure**: F Gratis (3 Indeks) - (*Jika tingkat ini tidak tersedia, pilih Standar S (50 Indeks)*)
     - **Dengan mencentang kotak ini, saya menyatakan bahwa saya telah meninjau dan menyetujui persyaratan dalam Pemberitahuan AI yang Bertanggung Jawab**: *Dipilih*.
 
-    > **Catatan** Jika Anda telah menyediakan sumber daya **Azure Cognitive Search** tingkat gratis, kuota Anda mungkin tidak memungkinkan Anda untuk membuat sumber daya lain. Dalam hal ini, pilih tingkat selain **F Gratis**.
+    > **Catatan** Jika Anda telah menyediakan sumber daya Azure Cognitive Search** tingkat **gratis, kuota Anda mungkin tidak memungkinkan Anda untuk membuat sumber daya lain. Dalam hal ini, pilih tingkat selain **F Gratis**.
 
 1. Klik **Tinjau dan Buat**, lalu klik **Buat**. Tunggu penyebaran layanan Bahasa yang akan mendukung pangkalan pengetahuan jawaban atas pertanyaan kustom Anda.
 
@@ -41,7 +41,7 @@ Fitur jawaban atas pertanyaan kustom layanan Bahasa memungkinkan Anda membuat pa
     - **Langganan Azure**: Langganan Azure Anda.
     - **Sumber daya bahasa**: Sumber daya bahasa yang Anda buat sebelumnya.
 
-1. Jika Anda ***tidak*** diminta untuk memilih sumber daya bahasa, itu mungkin karena Anda memiliki beberapa sumber daya Bahasa dalam langganan Anda; dalam hal ini:
+1. Jika Anda ***tidak*** diminta untuk memilih sumber daya bahasa, hal tersebut mungkin karena Anda memiliki beberapa sumber daya Bahasa dalam langganan Anda; dalam hal ini:
     1. Pada bilah di bagian atas halaman, klik tombol **Pengaturan (&#9881;)**.
     2. Pada halaman **Pengaturan**, lihat tab **Sumber Daya**.
     3. Pilih sumber daya bahasa yang baru saja Anda buat, dan klik **Ganti sumber daya**.
@@ -114,32 +114,32 @@ Pangkalan Pengetahuan menyediakan layanan back-end yang dapat digunakan aplikasi
         - **Langganan**: *Langganan Azure Anda*
         - **Grup sumber daya**: *Grup sumber daya yang berisi sumber daya Bahasa Anda*
     - **Detail instans**
-        - **Lokasi grup sumber daya**: *Lokasi yang sama dengan layanan Bahasa Anda*.
+        - **Lokasi** grup sumber daya: *Lokasi yang sama dengan layanan* Bahasa Anda.
     - **Azure Bot**
-        - **Handel bot**: *Nama unik untuk bot Anda* (*telah diisi sebelumnya*)
+        - **Handel bot: *Nama unik untuk bot* Anda (*telah diisi sebelumnya*)**
     - **Pilih tingkat harga Anda**
-        - **Tingkat harga**: Gratis (F0) (Anda mungkin perlu memilih *Ubah paket*)
+        - **Tingkat** harga: Gratis (F0) (Anda mungkin perlu memilih *Ubah paket*)
     - **ID Aplikasi Microsoft**
-        - **Jenis pembuatan**: *Pilih Buat identitas terkelola yang ditetapkan pengguna baru* 
+        - **Jenis** pembuatan: *Pilih Buat identitas terkelola baru yang ditetapkan pengguna* 
 
 5. Pilih **Berikutnya: Aplikasi Web >** untuk terus memperbarui pengaturan. 
     - **App Service**
         - **Nama aplikasi**: *Sama seperti **Handle bot** dengan **.azurewebsites.net** yang ditambahkan secara otomatis*
         - **Bahasa SDK**: *Pilih C# atau Node.js*
-    - **Paket Azure App Service**
-        - **Jenis Pembuatan**: *Pilih Buat paket layanan aplikasi baru*
+    - **Paket App Service**
+        - **Jenis** Pembuatan: *Pilih Buat paket layanan aplikasi baru*
     - **Pengaturan Aplikasi**
-        - **Kunci Sumber Daya Bahasa**: *Anda harus menyalin kunci sumber daya Bahasa Anda dan menempelkannya di sini.* 
+        - **Kunci** Sumber Daya Bahasa: *Anda harus menyalin kunci sumber daya Bahasa Anda dan menempelkannya di sini.* 
         
-        > **Catatan** Untuk menavigasi ke kunci sumber daya Bahasa Anda, buka [https://portal.azure.com](https://portal.azure.com?azure-portal=true). Pada beranda, klik *Grup Sumber Daya* dan temukan grup sumber daya tempat Anda membuat sumber daya Bahasa. Pilih sumber daya Bahasa Anda dan navigasikan ke menu sebelah kirinya. Lalu pilih *Kunci dan Titik Akhir*. Salin salah satu kunci. 
+        > **Catatan** Untuk menavigasi ke kunci sumber daya Bahasa Anda, bukahttps://portal.azure.com[](https://portal.azure.com?azure-portal=true) . Pada beranda, klik *Grup* Sumber Daya dan temukan grup sumber daya tempat Anda membuat sumber daya Bahasa. Pilih Sumber daya Bahasa Anda dan navigasikan ke menu sebelah kirinya. Lalu pilih *Kunci dan Titik* Akhir. Salin salah satu kunci. 
 
     -  
-        - **Nama proyek bahasa**: MargiesTravel
-        - **Nama host titik akhir layanan bahasa**: *Telah diisi sebelumnya dengan titik akhir layanan bahasa Anda*
+        - **Nama** proyek bahasa: MargiesTravel
+        - **Nama** host titik akhir layanan bahasa: *Telah diisi sebelumnya dengan titik akhir layanan bahasa Anda*
     - **Detail layanan bahasa**
-        - **ID Langganan**: *Telah diisi sebelumnya dengan ID langganan Anda*
-        - **Nama Grup Sumber Daya**: *Telah diisi sebelumnya dengan nama grup sumber daya Anda*
-        - **Nama Akun**: *Telah diisi sebelumnya dengan nama sumber daya Anda*
+        - **Id** Langganan: *Telah diisi sebelumnya dengan ID langganan Anda*
+        - **Nama** Grup Sumber Daya: *Telah diisi sebelumnya dengan nama grup sumber daya Anda*
+        - **Nama** Akun: *Telah diisi sebelumnya dengan nama sumber daya Anda*
 
 1. Pilih **Tinjau + Buat**.
 

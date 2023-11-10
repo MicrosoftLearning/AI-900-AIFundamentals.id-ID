@@ -3,27 +3,27 @@ lab:
   title: Menjelajahi analitik teks
 ---
 
-# <a name="explore-text-analytics"></a>Menjelajahi analitik teks
+# Menjelajahi analitik teks
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
 Natural Language Processing (NLP) adalah cabang kecerdasan buatan (AI) yang berhubungan dengan bahasa tertulis dan lisan. Anda dapat menggunakan NLP untuk membangun solusi yang mengekstraksi makna semantik dari teks atau ucapan, atau yang merumuskan tanggapan yang berarti dalam bahasa alami.
 
-Microsoft Azure *Cognitive Services* mencakup kemampuan analitik teks dalam layanan *Bahasa*, yang menyediakan beberapa kemampuan NLP unik, termasuk identifikasi frasa kunci dalam teks, dan klasifikasi teks berdasarkan sentimen.
+Layanan* Microsoft *Azure AI mencakup kemampuan analitik teks dalam *layanan Bahasa*, yang menyediakan beberapa kemampuan NLP di luar kotak, termasuk identifikasi frasa kunci dalam teks, dan klasifikasi teks berdasarkan sentimen.
 
 Misalnya, misalkan organisasi *Perjalanan Margie* fiktif menganjurkan pelanggan mengirim ulasan tentang menginap di hotel. Anda dapat menggunakan layanan Bahasa untuk meringkas ulasan dengan mengekstraksi frasa kunci, menentukan ulasan mana yang positif dan mana yang negatif, atau menganalisis teks ulasan untuk menyebutkan entitas yang dikenal seperti lokasi atau orang.
 
-Untuk menguji kemampuan layanan Bahasa, kami akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsionalitas yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi telepon.
+Untuk menguji kemampuan layanan Bahasa, kami akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
 
-## <a name="create-a-cognitive-services-resource"></a>Buat sumber daya *Cognitive Services*
+## Membuat *sumber daya layanan* Azure AI
 
-Anda dapat menggunakan layanan Bahasa dengan membuat sumber daya **Bahasa** atau sumber daya **Cognitive Services**.
+Anda dapat menggunakan layanan Bahasa dengan membuat **sumber daya Bahasa** atau **sumber daya layanan** Azure AI.
 
-Jika belum melakukannya, buat sumber daya **Cognitive Services** di langganan Azure Anda.
+Jika Anda belum melakukannya, buat **sumber daya layanan** Azure AI di langganan Azure Anda.
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. Pilih tombol **&#65291;Buat sumber daya**, cari *Cognitive Services*, dan buat sumber daya **Cognitive Services** dengan pengaturan berikut:
+1. **Klik &#65291; Buat tombol sumber daya** dan cari *layanan* Azure AI. Pilih **buat** **paket layanan** Azure AI. Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: *Pilih wilayah yang tersedia*.
@@ -33,13 +33,13 @@ Jika belum melakukannya, buat sumber daya **Cognitive Services** di langganan Az
 
 1. Tinjau dan buat sumber daya.
 
-### <a name="get-the-key-and-endpoint-for-your-cognitive-services-resource"></a>Mendapatkan kunci dan titik akhir untuk sumber daya Cognitive Services Anda
+### Mendapatkan kunci dan titik akhir untuk sumber daya layanan Azure AI Anda
 
-1. Tunggu hingga penerapan selesai. Kemudian buka sumber daya Cognitive Services Anda, dan pada halaman **Gambaran umum**, klik tautan untuk mengelola kunci layanan. Anda akan memerlukan titik akhir dan kunci untuk terhubung ke sumber daya Cognitive Services dari aplikasi klien.
+1. Tunggu hingga penerapan selesai. Lalu buka sumber daya layanan Azure AI Anda, dan pada **halaman Gambaran Umum** , pilih tautan untuk mengelola kunci untuk layanan. Anda akan memerlukan titik akhir dan kunci untuk menyambungkan ke sumber daya layanan Azure AI Anda dari aplikasi klien.
 
 1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Anda. Anda memerlukan **kunci** dan **titik akhir** untuk terhubung dari aplikasi klien.
 
-## <a name="run-cloud-shell"></a>Menjalankan Cloud Shell
+## Menjalankan Cloud Shell
 
 Untuk menguji kemampuan analitik teks dari layanan Bahasa, kami akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell di Azure.
 
@@ -61,7 +61,7 @@ Untuk menguji kemampuan analitik teks dari layanan Bahasa, kami akan menggunakan
 
     ![Tunggu PowerShell untuk memulai.](media/analyze-text-language-service/powershell-prompt.png)
 
-## <a name="configure-and-run-a-client-application"></a>Mengonfigurasi dan menjalankan aplikasi klien
+## Mengonfigurasi dan menjalankan aplikasi klien
 
 Setelah memiliki model khusus, Anda dapat menjalankan aplikasi klien sederhana yang menggunakan layanan Bahasa.
 
@@ -87,11 +87,11 @@ Setelah memiliki model khusus, Anda dapat menjalankan aplikasi klien sederhana y
 
     ![Editor yang berisi kode untuk menggunakan layanan Bahasa](media/analyze-text-language-service/analyze-text-code.png)
 
-1. Jangan terlalu memikirkan detail kode. Di portal Azure, navigasikan ke sumber daya Cognitive Services Anda. Lalu pilih halaman **Kunci dan Titik Akhir** di panel sebelah kiri. Salin kunci dan titik akhir dari halaman dan tempelkan ke dalam editor kode, menggantikan nilai tempat penampung **YOUR_KEY** dan **YOUR_ENDPOINT** masing-masing.
+1. Jangan terlalu memikirkan detail kode. Di portal Azure, navigasikan ke sumber daya layanan Azure AI Anda. Lalu pilih halaman **Kunci dan Titik Akhir** di panel sebelah kiri. Salin kunci dan titik akhir dari halaman dan tempelkan ke dalam editor kode, menggantikan nilai tempat penampung **YOUR_KEY** dan **YOUR_ENDPOINT** masing-masing.
 
     > **Tips** Anda mungkin perlu menggunakan bilah pemisah untuk menyesuaikan area layar saat bekerja dengan panel **Tombol dan Titik Akhir** serta **Editor**.
 
-    ![Temukan tab kunci dan titik akhir di panel sebelah kiri sumber Cognitive Services Anda.](media/analyze-text-language-service/key-endpoint-support.png)
+    ![Temukan tab kunci dan titik akhir di panel kiri sumber daya layanan Azure AI Anda.](media/analyze-text-language-service/key-endpoint-support.png)
 
     Setelah mengganti nilai kunci dan titik akhir, baris pertama kode harus sama dengan ini:
 
@@ -100,9 +100,9 @@ Setelah memiliki model khusus, Anda dapat menjalankan aplikasi klien sederhana y
     $endpoint="https..."
     ```
 
-1. Di kanan atas panel editor, gunakan tombol **...** untuk membuka menu dan pilih **Simpan** untuk menyimpan perubahan Anda. Kemudian buka lagi menu dan pilih **Tutup Penyunting**.
+1. Di kanan atas panel editor, gunakan tombol **...** untuk membuka menu dan pilih **Simpan** untuk menyimpan perubahan Anda. Kemudian, buka menu lagi dan pilih **Tutup Editor**.
 
-    Aplikasi klien sampel akan menggunakan layanan Bahasa Cognitive Services untuk mendeteksi bahasa, mengekstrak frasa kunci, menentukan sentimen, dan mengekstrak entitas yang dikenal untuk ditinjau.
+    Aplikasi klien sampel akan menggunakan layanan Bahasa Azure AI Services untuk mendeteksi bahasa, mengekstrak frasa kunci, menentukan sentimen, dan mengekstrak entitas yang diketahui untuk ditinjau.
 
 1. Di Cloud Shell, masukkan perintah berikut untuk menjalankan kode:
 
@@ -154,6 +154,6 @@ Setelah memiliki model khusus, Anda dapat menjalankan aplikasi klien sederhana y
 
 1. Tinjau output.
 
-## <a name="learn-more"></a>Pelajari lebih lanjut
+## Pelajari lebih lanjut
 
 Aplikasi sederhana ini hanya menunjukkan beberapa kemampuan layanan Bahasa. Untuk mempelajari selengkapnya tentang apa yang dapat Anda lakukan dengan layanan ini, lihat [halaman layanan Bahasa](https://azure.microsoft.com/services/cognitive-services/language-service/).

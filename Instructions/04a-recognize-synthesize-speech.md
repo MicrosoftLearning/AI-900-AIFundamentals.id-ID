@@ -7,21 +7,21 @@ lab:
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
-Untuk membangun perangkat lunak yang dapat menafsirkan ucapan yang dapat didengar dan merespons dengan tepat, Anda dapat menggunakan layanan **Azure AI Speech** , yang menyediakan cara sederhana untuk mentranskripsikan bahasa lisan ke dalam teks dan sebaliknya.
+Untuk membangun perangkat lunak yang dapat menafsirkan ucapan yang dapat didengar dan merespons dengan tepat, Anda dapat menggunakan **layanan Azure AI Speech** , yang menyediakan cara sederhana untuk mentranskripsikan bahasa lisan ke dalam teks dan sebaliknya.
 
 Misalnya, Anda ingin membuat perangkat pintar yang dapat merespons pertanyaan lisan secara lisan, seperti "Jam berapa sekarang?" Responsnya harus waktu setempat.
 
-Untuk menguji kemampuan layanan Ucapan, kami akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsionalitas yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi telepon.
+Untuk menguji kemampuan layanan Ucapan, kami akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
 
-## Membuat sumber daya *layanan Azure AI*
+## Membuat *sumber daya layanan* Azure AI
 
-Anda dapat menggunakan layanan Ucapan dengan membuat sumber daya **Ucapan** atau sumber daya **layanan Azure AI** .
+Anda dapat menggunakan layanan Ucapan dengan membuat **sumber daya Ucapan** atau **sumber daya layanan** Azure AI.
 
-Jika Anda belum melakukannya, buat sumber daya **layanan Azure AI** di langganan Azure Anda.
+Jika Anda belum melakukannya, buat **sumber daya layanan** Azure AI di langganan Azure Anda.
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. Klik tombol **&#65291;Buat sumber daya** dan cari *layanan Azure AI*. Pilih **buat** paket **layanan Azure AI** . Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
+1. **Klik &#65291; Buat tombol sumber daya** dan cari *layanan* Azure AI. Pilih **buat** **paket layanan** Azure AI. Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: *Pilih wilayah yang tersedia*.
@@ -33,11 +33,11 @@ Jika Anda belum melakukannya, buat sumber daya **layanan Azure AI** di langganan
 
 ### Mendapatkan Kunci dan Lokasi untuk sumber daya layanan Azure AI Anda
 
-1. Tunggu hingga penerapan selesai. Lalu buka sumber daya layanan Azure AI Anda, dan pada halaman **Gambaran Umum** , klik tautan untuk mengelola kunci layanan. Anda akan memerlukan titik akhir dan kunci untuk menyambungkan ke sumber daya layanan Azure AI Anda dari aplikasi klien.
+1. Tunggu hingga penerapan selesai. Lalu buka sumber daya layanan Azure AI Anda, dan pada **halaman Gambaran Umum** , klik tautan untuk mengelola kunci untuk layanan. Anda akan memerlukan titik akhir dan kunci untuk menyambungkan ke sumber daya layanan Azure AI Anda dari aplikasi klien.
 
 1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Anda. Anda memerlukan **lokasi/wilayah** dan **kunci** untuk terhubung dari aplikasi klien.
 
-## Jalankan Cloud Shell
+## Menjalankan Cloud Shell
 
 Untuk menguji kemampuan layanan Ucapan, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell di Azure.
 
@@ -59,11 +59,11 @@ Untuk menguji kemampuan layanan Ucapan, kita akan menggunakan aplikasi baris per
 
     ![Tunggu PowerShell untuk memulai.](media/recognize-synthesize-speech/powershell-prompt.png)
 
-## Konfigurasi dan jalankan aplikasi klien
+## Mengonfigurasi dan menjalankan aplikasi klien
 
 Sekarang setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien sederhana yang menggunakan layanan Ucapan.
 
-1. Di shell perintah, masukkan perintah berikut untuk mengunduh aplikasi contoh dan menyimpannya ke folder bernama ai-900.
+1. Di shell perintah, masukkan perintah berikut untuk mengunduh contoh aplikasi dan menyimpannya ke folder yang disebut ai-900.
 
     ```PowerShell
     git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
@@ -79,7 +79,7 @@ Sekarang setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien se
 
     Perhatikan bagaimana perintah ini membuka penyunting seperti pada gambar di bawah ini:
 
-    ![Penyunting kode.](media/recognize-synthesize-speech/powershell-portal-guide-4.png)
+    ![Editor kode.](media/recognize-synthesize-speech/powershell-portal-guide-4.png)
 
 1. Di panel **File** di sebelah kiri, luaskan **ai-900** dan pilih **speaking-clock.ps1**. File ini berisi beberapa kode yang menggunakan layanan Ucapan untuk mengenali dan mensintesis ucapan:
 
@@ -96,7 +96,7 @@ Sekarang setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien se
     $region="somelocation"
     ```
 
-1. Di kanan atas panel penyunting, gunakan tombol **...** untuk membuka menu dan pilih **Simpan** untuk menyimpan perubahan Anda. Kemudian buka lagi menu dan pilih **Tutup Penyunting**.
+1. Di kanan atas panel editor, gunakan tombol **...** untuk membuka menu dan pilih **Simpan** untuk menyimpan perubahan Anda. Kemudian, buka menu lagi dan pilih **Tutup Editor**.
 
     Aplikasi klien sampel akan menggunakan layanan Ucapan Anda untuk mentranskripsikan input lisan dan mensintesis respons lisan yang sesuai. Aplikasi nyata akan menerima input dari mikrofon dan mengirim respons ke speaker, tetapi dalam contoh sederhana ini, kita akan menggunakan input yang telah direkam sebelumnya dalam file dan menyimpan respons sebagai file lain.
 

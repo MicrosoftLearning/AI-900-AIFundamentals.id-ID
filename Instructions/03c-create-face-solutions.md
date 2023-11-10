@@ -11,15 +11,15 @@ Solusi visi komputer seringkali membutuhkan solusi kecerdasan buatan (AI) untuk 
 
 Untuk menguji kemampuan layanan Face, kita akan menggunakan aplikasi baris perintah sederhana yang dijalankan di Cloud Shell. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
 
-## Membuat sumber daya *Face API*
+## Membuat *sumber daya Face API*
 
-Anda dapat menggunakan layanan Face dengan membuat sumber daya **Face** .
+Anda dapat menggunakan layanan Face dengan membuat **sumber daya Face** .
 
-Jika Anda belum melakukannya, buat sumber daya **Face API** di langganan Azure Anda.
+Jika Anda belum melakukannya, buat **sumber daya Face API** di langganan Azure Anda.
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. Klik tombol **&#65291;Buat sumber daya** , cari *Face*, dan buat sumber daya **Face** dengan pengaturan berikut:
+1. **Klik &#65291; Buat tombol sumber daya**, cari *Face*, dan buat **sumber daya Face** dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: *Pilih wilayah yang tersedia*.
@@ -28,13 +28,13 @@ Jika Anda belum melakukannya, buat sumber daya **Face API** di langganan Azure A
 
 1. Tinjau dan buat sumber daya, dan tunggu hingga penyebaran selesai. Lalu pergi ke sumber daya yang disebarkan.
 
-1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Wajah Anda. Anda akan membutuhkan titik akhir dan kunci untuk terhubung dari aplikasi klien.
+1. Lihat halaman **Kunci dan Titik** Akhir untuk sumber daya Wajah Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
 
 ## Menjalankan Cloud Shell
 
 Untuk menguji kemampuan layanan Face, kita akan menggunakan aplikasi baris perintah sederhana yang dijalankan di Cloud Shell di Azure. 
 
-1. Di portal Azure, pilih tombol **[>_]** (*Cloud Shell*) di bagian atas halaman di sebelah kanan kotak pencarian. Tindakan ini akan membuka panel Cloud Shell di bagian bawah portal. 
+1. Di portal Microsoft Azure, pilih tombol **[>_]** (*Cloud Shell*) di bagian atas halaman di sebelah kanan kotak pencarian. Tindakan ini akan membuka panel Cloud Shell di bagian bawah portal. 
 
     ![Mulai Cloud Shell dengan mengeklik ikon di sebelah kanan kotak pencarian di atas](media/create-face-solutions/powershell-portal-guide-1.png)
 
