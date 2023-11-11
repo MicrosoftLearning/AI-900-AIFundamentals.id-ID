@@ -9,21 +9,21 @@ lab:
 
 Natural Language Processing (NLP) adalah cabang kecerdasan buatan (AI) yang berhubungan dengan bahasa tertulis dan lisan. Anda dapat menggunakan NLP untuk membangun solusi yang mengekstraksi makna semantik dari teks atau ucapan, atau yang merumuskan tanggapan yang berarti dalam bahasa alami.
 
-*Layanan Microsoft Azure AI* menyertakan kemampuan analitik teks dalam layanan *Bahasa*, yang menyediakan beberapa kemampuan NLP out-of-the-box, termasuk identifikasi frasa kunci dalam teks, dan klasifikasi teks berdasarkan sentimen.
+Layanan* Microsoft *Azure AI mencakup kemampuan analitik teks dalam *layanan Bahasa*, yang menyediakan beberapa kemampuan NLP di luar kotak, termasuk identifikasi frasa kunci dalam teks, dan klasifikasi teks berdasarkan sentimen.
 
 Misalnya, misalkan organisasi *Perjalanan Margie* fiktif menganjurkan pelanggan mengirim ulasan tentang menginap di hotel. Anda dapat menggunakan layanan Bahasa untuk meringkas ulasan dengan mengekstraksi frasa kunci, menentukan ulasan mana yang positif dan mana yang negatif, atau menganalisis teks ulasan untuk menyebutkan entitas yang dikenal seperti lokasi atau orang.
 
 Untuk menguji kemampuan layanan Bahasa, kami akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
 
-## Membuat sumber daya *layanan Azure AI*
+## Membuat *sumber daya layanan* Azure AI
 
-Anda dapat menggunakan Layanan bahasa dengan membuat sumber daya **Bahasa** atau sumber daya **layanan Azure AI** .
+Anda dapat menggunakan layanan Bahasa dengan membuat **sumber daya Bahasa** atau **sumber daya layanan** Azure AI.
 
-Jika Anda belum melakukannya, buat sumber daya **layanan Azure AI** di langganan Azure Anda.
+Jika Anda belum melakukannya, buat **sumber daya layanan** Azure AI di langganan Azure Anda.
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. Klik tombol **&#65291;Buat sumber daya** dan cari *layanan Azure AI*. Pilih **buat** paket **layanan Azure AI** . Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
+1. **Klik &#65291; Buat tombol sumber daya** dan cari *layanan* Azure AI. Pilih **buat** **paket layanan** Azure AI. Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: *Pilih wilayah yang tersedia*.
@@ -35,7 +35,7 @@ Jika Anda belum melakukannya, buat sumber daya **layanan Azure AI** di langganan
 
 ### Mendapatkan kunci dan titik akhir untuk sumber daya layanan Azure AI Anda
 
-1. Tunggu hingga penerapan selesai. Lalu buka sumber daya layanan Azure AI Anda, dan pada halaman **Gambaran Umum** , pilih tautan untuk mengelola kunci layanan. Anda akan memerlukan titik akhir dan kunci untuk menyambungkan ke sumber daya layanan Azure AI Anda dari aplikasi klien.
+1. Tunggu hingga penerapan selesai. Lalu buka sumber daya layanan Azure AI Anda, dan pada **halaman Gambaran Umum** , pilih tautan untuk mengelola kunci untuk layanan. Anda akan memerlukan titik akhir dan kunci untuk menyambungkan ke sumber daya layanan Azure AI Anda dari aplikasi klien.
 
 1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Anda. Anda memerlukan **kunci** dan **titik akhir** untuk terhubung dari aplikasi klien.
 
@@ -102,7 +102,7 @@ Setelah memiliki model khusus, Anda dapat menjalankan aplikasi klien sederhana y
 
 1. Di kanan atas panel editor, gunakan tombol **...** untuk membuka menu dan pilih **Simpan** untuk menyimpan perubahan Anda. Kemudian, buka menu lagi dan pilih **Tutup Editor**.
 
-    Aplikasi klien sampel akan menggunakan layanan Bahasa Layanan Azure AI untuk mendeteksi bahasa, mengekstrak frasa kunci, menentukan sentimen, dan mengekstrak entitas yang diketahui untuk ditinjau.
+    Aplikasi klien sampel akan menggunakan layanan Bahasa Azure AI Services untuk mendeteksi bahasa, mengekstrak frasa kunci, menentukan sentimen, dan mengekstrak entitas yang diketahui untuk ditinjau.
 
 1. Di Cloud Shell, masukkan perintah berikut untuk menjalankan kode:
 

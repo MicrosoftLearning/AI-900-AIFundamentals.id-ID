@@ -11,7 +11,7 @@ Bayangkan Anda bekerja untuk Fourth Coffee, rantai kopi nasional. Anda diminta u
 
 Di lab ini Anda akan:
 
-- Buat Sumber Daya Azure
+- Membuat sumber daya Azure
 - Mengekstrak data dari sumber data
 - Memperkaya data dengan kemampuan AI
 - Menggunakan pengindeks Azure di portal Microsoft Azure
@@ -23,9 +23,9 @@ Di lab ini Anda akan:
 Solusi yang akan Anda buat untuk Fourth Coffee memerlukan sumber daya berikut dalam langganan Azure Anda:
 
 - Sumber daya **Azure Cognitive Search**, yang akan mengelola pengindeksan dan kueri.
-- Sumber daya **layanan Azure AI** , yang menyediakan layanan AI untuk keterampilan yang dapat digunakan solusi pencarian Anda untuk memperkaya data di sumber data dengan wawasan yang dihasilkan AI.
+- Sumber **daya layanan** Azure AI, yang menyediakan layanan AI untuk keterampilan yang dapat digunakan solusi pencarian Anda untuk memperkaya data di sumber data dengan wawasan yang dihasilkan AI.
 
-    > **Catatan** Sumber daya layanan Azure Cognitive Search dan Azure AI Anda harus berada di lokasi yang sama!
+    > **Perhatikan** sumber daya layanan Azure Cognitive Search dan Azure AI Anda harus berada di lokasi yang sama!
 
 - **Akun penyimpanan** dengan kontainer blob, yang akan menyimpan dokumen mentah dan kumpulan tabel, objek, atau file lainnya.
 
@@ -47,9 +47,9 @@ Solusi yang akan Anda buat untuk Fourth Coffee memerlukan sumber daya berikut da
 
 ### Membuat sumber daya layanan Azure AI
 
-Anda harus menyediakan sumber daya **layanan Azure AI** yang berada di lokasi yang sama dengan sumber daya Azure Cognitive Search Anda. Solusi pencarian Anda akan menggunakan sumber daya ini untuk memperkaya data di datastore dengan wawasan yang dihasilkan AI.
+Anda harus menyediakan **sumber daya layanan** Azure AI yang berada di lokasi yang sama dengan sumber daya Azure Cognitive Search Anda. Solusi pencarian Anda akan menggunakan sumber daya ini untuk memperkaya data di datastore dengan wawasan yang dihasilkan AI.
 
-1. Kembali ke halaman beranda portal Azure. Klik tombol **&#65291;Buat sumber daya** dan cari *layanan Azure AI*. Pilih **buat** paket **layanan Azure AI** . Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
+1. Kembali ke halaman beranda portal Azure. **Klik &#65291; Buat tombol sumber daya** dan cari *layanan* Azure AI. Pilih **buat** **paket layanan** Azure AI. Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Grup sumber daya yang sama dengan sumber daya Azure Cognitive Search Anda*.
     - **Wilayah**: *Lokasi yang sama dengan sumber daya Azure Cognitive Search Anda*.
@@ -65,9 +65,9 @@ Anda harus menyediakan sumber daya **layanan Azure AI** yang berada di lokasi ya
 
 1. Kembali ke beranda portal Microsoft Azure, lalu pilih tombol **+ Buat sumber daya**.
 
-1. Cari *akun penyimpanan*, dan buat sumber daya **Akun penyimpanan** dengan pengaturan berikut: 
+1. Cari *akun penyimpanan*, dan buat sumber daya **Akun penyimpanan** dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
-    - **Grup sumber daya**: *Grup sumber daya yang sama dengan sumber daya layanan Azure Cognitive Search dan Azure AI Anda*.
+    - **Grup** sumber daya: *Grup sumber daya yang sama dengan sumber daya* layanan Azure Cognitive Search dan Azure AI Anda.
     - **Nama akun penyimpanan**: *Nama yang unik*.
     - **Lokasi**: *Pilih lokasi yang tersedia*.
     - **Performa**: Standar
@@ -75,8 +75,8 @@ Anda harus menyediakan sumber daya **layanan Azure AI** yang berada di lokasi ya
 
 1. Klik **Tinjau** lalu klik **Buat**. Tunggu hingga penyebaran selesai, lalu buka sumber daya yang disebarkan.
 
-1. Di akun Azure Storage yang Anda buat, di panel menu sebelah kiri, pilih **Konfigurasi** (di bawah **Seteting).**
-1. Ubah pengaturan untuk *Izinkan akses anonim Blob* ke **Diaktifkan** lalu pilih **Simpan**.
+1. Di akun Azure Storage yang Anda buat, di panel menu sebelah kiri, pilih **Konfigurasi** (di bawah **Pengaturan**).
+1. Ubah pengaturan untuk *Izinkan akses* anonim Blob ke **Diaktifkan** lalu pilih **Simpan**.
 
 ## Mengunggah Dokumen ke Azure Storage
 
@@ -114,7 +114,7 @@ Setelah Anda menyimpan dokumen, Anda dapat menggunakan Azure Cognitive Search un
     ![Cuplikan layar yang menampilkan wizard data impor.](media/create-cognitive-search-solution/azure-search-wizard-1.png)
 
 1. Pada halaman **Hubungkan ke data Anda**, dalam daftar **Sumber Data**, pilih **Azure Blob Storage**. Lengkapi detail penyimpanan data dengan nilai berikut:
-    - **Sumber Data**: Azure Blob Storage
+    - **Sumber** Data: Azure Blob Storage
     - **Nama sumber data**: coffee-customer-data
     - **Data yang akan diekstrak**: Konten dan metadata
     - **Mode penguraian**: Default
@@ -159,7 +159,7 @@ Setelah Anda menyimpan dokumen, Anda dapat menggunakan Azure Cognitive Search un
     > ![Cuplikan layar yang menampilkan peringatan layar koneksi akun Azure Storage dengan 'Pilih koneksi yang ada' dipilih.](media/create-cognitive-search-solution/6a-azure-cognitive-search-enrichments-warning.png)
     >
     > 1. Pilih **Pilih koneksi yang ada**. Pilih akun penyimpanan yang Anda buat sebelumnya.
-    > 1. Klik **+ Kontainer** untuk membuat kontainer baru yang disebut **penyimpanan pengetahuan** dengan tingkat privasi yang diatur ke **Privat**, dan pilih **Buat**.
+    > 1. **Klik + Kontainer** untuk membuat kontainer baru yang disebut **penyimpanan pengetahuan** dengan tingkat privasi yang diatur ke **Privat**, dan pilih **Buat**.
     > 1. Pilih kontainer **penyimpanan pengetahuan**, lalu klik **Pilih** di bagian bawah layar.
 
 1. Pilih **Proyeksi blob Azure: Dokumen**. Pengaturan untuk *Nama kontainer* dengan tampilan kontainer *penyimpanan pengetahuan* yang terisi secara otomatis. Jangan ubah nama kontainer.
