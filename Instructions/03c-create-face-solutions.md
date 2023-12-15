@@ -11,15 +11,15 @@ Solusi visi komputer seringkali membutuhkan solusi kecerdasan buatan (AI) untuk 
 
 Untuk menguji kemampuan layanan Face, kita akan menggunakan aplikasi baris perintah sederhana yang dijalankan di Cloud Shell. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
 
-## Membuat *sumber daya Face API*
+## Membuat sumber daya *Face API*
 
-Anda dapat menggunakan layanan Face dengan membuat **sumber daya Face** .
+Anda dapat menggunakan layanan Face dengan membuat sumber daya **Face** .
 
-Jika Anda belum melakukannya, buat **sumber daya Face API** di langganan Azure Anda.
+Jika belum menggunakannya, buatlah sumber daya **Face API** di langganan Azure Anda.
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. **Klik &#65291; Buat tombol sumber daya**, cari *Face*, dan buat **sumber daya Face** dengan pengaturan berikut:
+1. Klik tombol **＋Buat sumber daya**, cari *Face*, dan buat sumber daya **Face** dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: *Pilih wilayah yang tersedia*.
@@ -28,7 +28,7 @@ Jika Anda belum melakukannya, buat **sumber daya Face API** di langganan Azure A
 
 1. Tinjau dan buat sumber daya, dan tunggu hingga penyebaran selesai. Lalu pergi ke sumber daya yang disebarkan.
 
-1. Lihat halaman **Kunci dan Titik** Akhir untuk sumber daya Wajah Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
+1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Face Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
 
 ## Menjalankan Cloud Shell
 
@@ -78,7 +78,7 @@ Setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien sederhana y
 
     ![Editor yang berisi kode untuk mendeteksi wajah dalam gambar](media/create-face-solutions/find-faces-code.png)
 
-1. Jangan terlalu khawatir tentang detail kode, yang penting adalah bahwa ia membutuhkan URL titik akhir dan salah satu kunci untuk sumber daya Face Anda. Salin ini dari halaman **Kunci dan Titik Akhir** untuk sumber daya Anda dari portal Azure dan tempelkan ke dalam editor kode, dengan mengganti nilai tempat penampung **YOUR_KEY** dan **YOUR_ENDPOINT** masing-masing.
+1. Jangan terlalu khawatir tentang detail kode, yang penting kode tersebut memerlukan URL titik akhir dan salah satu kunci untuk sumber daya Face Anda. Salin ini dari halaman **Kunci dan Titik Akhir** untuk sumber daya Anda dari portal Azure dan tempelkan ke dalam editor kode, dengan mengganti nilai tempat penampung **YOUR_KEY** dan **YOUR_ENDPOINT** masing-masing.
 
     > **Tips** Anda mungkin perlu menggunakan bilah pemisah untuk menyesuaikan area layar saat bekerja dengan panel **Tombol dan Titik Akhir** serta **Editor**.
 

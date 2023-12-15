@@ -6,7 +6,7 @@ lab:
 Dalam latihan ini Anda akan menjelajahi AI generatif dengan Bing Copilot. 
 
 ## Sebelum memulai
-Anda memerlukan akun Microsoft pribadi. Jika Anda tidak memilikinya, buka [signup.live.com](https://signup.live.com/signup?azure-portal=true) untuk mendaftar.
+Menambahkan akun Microsoft pribadi Anda Jika Anda tidak memilikinya, buka [signup.live.com](https://signup.live.com/signup?azure-portal=true) untuk mendaftar.
 
 # Menjelajahi AI generatif dengan Bing
 
@@ -14,7 +14,7 @@ Anda memerlukan akun Microsoft pribadi. Jika Anda tidak memilikinya, buka [signu
 
 **Catatan**: Meskipun Anda dapat masuk dengan akun kerja atau sekolah, Anda akan melihat pengalaman pengguna yang sedikit berbeda dibandingkan dengan masuk dengan akun pribadi Anda. Dengan menggunakan akun kerja atau sekolah, Anda akan melihat obrolan Bing Enterprise. 
 
-1. Pilih **Obrolan** dari menu di bagian atas layar. Obrolan membawa Anda ke Bing Copilot, yang menggunakan AI generatif untuk mendukung hasil pencarian. Artinya, tidak seperti pencarian saja, yang mengembalikan konten yang ada, Bing Copilot dapat menyusun respons baru berdasarkan pemodelan bahasa alami dan informasi web.  
+1. Pada menu di bagian atas layar, pilih **Kelola**. Obrolan membawa Anda ke Bing Copilot, yang menggunakan AI generatif untuk mendukung hasil pencarian. Artinya, tidak seperti pencarian saja, yang mengembalikan konten yang ada, Bing Copilot dapat menyusun respons baru berdasarkan pemodelan bahasa alami dan informasi web.  
     
 1. Menuju bagian bawah layar, Anda akan melihat jendela **Tanyakan apa pun** kepada saya. Saat Anda memasukkan perintah ke jendela, Bing Copilot menggunakan seluruh utas percakapan untuk mengembalikan respons. Misalnya, mari kita coba mengajukan serangkaian pertanyaan tentang bepergian. 
 
@@ -46,11 +46,11 @@ Yang penting, perhatikan bahwa respons mungkin terlihat mirip tetapi tidak sama.
 
 1. Kembali ke obrolan Bing Copilot dengan mengklik ikon Microsoft Bing di sudut kanan atas layar. 
 
-## Coba pembuatan kode
+## Pembuatan kode yang buruk
 
 1. Sekarang mari kita lihat contoh pembuatan kode dan terjemahan. Ketik perintah: `Use Python to create a list`. 
 
-1. Ketik perintah: `Translate that into C#`. Perhatikan bagaimana Anda tidak perlu menentukan "itu" apa yang diketahui Bing Copilot untuk merujuk ke riwayat percakapan. 
+1. Saat diminta, ketik `Translate that into C#`. Perhatikan bagaimana Anda tidak perlu menentukan "itu" apa yang diketahui Bing Copilot untuk merujuk ke riwayat percakapan. 
 
 ## Bonus 
 

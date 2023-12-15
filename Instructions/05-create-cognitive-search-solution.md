@@ -23,9 +23,9 @@ Di lab ini Anda akan:
 Solusi yang akan Anda buat untuk Fourth Coffee memerlukan sumber daya berikut dalam langganan Azure Anda:
 
 - Sumber daya **Azure Cognitive Search**, yang akan mengelola pengindeksan dan kueri.
-- Sumber **daya layanan** Azure AI, yang menyediakan layanan AI untuk keterampilan yang dapat digunakan solusi pencarian Anda untuk memperkaya data di sumber data dengan wawasan yang dihasilkan AI.
+- Sumber daya **Cognitive Services**, yang menyediakan layanan AI untuk kemampuan yang dapat digunakan solusi pencarian Anda guna memperkaya data dalam sumber data dengan wawasan yang dihasilkan AI.
 
-    > **Perhatikan** sumber daya layanan Azure Cognitive Search dan Azure AI Anda harus berada di lokasi yang sama!
+    > **Catatan** Sumber daya Azure Cognitive Search dan Cognitive Services Anda harus berada di lokasi yang sama!
 
 - **Akun penyimpanan** dengan kontainer blob, yang akan menyimpan dokumen mentah dan kumpulan tabel, objek, atau file lainnya.
 
@@ -45,11 +45,11 @@ Solusi yang akan Anda buat untuk Fourth Coffee memerlukan sumber daya berikut da
 
 1. Setelah penyebaran selesai, pilih **Buka sumber daya**. Pada halaman gambaran umum Azure Cognitive Search, Anda dapat menambahkan indeks, mengimpor data, dan mencari indeks yang dibuat.
 
-### Membuat sumber daya layanan Azure AI
+### Membuat sumber daya Azure App Service
 
-Anda harus menyediakan **sumber daya layanan** Azure AI yang berada di lokasi yang sama dengan sumber daya Azure Cognitive Search Anda. Solusi pencarian Anda akan menggunakan sumber daya ini untuk memperkaya data di datastore dengan wawasan yang dihasilkan AI.
+Anda harus memprovisikan sumber daya **Cognitive Services** yang berada di lokasi yang sama dengan sumber daya Azure Cognitive Search Anda. Solusi pencarian Anda akan menggunakan sumber daya ini untuk memperkaya data di datastore dengan wawasan yang dihasilkan AI.
 
-1. Kembali ke halaman beranda portal Azure. **Klik &#65291; Buat tombol sumber daya** dan cari *layanan* Azure AI. Pilih **buat** **paket layanan** Azure AI. Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
+1. Gambar halaman beranda di portal Microsoft Azure. **Klik &#65291; Buat tombol sumber daya** dan cari *layanan* Azure AI. Pilih **buat** **paket layanan** Azure AI. Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan PuTTY dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Grup sumber daya yang sama dengan sumber daya Azure Cognitive Search Anda*.
     - **Wilayah**: *Lokasi yang sama dengan sumber daya Azure Cognitive Search Anda*.
@@ -67,7 +67,7 @@ Anda harus menyediakan **sumber daya layanan** Azure AI yang berada di lokasi ya
 
 1. Cari *akun penyimpanan*, dan buat sumber daya **Akun penyimpanan** dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
-    - **Grup** sumber daya: *Grup sumber daya yang sama dengan sumber daya* layanan Azure Cognitive Search dan Azure AI Anda.
+    - **Grup sumber daya**: *Grup sumber daya yang sama dengan sumber daya Azure Cognitive Search dan Cognitive Services Anda*.
     - **Nama akun penyimpanan**: *Nama yang unik*.
     - **Lokasi**: *Pilih lokasi yang tersedia*.
     - **Performa**: Standar
@@ -75,7 +75,7 @@ Anda harus menyediakan **sumber daya layanan** Azure AI yang berada di lokasi ya
 
 1. Klik **Tinjau** lalu klik **Buat**. Tunggu hingga penyebaran selesai, lalu buka sumber daya yang disebarkan.
 
-1. Di akun Azure Storage yang Anda buat, di panel menu sebelah kiri, pilih **Konfigurasi** (di bawah **Pengaturan**).
+1. Di akun Azure Storage yang Anda buat, di panel menu sebelah kiri, pilih Kontainer.
 1. Ubah pengaturan untuk *Izinkan akses* anonim Blob ke **Diaktifkan** lalu pilih **Simpan**.
 
 ## Mengunggah Dokumen ke Azure Storage
@@ -114,7 +114,7 @@ Setelah Anda menyimpan dokumen, Anda dapat menggunakan Azure Cognitive Search un
     ![Cuplikan layar yang menampilkan wizard data impor.](media/create-cognitive-search-solution/azure-search-wizard-1.png)
 
 1. Pada halaman **Hubungkan ke data Anda**, dalam daftar **Sumber Data**, pilih **Azure Blob Storage**. Lengkapi detail penyimpanan data dengan nilai berikut:
-    - **Sumber** Data: Azure Blob Storage
+    - Sumber Data: Pilih Azure Blob Storage
     - **Nama sumber data**: coffee-customer-data
     - **Data yang akan diekstrak**: Konten dan metadata
     - **Mode penguraian**: Default
@@ -126,7 +126,7 @@ Setelah Anda menyimpan dokumen, Anda dapat menggunakan Azure Cognitive Search un
 
 1. Pilih **Berikutnya: Tambahkan keterampilan kognitif (Opsional)**.
 
-1. Di bagian **Lampirkan Cognitive Services** , pilih sumber daya layanan Azure AI Anda.  
+1. di bagian **Lampirkan Cognitive Services**, pilih sumber daya layanan kognitif Anda.  
 
 1. Di bagian **Tambahkan pengayaan**:
     - Ubah **Nama Set Kemampuan** menjadi **coffee-skillset**.
@@ -159,10 +159,10 @@ Setelah Anda menyimpan dokumen, Anda dapat menggunakan Azure Cognitive Search un
     > ![Cuplikan layar yang menampilkan peringatan layar koneksi akun Azure Storage dengan 'Pilih koneksi yang ada' dipilih.](media/create-cognitive-search-solution/6a-azure-cognitive-search-enrichments-warning.png)
     >
     > 1. Pilih **Pilih koneksi yang ada**. Pilih akun penyimpanan yang Anda buat sebelumnya.
-    > 1. **Klik + Kontainer** untuk membuat kontainer baru yang disebut **penyimpanan pengetahuan** dengan tingkat privasi yang diatur ke **Privat**, dan pilih **Buat**.
+    > 1. Klik + Kontainer untuk membuat kontainer baru bernama penyimpanan pengetahuan dengan tingkat privasi diatur ke pribadi, dan pilih Buat.
     > 1. Pilih kontainer **penyimpanan pengetahuan**, lalu klik **Pilih** di bagian bawah layar.
 
-1. Pilih **Proyeksi blob Azure: Dokumen**. Pengaturan untuk *Nama kontainer* dengan tampilan kontainer *penyimpanan pengetahuan* yang terisi secara otomatis. Jangan ubah nama kontainer.
+1. Pilih **Proyek blob Azure: Dokumen**. Pengaturan untuk *Nama kontainer* dengan tampilan kontainer *penyimpanan pengetahuan* yang terisi secara otomatis. Jangan ubah nama kontainer.
 
 1. Pilih **Berikutnya: Sesuaikan indeks target**. Ubah **Nama indeks** menjadi **coffee-index**.
 

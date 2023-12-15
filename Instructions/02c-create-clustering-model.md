@@ -25,13 +25,13 @@ lab:
 
 1. Pilih **Luncurkan studio** (atau buka tab browser baru dan arahkan ke [https://ml.azure.com](https://ml.azure.com?azure-portal=true), dan masuk ke studio Azure Machine Learning menggunakan akun Microsoft Anda).
 
-1. Di studio Azure Machine Learning, Anda akan melihat ruang kerja yang baru dibuat. Jika tidak demikian, pilih direktori Azure Anda di menu sebelah kiri. Kemudian dari menu sebelah kiri baru pilih **Ruang** Kerja, tempat semua ruang kerja yang terkait dengan direktori Anda tercantum, dan pilih ruang kerja yang Anda buat untuk latihan ini.
+1. Di studio Azure Machine Learning, Anda akan melihat ruang kerja yang baru dibuat. Jika tidak demikian, pilih direktori Azure Anda di menu sebelah kiri. Kemudian dari menu sebelah kiri yang baru, pilih **Ruang Kerja**, tempat semua ruang kerja yang terkait dengan langganan Anda dicantumkan.
 
 > **Catatan** Modul ini adalah salah satu dari banyak modul yang memanfaatkan ruang kerja Azure Machine Learning, termasuk modul lainnya di jalur pembelajaran [Dasar-Dasar AI Microsoft Azure: Menjelajahi alat visual untuk pembelajaran mesin](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/). Jika menggunakan langganan Azure Anda sendiri, Anda dapat mempertimbangkan untuk membuat ruang kerja satu kali dan menggunakannya kembali di modul lain. Langganan Azure Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda, jadi sebaiknya hapus ruang kerja Azure Machine Learning saat tidak lagi diperlukan.
 
 ## Membuat komputasi
 
-1. Di [studio](https://ml.azure.com?azure-portal=true) Azure Pembelajaran Mesin, pilih **ikon &#8801;** (ikon menu yang terlihat seperti tumpukan tiga baris) di kiri atas untuk melihat berbagai halaman di antarmuka (Anda mungkin perlu memaksimalkan ukuran layar Anda). Anda dapat menggunakan halaman ini di panel sebelah kiri untuk mengelola sumber daya di ruang kerja. Pilih halaman **Komputasi** (di bagian **Kelola**).
+1. Di studio Azure Machine Learning, pilih tiga baris di kiri atas untuk melihat berbagai halaman di antarmuka (Anda mungkin perlu memaksimalkan ukuran layar). Anda dapat menggunakan halaman ini di panel sebelah kiri untuk mengelola sumber daya di ruang kerja. Pilih halaman **Komputasi** (di bagian **Kelola**).
 
 2. Pada halaman **Komputasi**, pilih tab **Kluster komputasi**, dan tambahkan kluster komputasi baru dengan pengaturan berikut. Anda akan menggunakan ini untuk melatih model pembelajaran mesin:
     - **Lokasi**: *Pilih lokasi yang sama dengan ruang kerja Anda. Jika lokasi tersebut tidak terdaftar, pilih yang terdekat dengan lokasi Anda*.
@@ -56,21 +56,21 @@ Kluster komputasi akan membutuhkan waktu untuk dibuat. Sembari menunggu, Anda da
 
 Untuk memulai dengan perancang Azure Machine Learning, langkah pertama Anda harus membuat alur.
 
-1. Di [studio](https://ml.azure.com?azure-portal=true) Azure Pembelajaran Mesin, perluas panel kiri dengan memilih ikon menu di kiri atas layar. Lihat halaman **Perancang** (di bawah **Penulisan**), dan pilih **+** untuk membuat alur baru.
+1. Di [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih ikon tiga garis di kiri atas layar. Lihat halaman **Desainer** (di bagian **Pembuat**), dan pilih **+** untuk membuat alur baru.
 
-1. Ubah nama draf (**Pipeline-Created-on-date****) menjadi **Melatih Pengklusteran** Penguin.
+1. Di Pengaturan, pada Detail Draf, ubah nama draf (*Pipeline-Created-on-date***) menjadi Latih Pengklusteran Penguin.
 
     Di Azure Machine Learning, data untuk pelatihan model dan operasi lainnya biasanya dirangkum dalam objek yang disebut *himpunan data*. Dalam modul ini, Anda akan menggunakan himpunan data yang mencakup pengamatan tiga spesies penguin.
 
 1. Lihat halaman **Data** (di bagian **Aset**). Halaman Data berisi file atau tabel data tertentu yang Anda rencanakan untuk digunakan di Azure ML.
 
-1. Pada halaman **Data** , di bawah tab **Aset data** , pilih **+ Buat**. Kemudian konfigurasikan aset data dengan pengaturan berikut:
+1. Di halaman **Data**, pada tab **Aset data**, pilih **Buat**. Kemudian konfigurasikan aset data dengan pengaturan berikut:
     - **Jenis data**:
         - **Nama**: penguin-data
         - **Deskripsi**: Data penguin
         - **Jenis himpunan data**: Tabular
     - **Sumber data**: Dari File Web
-    - **URL** Web:
+    - URL Web
         - **URL Web**: https://aka.ms/penguin-data
         - **Lewati validasi data**: *jangan pilih*
     - **Pengaturan**:
@@ -93,17 +93,17 @@ Untuk memulai dengan perancang Azure Machine Learning, langkah pertama Anda haru
 
 ### Memuat data ke kanvas
 
-1. Kembali ke alur dengan memilih **Perancang** di menu sebelah kiri. Pada halaman Perancang****, pilih **draf alur Latih Pengklusteran** Penguin.
+1. Kembali ke alur dengan memilih **Perancang** di menu sebelah kiri. Pada halaman **Desainer**, pilih **Latih Pengklusteran Penguin**.
 
 1. Di samping nama alur di sebelah kiri, pilih ikon anak panah untuk memperluas panel jika belum diperluas. Panel akan terbuka secara default ke panel **Pustaka aset**, yang ditunjukkan dengan ikon buku di bagian atas panel. Perhatikan bahwa terdapat bilah pencarian untuk menemukan aset. Perhatikan dua tombol, **Data** dan **Komponen**.
 
     ![Cuplikan layar lokasi pustaka, bilah pencarian, dan ikon data aset perancang.](media/create-clustering-model/designer-asset-library-data.png)
 
-1. Pilih **Data**, cari dan tempatkan himpunan **data penguin-data** ke kanvas.
+1. Cari dan tempatkan himpunan data penguin-data ke kanvas.
 
 1. Klik kanan (Ctrl+klik pada Mac) himpunan data **penguin-data** di kanvas, dan klik **Pratinjau data**.
 
-1. Pilih tab *Profil* , mencatat bahwa Anda dapat melihat distribusi berbagai kolom sebagai histogram.
+1. Tinjau skema data di tab *Profil*, perhatikan bahwa Anda dapat melihat distribusi berbagai kolom sebagai histogram.
 
 1. Perhatikan karakteristik himpunan data berikut:
 
@@ -116,11 +116,11 @@ Untuk memulai dengan perancang Azure Machine Learning, langkah pertama Anda haru
     - Ada dua nilai yang hilang di kolom **CulmenLength** (kolom **CulmenDepth**, **FlipperLength**, dan **BodyMass** juga memiliki dua nilai yang hilang).
     - Nilai pengukuran dalam skala yang berbeda (dari puluhan milimeter hingga ribuan gram).
 
-1. Tutup halaman **DataOutput** sehingga Anda dapat melihat himpunan data di kanvas alur.
+1. Tutup visualisasi himpunan data sehingga Anda dapat melihat himpunan data di kanvas alur pipa.
 
 ## Menerapkan transformasi
 
-1. Di panel **Pustaka** aset di sebelah kiri, pilih **Komponen** ( yang berisi berbagai modul yang dapat Anda gunakan untuk transformasi data dan pelatihan model). Anda juga dapat menggunakan bilah pencarian untuk menemukan modul dengan cepat.
+1. Di panel **Pustaka aset** di sebelah kiri, klik **Komponen**, yang berisi berbagai modul yang dapat Anda gunakan untuk transformasi data dan pelatihan model. Anda juga dapat menggunakan bilah pencarian untuk menemukan modul dengan cepat.
 
     ![Cuplikan layar lokasi pustaka, bilah pencarian, dan ikon komponen aset perancang.](media/create-clustering-model/designer-asset-library-components.png)
 
@@ -132,13 +132,13 @@ Untuk memulai dengan perancang Azure Machine Learning, langkah pertama Anda haru
 
     ![Cuplikan layar tentang cara memasukkan nama kolom CulmenLength, CulmenDepth, FlipperLength, dan BodyMass.](media/create-clustering-model/select-columns.png)
 
-1. Pilih **Simpan**, lalu tutup **menu Pilih Kolom di Himpunan** Data untuk kembali ke kanvas perancang.
+1. Tutup pengaturan modul Pilih Kolom dalam Himpunan Data untuk kembali ke kanvas perancang.
 
-1. **Di pustaka** Aset, cari modul Bersihkan Data** yang **Hilang dan letakkan ke kanvas, di bawah **modul Pilih kolom dalam himpunan** data dan sambungkan seperti ini:
+1. Di **Pustaka aset**, cari modul **Membersihkan Data yang Hilang** dan tempatkan ke kanvas, di bawah modul **Memilih kolom dalam himpunan data** dan menyambungkannya seperti ini:
 
     ![Cuplikan layar tentang cara menghubungkan modul Pilih Kolom di Himpunan Data ke modul Bersihkan Data yang Hilang.](media/create-clustering-model/clean-missing-data.png)
 
-1. **Klik ganda modul Bersihkan Data** yang Hilang, dan di panel pengaturan di sebelah kanan, pilih **Edit kolom**. Kemudian di jendela **Kolom yang akan dihapus**, pilih **Dengan aturan** dan sertakan **Semua kolom**; seperti ini:
+1. Klik dua kali modul **Membersihkan Data yang Hilang**, dan klik **Edit kolom** di panel pengaturan di sebelah kanan. Kemudian di jendela **Kolom yang akan dihapus**, pilih **Dengan aturan** dan sertakan **Semua kolom**; seperti ini:
 
     ![Cuplikan layar tentang cara menggunakan opsi dengan aturan untuk memilih semua kolom.](media/create-clustering-model/normalize-columns.png)
 
@@ -155,7 +155,7 @@ Untuk memulai dengan perancang Azure Machine Learning, langkah pertama Anda haru
 
     ![Cuplikan layar tentang cara memilih semua kolom.](media/create-clustering-model/normalize-columns.png)
 
-1. Pilih **Simpan** , lalu tutup **pengaturan Normalisasi modul Data** untuk kembali ke kanvas perancang.
+1. Tutup pengaturan modul Normalkan Data untuk kembali ke kanvas perancang.
 
 ## Menjalankan alur
 
@@ -176,15 +176,15 @@ Untuk menerapkan transformasi data Anda, Anda harus menjalankan alur sebagai eks
 
 ## Menampilkan data yang diubah
 
-1. Setelah eksekusi selesai, modul akan terlihat seperti ini:
+1. Ketika eksekusi sudah selesai, modul akan terlihat seperti ini:
 
     ![Cuplikan layar modul dalam status selesai dengan bilah hijau di sebelah kiri setiap modul.](media/create-clustering-model/normalize-complete.png)
 
-1. Klik kanan pada **modul Normalisasi Data** , pilih **Pratinjau data**, lalu pilih **Himpunan** data yang ditransformasi untuk melihat hasilnya.
+1. Di tab baru, klik kanan modul **Normalisasi Data**, pilih **Lihat pratinjau data**, lalu pilih **Himpunan data yang diubah** untuk melihat hasilnya.
 
 1. Lihat data, mencatat bahwa kolom **Spesies** telah dihapus, tidak ada nilai yang hilang, dan nilai untuk keempat fitur telah dinormalisasi ke skala umum.
 
-1. **Tutup halaman Transformed_dataset** untuk kembali ke eksekusi alur.
+1. Tutup (2) himpunan data untuk kembali ke alur.
 
 Setelah memilih dan menyiapkan fitur yang ingin Anda gunakan dari himpunan data, Anda siap menggunakannya untuk melatih model pengklusteran.
 
@@ -217,7 +217,7 @@ Ikuti langkah-langkah di bawah, menggunakan gambar di atas untuk referensi saat 
 
     ![Cuplikan layar tentang cara menyertakan semua kolom dalam kumpulan kolom.](media/create-clustering-model/cluster-features.png)
 
-1. Model yang kami latih akan menggunakan fitur untuk mengelompokkan data ke dalam kluster, jadi kami perlu melatih model menggunakan algoritme *pengklusteran*. **Di pustaka** Aset, cari dan tempatkan **modul Pengklusteran** K-Means ke kanvas, di sebelah kiri **modul Pisahkan data** dan di atas **modul Latih Model** Pengklusteran. Kemudian, sambungkan output-nya ke input **Model tidak terlatih** (kiri) modul **Latih Model Pengklusteran**.
+1. Model yang kami latih akan menggunakan fitur untuk mengelompokkan data ke dalam kluster, jadi kami perlu melatih model menggunakan algoritme *pengklusteran*. Dalam **Pustaka aset**, cari dan tempatkan modul **Pengklusteran K-Means** ke kanvas, ke sebelah kiri himpunan data **penguin-data** dan di atas modul **Melatih Model Pengklusteran**. Kemudian, sambungkan output-nya ke input **Model tidak terlatih** (kiri) modul **Latih Model Pengklusteran**.
 
 1. Algoritme *K-Means* mengelompokkan item ke jumlah kluster yang Anda tentukan - nilai yang dirujuk sebagai ***K***. Pilih modul **Pengklusteran K-Means** dan di kanan panel, atur parameter **Jumlah sentroid** menjadi **3**.
 
@@ -226,7 +226,7 @@ Ikuti langkah-langkah di bawah, menggunakan gambar di atas untuk referensi saat 
     > 2. Merencanakan vektor fitur sebagai titik di ruang yang sama, dan menetapkan setiap titik ke sentroid terdekatnya.
     > 3. Memindahkan sentroid ke tengah titik yang dialokasikan untuk itu (berdasarkan jarak *rata-rata*).
     > 4. Menetapkan kembali titik ke sentroid terdekatnya setelah perpindahan.
-    > 5. Mengulangi langkah c. dan d. hingga alokasi kluster stabil atau jumlah iterasi yang ditentukan telah selesai.
+    > 5. Mengulangi langkah c. dan D. Mengulangi langkah 3 dan 4 hingga alokasi kluster stabil atau jumlah iterasi yang ditentukan telah selesai.
 
    Setelah menggunakan 70% data untuk melatih model pengklusteran, Anda dapat menggunakan 30% sisanya untuk mengujinya menggunakan model untuk menetapkan data ke kluster.
 
@@ -240,11 +240,11 @@ Sekarang Anda siap untuk menjalankan alur pelatihan dan melatih model.
 
     ![Cuplikan layar dari alur pelatihan selesai yang dimulai dengan data penguin dan diakhiri dengan penetapan data ke komponen kluster.](media/create-clustering-model/k-means.png)
 
-1. Pilih **Konfigurasikan & Kirim, dan jalankan** alur menggunakan eksperimen yang ada bernama **mslearn-penguin-training** pada kluster komputasi Anda.
+1. Pilih **Kirim**, dan jalankan alur menggunakan eksperimen yang ada bernama **mslearn-penguin-training** pada kluster komputasi Anda.
 
 1. Tunggu sampai eksekusi selesai. Eksekusi eksperimen dapat memakan waktu 5 menit atau lebih. Periksa status pekerjaan dengan memilih **Pekerjaan** di **bawah Aset**. Dari sana, pilih pekerjaan Latih Pengklusteran** Penguin terbaru**.
 
-1. Setelah eksekusi eksperimen selesai, klik kanan pada **modul Tetapkan Data ke Kluster** , pilih **Pratinjau data** lalu pilih **Himpunan data** hasil untuk melihat hasilnya.
+1. Di tab baru, klik kanan modul **Tetapkan Data ke Kluster**, pilih **Lihat pratinjau data**, lalu pilih **Himpunan data hasil** untuk melihat hasilnya.
 
 1. Gulir ke kanan, dan perhatikan kolom **Tugas**, yang berisi kluster (0, 1, atau 2) tempat setiap baris ditetapkan. Ada juga kolom baru yang menunjukkan jarak dari titik yang mewakili baris ini ke pusat masing-masing kluster - kluster yang titiknya paling dekat adalah yang ditetapkan.
 
@@ -256,7 +256,7 @@ Mengevaluasi model pengklusteran dibuat sulit oleh fakta bahwa sebelumnya tidak 
 
 ## Menambahkan modul Evaluasi Model
 
-1. Pada halaman Perancang****, buka **draf alur Pengklusteran** Penguin Latih.
+1. Pada halaman **Desainer**, pilih **Latih Pengklusteran Penguin**.
 
 1. Di **Pustaka aset**, cari dan tempatkan modul **Mengevaluasi Model** pada kanvas, di bawah modul **Menetapkan Data ke Kluster**. Sambungkan output modul **Menetapkan Data ke Kluster** ke input **Himpunan data yang dinilai** (kiri) dari modul **Mengevaluasi Model**.
 
@@ -264,17 +264,17 @@ Mengevaluasi model pengklusteran dibuat sulit oleh fakta bahwa sebelumnya tidak 
 
     ![Cuplikan layar tentang cara menambahkan modul Mengevaluasi Model ke modul Tetapkan Data ke Kluster.](media/create-clustering-model/evaluate-cluster.png)
 
-1. Pilih **Konfigurasikan & Kirim, dan jalankan** alur menggunakan eksperimen yang ada bernama **mslearn-penguin-training** pada kluster komputasi Anda.
+1. Pilih **Kirim**, dan jalankan alur menggunakan eksperimen yang ada bernama **mslearn-penguin-training** pada kluster komputasi Anda.
 
 1. Tunggu hingga eksekusi eksperimen selesai. Untuk memeriksa statusnya, buka **halaman Pekerjaan** dan pilih pekerjaan Melatih Pengklusteran** Penguin terbaru**.
 
-1. Klik kanan pada **modul Evaluasi Model** , pilih **Pratinjau data**, lalu pilih **Hasil** evaluasi. Tinjau metrik di setiap baris:
+1. Klik kanan modul **Mengevaluasi Model** dan pilih **Pratinjau data**, lalu pilih **Hasil evaluasi**. Tinjau metrik di setiap baris:
     - **Jarak Rata-Rata ke Pusat Lainnya**
     - **Jarak Rata-Rata ke Pusat Kluster**
     - **Jumlah Poin**
     - **Jarak Maksimal ke Pusat Kluster**
 
-1. Tutup tab **Evaluation_results** .
+1. Tutup panel **Evaluation_results**.
 
 Setelah memiliki model pengklusteran yang berfungsi, Anda dapat menggunakannya untuk menetapkan data baru ke kluster dalam *alur inferensi*.
 
@@ -282,11 +282,11 @@ Setelah membuat dan menjalankan alur untuk melatih model pengklusteran, Anda dap
 
 ## Membuat alur inferensi
 
-1. Temukan menu di atas kanvas dan pilih **Buat alur** inferensi. Anda mungkin perlu memperluas layar Anda menjadi penuh dan mengklik **ikon ...** di sudut kanan atas layar untuk menemukan **Buat alur** inferensi di menu.  
+1. Cari menu di atas kanvas dan klik **Buat alur inferensi**. Anda mungkin perlu memperluas layar hingga penuh dan mengeklik ikon tiga titik **...** di sudut kanan atas layar untuk menemukan **Buat alur inferensi** di menu.  
 
     ![Cuplikan layar lokasi pembuatan alur inferensi.](media/create-clustering-model/create-inference-pipeline.png)
 
-1. **Di daftar drop-down Buat alur** inferensi pilih **Alur** inferensi real time. Setelah beberapa detik, versi baru dari alur Anda bernama **Latih Pengklusteran Penguin-inferensi real time** akan dibuka.
+1. Di daftar drop-down **Buat alur masuk**, klik **Alur inferensi real-time**. Setelah beberapa detik, versi baru dari alur Anda bernama **Latih Pengklusteran Penguin-inferensi real time** akan dibuka.
 
 1. Ganti nama alur baru menjadi **Prediksi Kluster Penguin**, lalu tinjau alur baru. Model transformasi dan pengklusteran dalam alur pelatihan Anda adalah bagian dari alur ini. Model yang dilatih akan digunakan untuk menilai data baru. Alur juga berisi output layanan web untuk menampilkan hasil.
 
@@ -295,13 +295,13 @@ Setelah membuat dan menjalankan alur untuk melatih model pengklusteran, Anda dap
     ![Cuplikan layar perubahan yang dibuat pada alur termasuk komponen mana yang akan ditambahkan dan dihapus yang berwarna merah.](media/create-clustering-model/inference-changes.png)
 
     - Tambahkan komponen **input layanan web** agar data baru dapat dikirimkan.
-    - Ganti himpunan **data penguin-data** dengan **komponen Enter Data Manually** yang tidak menyertakan **kolom Spesies** .
-    - **Hapus komponen Pilih Kolom di Himpunan** Data, yang sekarang berlebihan.
-    - ** KoneksiKomponen Input** Layanan Web dan **Masukkan Data Secara** Manual (yang mewakili input untuk data yang akan diklusterkan) ke komponen Terapkan Transformasi** pertama**.
+    - Ganti himpunan data **penguin-data** dengan modul **Masukkan Data Secara Manual** yang tidak menyertakan kolom **Spesies**.
+    - Hapus modul **Pilih Kolom dalam Himpunan Data**, yang sekarang redundan.
+    - Sambungkan modul **Input Layanan Web** dan **Masukkan Data Secara Manual** (yang mewakili input data yang akan diklusterkan) ke modul **Terapkan Transformasi** pertama.
 
     Ikuti langkah-langkah yang tersisa di bawah, menggunakan gambar dan informasi di atas untuk referensi saat Anda memodifikasi alur.
 
-1. Alur tidak secara otomatis menyertakan komponen **Input Layanan Web** untuk model yang dibuat dari himpunan data kustom. Cari komponen **Input Layanan Web** dari pustaka aset dan tempatkan di bagian atas alur.  Koneksi output **Komponen Input** Layanan Web ke *input Himpunan* Data (kanan) dari komponen Terapkan Transformasi** pertama **yang sudah ada di kanvas.  
+1. Alur tidak secara otomatis menyertakan komponen **Input Layanan Web** untuk model yang dibuat dari himpunan data kustom. Cari komponen **Input Layanan Web** dari pustaka aset dan tempatkan di bagian atas alur.  Hubungkan output komponen Input Layanan Web ke input sisi kanan komponen Terapkan Transformasi yang sudah ada di kanvas.  
 
 1. Alur inferensi mengasumsikan bahwa data baru akan cocok dengan skema data pelatihan asli, sehingga himpunan data **penguin-data** dari alur pelatihan disertakan. Namun, data input ini mencakup kolom untuk spesies penguin, yang tidak digunakan model. Hapus himpunan data **penguin-data** dan modul **Pilih Kolom dalam Himpunan Data**, dan ganti dengan modul **Masukkan Data Secara Manual** dari bagian **Pustaka aset**.
 
@@ -314,7 +314,7 @@ Setelah membuat dan menjalankan alur untuk melatih model pengklusteran, Anda dap
     46.6,17.8,193,3800
     ```
 
-1. Koneksi output **Masukkan modul Data Secara** Manual ke *input Himpunan* Data (kanan) dari modul Terapkan Transformasi** pertama**.
+1. Sambungkan output dari modul **Input Layanan Web** dan *Masukkan Data Secara Manual* ke input Himpunan Data (kanan) modul **Terapkan Transformasi** pertama.
 
 1. Hapus modul **Evaluasi Model**.
 
@@ -326,7 +326,7 @@ Setelah membuat dan menjalankan alur untuk melatih model pengklusteran, Anda dap
 
 1. Buka Pekerjaan** dan pilih pekerjaan Predict Penguin Clusters** terbaru **dengan **nama eksperimen mslearn-penguin-inference**.**
 
-1. Setelah alur selesai, klik kanan pada **modul Tetapkan Data ke Kluster** , pilih **Pratinjau data** dan pilih **Himpunan data** hasil untuk melihat penetapan dan metrik kluster yang diprediksi untuk tiga pengamatan penguin dalam data input.
+1. Di tab baru, klik kanan pada modul **Tetapkan Data ke Kluster**, pilih **Lihat pratinjau data** dan pilih **Himpunan data hasil** untuk melihat perkiraan penetapan dan metrik kluster untuk tiga pengamatan penguin dalam data input.
 
 Alur inferensi Anda menetapkan pengamatan penguin ke kluster berdasarkan fiturnya. Sekarang Anda siap menerbitkan alur agar aplikasi klien dapat menggunakannya.
 
@@ -338,14 +338,14 @@ Dalam latihan ini, Anda akan menyebarkan layanan web ke Azure Container Instance
 
     ![Cuplikan layar tombol penyebaran untuk alur inferensi Prediksi Harga Otomatis Anda.](media/create-clustering-model/deploy-screenshot.png)
 
-1. Pilih **Sebarkan titik** akhir real-time baru dan gunakan pengaturan berikut:
+1. Sebarkan titik akhir real time baru, menggunakan pengaturan berikut:
     - **Nama**: predict-penguin-clusters
     - **Deskripsi**: Penguin kluster.
     - **Jenis komputasi**: Azure Container Instance
 
 1. Tunggu hingga layanan web disebarkan - ini bisa memakan waktu beberapa menit. 
 
-1. Untuk melihat status penyebaran, perluas panel kiri dengan memilih ikon menu di kiri atas layar. Lihat halaman **Titik akhir** (di bagian **Aset**) dan pilih **predict-penguin-clusters**. Setelah penyebaran selesai, **status Penyebaran** akan berubah menjadi **Sehat**.
+1. Untuk melihat status penyebaran, luaskan panel kiri dengan memilih tiga baris di kiri atas layar. Lihat halaman **Titik akhir** (di bagian **Aset**) dan pilih **predict-penguin-clusters**. Setelah penyebaran selesai, **status Penyebaran** akan berubah menjadi **Sehat**.
 
 ## Menguji layanan
 
@@ -387,7 +387,7 @@ Layanan web yang Anda buat dihost dalam *Azure Container Instance*. Jika tidak b
 
 1. Pada halaman **Komputasi**, pada tab **Kluster komputasi**, pilih kluster komputasi Anda, lalu pilih **Hapus**.
 
->**Catatan** Menghapus komputasi Anda memastikan langganan Anda tidak akan dikenakan biaya untuk sumber daya komputasi. Namun, Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait. Namun, jika berencana untuk menyelesaikan laboratorium lain dalam seri ini, Anda harus membuatnya kembali.
+>**Catatan** Menghentikan komputasi memastikan langganan Anda tidak akan dikenakan biaya untuk sumber daya komputasi. Namun, Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait. Namun, jika berencana untuk menyelesaikan laboratorium lain dalam seri ini, Anda harus membuatnya kembali.
 >
 > Untuk menghapus ruang kerja Anda:
 >
