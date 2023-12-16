@@ -27,13 +27,13 @@ Dalam latihan ini, Anda akan melatih model regresi yang memprediksi harga mobil 
 
 1. Pilih **Luncurkan studio** (atau buka tab browser baru dan arahkan ke [https://ml.azure.com](https://ml.azure.com?azure-portal=true), dan masuk ke studio Azure Machine Learning menggunakan akun Microsoft Anda).
 
-1. Di studio Azure Machine Learning, Anda akan melihat ruang kerja yang baru dibuat. Jika tidak demikian, pilih direktori Azure Anda di menu sebelah kiri. Kemudian dari menu sebelah kiri baru pilih **Ruang** Kerja, tempat semua ruang kerja yang terkait dengan direktori Anda tercantum, dan pilih ruang kerja yang Anda buat untuk latihan ini.
+1. Di studio Azure Machine Learning, Anda akan melihat ruang kerja yang baru dibuat. Jika tidak demikian, pilih direktori Azure Anda di menu sebelah kiri. Kemudian dari menu sebelah kiri yang baru, pilih **Ruang Kerja**, tempat semua ruang kerja yang terkait dengan langganan Anda dicantumkan.
 
 > **Catatan** Modul ini adalah salah satu dari banyak modul yang memanfaatkan ruang kerja Azure Machine Learning, termasuk modul lainnya di jalur pembelajaran [Dasar-Dasar AI Microsoft Azure: Menjelajahi alat visual untuk pembelajaran mesin](https://docs.microsoft.com/learn/paths/create-no-code-predictive-models-azure-machine-learning/). Jika menggunakan langganan Azure Anda sendiri, Anda dapat mempertimbangkan untuk membuat ruang kerja satu kali dan menggunakannya kembali di modul lain. Langganan Azure Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda, jadi sebaiknya hapus ruang kerja Azure Machine Learning saat tidak lagi diperlukan.
 
 ## Membuat komputasi
 
-1. Di [studio](https://ml.azure.com?azure-portal=true) Azure Pembelajaran Mesin, pilih **ikon &#8801;** (ikon menu yang terlihat seperti tumpukan tiga baris) di kiri atas untuk melihat berbagai halaman di antarmuka (Anda mungkin perlu memaksimalkan ukuran layar Anda). Anda dapat menggunakan halaman ini di panel sebelah kiri untuk mengelola sumber daya di ruang kerja. Pilih halaman **Komputasi** (di bagian **Kelola**).
+1. Di studio Azure Machine Learning, pilih tiga baris di kiri atas untuk melihat berbagai halaman di antarmuka (Anda mungkin perlu memaksimalkan ukuran layar). Anda dapat menggunakan halaman ini di panel sebelah kiri untuk mengelola sumber daya di ruang kerja. Pilih halaman **Komputasi** (di bagian **Kelola**).
 
 1. Pada halaman **Komputasi**, pilih tab **Kluster komputasi**, dan tambahkan kluster komputasi baru dengan pengaturan berikut untuk melatih model pembelajaran mesin:
     - **Lokasi**: *Pilih lokasi yang sama dengan ruang kerja Anda. Jika lokasi tersebut tidak terdaftar, pilih yang terdekat dengan lokasi Anda*.
@@ -58,17 +58,17 @@ Kluster komputasi akan membutuhkan waktu untuk dibuat. Sembari menunggu, Anda da
 
 Azure Machine Learning menyertakan himpunan data sampel yang dapat Anda gunakan untuk model regresi Anda.
 
-1. Di [studio](https://ml.azure.com?azure-portal=true) Azure Pembelajaran Mesin, perluas panel kiri dengan memilih ikon menu di kiri atas layar. Lihat halaman **Perancang** (di bawah **Penulisan**), dan pilih **+** untuk membuat alur baru.
+1. Di [Azure Machine Learning studio](https://ml.azure.com?azure-portal=true), perluas panel kiri dengan memilih ikon tiga garis di kiri atas layar. Lihat halaman **Desainer** (di bagian **Pembuat**), dan pilih **+** untuk membuat alur baru.
 
-1. Ubah nama draf (**Pipeline-Created-on-date****) menjadi **Pelatihan** Harga Otomatis.
+1. Di Pengaturan, pada Detail draf, ubah nama draf (*Pipeline-Created-on-date***) menjadi Pelatihan Harga Otomatis.
 
 1. Di samping nama alur di sebelah kiri, pilih ikon anak panah untuk memperluas panel jika belum diperluas. Panel akan terbuka secara default ke panel **Pustaka aset**, yang ditunjukkan dengan ikon buku di bagian atas panel. Terdapat bilah pencarian untuk menemukan aset di panel dan dua tombol, **Data** dan **Komponen**.
 
     ![Cuplikan layar lokasi pustaka aset desainer, bilah pencarian, dan ikon komponen.](media/create-regression-model/designer-asset-library-components.png)
 
-1. Pilih **Komponen**. Telusuri dan tempatkan himpunan data dari **Data harga mobil (Mentah)** ke kanvas.
+1. Pilih Komponen Telusuri dan tempatkan himpunan data dari **Data harga mobil (Mentah)** ke kanvas.
 
-1. Klik kanan (Ctrl+klik mac) himpunan **data Data harga mobil (Mentah)** di kanvas, dan pilih **Pratinjau data**.
+1. Klik kanan (Ctrl+klik pada Mac) himpunan data dari **Data harga mobil (Raw)** di kanvas, dan klik **Pratinjau data**.
 
 1. Tinjau skema *Output himpunan data* dari data, dengan mencatat bahwa Anda dapat melihat distribusi berbagai kolom sebagai histogram.
 
@@ -76,7 +76,7 @@ Azure Machine Learning menyertakan himpunan data sampel yang dapat Anda gunakan 
 
 1. Gulir kembali ke kiri dan pilih header kolom **normalized-losses**. Kemudian tinjau statistik untuk kolom ini. Perhatikan ada beberapa nilai yang hilang di kolom ini. Nilai yang hilang membatasi kegunaan kolom untuk memprediksi label **harga** sehingga Anda mungkin ingin mengecualikannya dari pelatihan.
 
-1. Tutup jendela **DataOutput** sehingga Anda dapat melihat himpunan data di kanvas seperti ini:
+1. Tutup jendela **visualisasi hasil diabetes-data** agar Anda dapat melihat himpunan data di kanvas seperti ini:
 
     ![Cuplikan layar himpunan data harga mobil di kanvas perancang.](media/create-regression-model/dataset.png)
 
@@ -84,7 +84,7 @@ Azure Machine Learning menyertakan himpunan data sampel yang dapat Anda gunakan 
 
 Anda biasanya menerapkan transformasi data guna menyiapkan data untuk pemodelan. Dalam hal data harga mobil, Anda menambahkan transformasi untuk mengatasi masalah yang Anda identifikasi saat menjelajahi data.
 
-1. Di panel **Pustaka** aset di sebelah kiri, pilih **Komponen**, yang berisi berbagai modul yang dapat Anda gunakan untuk transformasi data dan pelatihan model. Anda juga dapat menggunakan bilah pencarian untuk menemukan modul dengan cepat.
+1. Di panel **Pustaka aset** di sebelah kiri, klik **Komponen**, yang berisi berbagai modul yang dapat Anda gunakan untuk transformasi data dan pelatihan model. Anda juga dapat menggunakan bilah pencarian untuk menemukan modul dengan cepat.
 
 1. Telusuri modul **Pilih Kolom di Himpunan Data** dan letakkan di kanvas, di bawah modul **Data harga mobil (Raw)**. Selanjutnya sambungkan output di bagian bawah modul **Automobile price data (Raw)** ke input di bagian atas modul **Select Columns in Dataset**, seperti ini:
 
@@ -96,7 +96,7 @@ Anda biasanya menerapkan transformasi data guna menyiapkan data untuk pemodelan.
 
 1. Pilih **Simpan** dan tutup jendela kepemilikan.
 
-Di sisa latihan ini, Anda akan melalui langkah-langkah untuk membuat alur yang akan terlihat seperti ini:
+Di sisa latihan ini, Anda akan melalui langkah-langkah untuk membuat alur yang terlihat seperti ini:
 
 ![Cuplikan layar himpunan data harga Mobil dengan modul Normalisasi Data.](media/create-regression-model/data-transforms.png)
 
@@ -104,7 +104,7 @@ Ikuti langkah selanjutnya, gunakan gambar untuk referensi saat Anda menambahkan 
 
 1. Di **Pustaka Aset**, cari modul **Bersihkan Data yang Hilang** dan letakkan di bawah modul **Pilih Kolom di Himpunan Data** di kanvas. Selanjutnya sambungkan output dari modul **Select Columns in Dataset** ke input dari modul **Clean Missing Data**.
 
-1. **Klik ganda modul Bersihkan Data** yang Hilang, dan di panel di sebelah kanan, pilih **Edit kolom**. Kemudian di jendela **Kolom yang akan dihapus**, pilih **Dengan aturan**, di daftar **Sertakan** pilih **Nama kolom**, di kotak nama kolom, masukkan **bore**, **stroke**, dan **horsepower** seperti ini:
+1. Klik dua kali modul **Membersihkan Data yang Hilang**, dan di panel sebelah kanan, klik **Edit kolom**. Kemudian di jendela **Kolom yang akan dihapus**, pilih **Dengan aturan**, di daftar **Sertakan** pilih **Nama kolom**, di kotak nama kolom, masukkan **bore**, **stroke**, dan **horsepower** seperti ini:
 
     ![Cuplikan layar tentang bagaimana kolom bore, stroke, dan horsepower dipilih.](media/create-regression-model/clean-missing-values.png)
 
@@ -155,7 +155,7 @@ Untuk menerapkan transformasi data, Anda harus menjalankan alur.
 
 1. Pilih **Berikutnya** untuk meninjau pekerjaan alur lalu pilih **Kirim** untuk menjalankan alur pelatihan.
 
-1. Tunggu beberapa menit hingga eksekusi selesai. Anda dapat memeriksa status pekerjaan dengan memilih **Pekerjaan** di **bawah Aset**. Dari sana, pilih **pekerjaan Pelatihan** Harga Otomatis. Dari sini, Anda dapat melihat kapan pekerjaan selesai. Setelah pekerjaan selesai, himpunan data sekarang disiapkan untuk pelatihan model.
+1. Tunggu beberapa menit hingga eksekusi selesai. Anda dapat memeriksa status pekerjaan dengan memilih **Pekerjaan** di **bawah Aset**. Dari sana, pilih **pekerjaan Pelatihan** Harga Otomatis. Dari sini, Anda dapat melihat kapan pekerjaan selesai. Setelah eksekusi selesai, himpunan data kini disiapkan untuk pelatihan model.
 
 1. Buka menu sebelah kiri. Di bawah **Penulisan** pilih **Perancang**. Kemudian pilih alur Pelatihan* Harga Otomatis Anda *dari daftar **Alur**.
 
@@ -198,11 +198,11 @@ Setelah menggunakan transformasi data untuk menyiapkan data, Anda dapat mengguna
 
 Sekarang Anda siap untuk menjalankan alur pelatihan dan melatih model.
 
-1. Pilih **Konfigurasikan & Kirim**, dan jalankan alur menggunakan eksperimen yang ada bernama **mslearn-auto-training**.
+1. Pilih **Kirim**, dan jalankan alur menggunakan eksperimen yang ada bernama **mslearn-auto-training**.
 
 1. Eksperimen ini akan memerlukan waktu 5 menit atau lebih untuk selesai. Kembali ke **halaman Pekerjaan** dan pilih eksekusi pekerjaan Pelatihan** Harga Otomatis terbaru**.
 
-1. Ketika eksekusi eksperimen telah selesai, klik kanan pada **modul Model** Skor dan pilih **Pratinjau data** lalu **Himpunan data** skor untuk melihat hasilnya.
+1. Di jendela baru, klik kanan pada modul **Model Skor** dan pilih **Pratinjau data** lalu **Himpunan data** skor untuk melihat hasilnya.
 
 1. Gulir ke kanan, dan perhatikan bahwa di samping kolom **harga** (yang berisi nilai sebenarnya dari label yang diketahui) terdapat kolom baru bernama **Label yang Dinilai**, yang berisi nilai label yang diprediksi.
 
@@ -212,7 +212,7 @@ Model ini memprediksi nilai untuk label **harga**, tetapi seberapa andal prediks
 
 ## Mengevaluasi model
 
-Salah satu cara untuk mengevaluasi model regresi adalah dengan membandingkan label yang diprediksi dengan label aktual dalam himpunan data validasi yang ditahan selama pelatihan. Cara lain adalah dengan membandingkan performa beberapa model.
+Salah satu cara untuk mengevaluasi model regresi adalah dengan membandingkan label yang diprediksi dengan label aktual dalam himpunan data validasi yang akan ditahan selama pelatihan. Cara lain adalah dengan membandingkan performa beberapa model.
 
 1. Buka alur **Pelatihan Harga Otomatis** yang Anda buat.
 
@@ -222,9 +222,9 @@ Salah satu cara untuk mengevaluasi model regresi adalah dengan membandingkan lab
 
     ![Cuplikan layar penambahan modul Evaluasi Model ke modul Nilai Model.](media/create-regression-model/evaluate.png)
 
-1. Pilih **Konfigurasikan & Kirim**, dan jalankan alur menggunakan eksperimen yang ada bernama **mslearn-auto-training**.
+1. Pilih **Kirim**, dan jalankan alur menggunakan eksperimen yang ada bernama **mslearn-auto-training**.
 
-1. Eksperimen yang dijalankan akan memakan waktu beberapa menit untuk diselesaikan. Kembali ke **halaman Pekerjaan** dan pilih eksekusi pekerjaan Pelatihan** Harga Otomatis terbaru**.
+1. Eksperimen ini akan memerlukan waktu 5 menit atau lebih untuk selesai. Kembali ke **halaman Pekerjaan** dan pilih eksekusi pekerjaan Pelatihan** Harga Otomatis terbaru**.
 
 1. Setelah percobaan selesai, pilih **Detail pekerjaan**, yang akan membuka tab lain. Temukan dan klik kanan pada modul **Evaluasi Model**. Pilih **Pratinjau data** lalu **Hasil evaluasi**.
 
@@ -242,15 +242,15 @@ Saat mengidentifikasi model dengan metrik evaluasi yang memenuhi kebutuhan Anda,
 
 ## Membuat dan menjalankan alur inferensi
 
-1. Temukan menu di atas kanvas dan pilih **Buat alur** inferensi. Anda mungkin perlu memperluas layar hingga penuh dan mengeklik ikon tiga titik **...** di sudut kanan atas layar untuk menemukan **Buat alur inferensi** di menu.  
+1. Cari menu di atas kanvas dan klik **Buat alur inferensi**. Anda mungkin perlu memperluas layar hingga penuh dan mengeklik ikon tiga titik **...** di sudut kanan atas layar untuk menemukan **Buat alur inferensi** di menu.  
 
     ![Cuplikan layar lokasi pembuatan alur inferensi.](media/create-regression-model/create-inference-pipeline.png)
 
-1. **Di daftar drop-down Buat alur** inferensi, pilih **Alur** inferensi real time. Setelah beberapa detik, versi baru alur Anda bernama **Inferensi real-time Pelatihan Harga Otomatis** akan dibuka.
+1. Di daftar drop-down **Buat alur masuk**, klik **Alur inferensi real-time**. Setelah beberapa detik, versi baru alur Anda bernama **Inferensi real-time Pelatihan Harga Otomatis** akan dibuka.
 
 1. Ganti nama alur baru menjadi **Prediksi Harga Otomatis**, lalu tinjau alur baru. Ini berisi input layanan web untuk data baru yang akan dikirimkan, dan output layanan web untuk menampilkan hasil. Beberapa langkah transformasi dan pelatihan adalah bagian dari alur ini. Model yang dilatih akan digunakan untuk menilai data baru.
 
-    Anda akan membuat perubahan berikut pada alur inferensi di langkah berikutnya:
+    Anda akan membuat perubahan berikut pada alur inferensi pada langkah #5-9 berikutnya:
 
     ![Cuplikan layar saluran inferensi dengan perubahan yang ditunjukkan.](media/create-regression-model/inference-changes.png)
 
@@ -266,7 +266,7 @@ Saat mengidentifikasi model dengan metrik evaluasi yang memenuhi kebutuhan Anda,
     1,NaN,alfa-romero,gas,std,two,hatchback,rwd,front,94.5,171.2,65.5,52.4,2823,ohcv,six,152,mpfi,2.68,3.47,9,154,5000,19,26
     ```
 
-1. Koneksi yang baru **Masukkan modul Data Secara** Manual ke input Himpunan** Data yang sama **dari **modul Pilih Kolom di Himpunan** Data sebagai **Input** Layanan Web.
+1. Sambungkan modul **Enter Data Manually** ke input **himpunan data** yang sama dari modul **Select Columns in Dataset** sebagai **Web Service Input**.
 
 1. Sekarang setelah Anda mengubah skema data masuk untuk mengecualikan bidang **harga**, Anda perlu menghapus penggunaan eksplisit bidang ini di modul yang tersisa. Pilih modul **Select Columns in Dataset**, lalu di panel pengaturan, edit kolom untuk menghapus bidang **harga**.
 
@@ -318,12 +318,12 @@ Setelah membuat dan menguji alur inferensi untuk inferensi real time, Anda bisa 
 
     ![Cuplikan layar tombol penyebaran untuk alur inferensi Prediksi Harga Otomatis Anda.](media/create-regression-model/deploy-screenshot.png)
 
-1. Di layar konfigurasi, pilih **Sebarkan titik** akhir real-time baru, dan gunakan pengaturan berikut:
+1. Di layar konfigurasi, pilih **Sebarkan titik akhir real time baru**, menggunakan pengaturan berikut:
     - **Nama**: predict-auto-price
     - **Deskripsi**: Regresi harga otomatis
     - **Jenis komputasi**: Azure Container Instance
 
-1. Pilih **Sebarkan** dan tunggu beberapa menit agar layanan web disebarkan.
+1. Tunggu beberapa menit hingga layanan web disebarkan.
 
 ## Menguji layanan
 
@@ -331,7 +331,7 @@ Setelah membuat dan menguji alur inferensi untuk inferensi real time, Anda bisa 
 
     ![Cuplikan layar lokasi opsi Titik Akhir di panel sebelah kiri.](media/create-regression-model/endpoints-lab.png)
 
-1. Saat titik akhir **predict-auto-price** terbuka, pilih tab **Uji**. Kita akan menggunakannya untuk menguji model dengan data baru. Hapus data saat ini di bawah **Input data untuk menguji titik** akhir. Salin dan tempel data di bawah ini ke bagian data:  
+1. Saat titik akhir **predict-auto-price** terbuka, pilih tab **Uji**. Kita akan menggunakannya untuk menguji model dengan data baru. Hapus data saat ini pada **Data input untuk menguji titik akhir real time**. Salin dan tempel data di bawah ini ke bagian data:  
 
     ```json
     {
@@ -387,7 +387,7 @@ Layanan web yang Anda buat dihost dalam *Azure Container Instance*. Jika tidak b
 
 1. Pada halaman **Komputasi**, pada tab **Kluster komputasi**, pilih kluster komputasi Anda, lalu pilih **Hapus**.
 
->**Catatan** Menghapus komputasi Anda memastikan langganan Anda tidak akan dikenakan biaya untuk sumber daya komputasi. Namun, Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait. Namun, jika berencana untuk menyelesaikan laboratorium lain dalam seri ini, Anda harus membuatnya kembali.
+>**Catatan** Menghentikan komputasi memastikan langganan Anda tidak akan dikenakan biaya untuk sumber daya komputasi. Namun, Anda akan dikenakan biaya kecil untuk penyimpanan data selama ruang kerja Azure Machine Learning ada di langganan Anda. Jika telah selesai menjelajahi Azure Machine Learning, Anda dapat menghapus ruang kerja Azure Machine Learning dan sumber daya terkait. Namun, jika berencana untuk menyelesaikan laboratorium lain dalam seri ini, Anda harus membuatnya kembali.
 >
 > Untuk menghapus ruang kerja Anda:
 >

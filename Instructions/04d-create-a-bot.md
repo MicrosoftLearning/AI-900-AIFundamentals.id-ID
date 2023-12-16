@@ -30,7 +30,7 @@ Fitur jawaban atas pertanyaan kustom layanan Bahasa memungkinkan Anda membuat pa
     - **Tingkat harga pencarian Azure**: F Gratis (3 Indeks) - (*Jika tingkat ini tidak tersedia, pilih Standar S (50 Indeks)*)
     - **Dengan mencentang kotak ini, saya menyatakan bahwa saya telah meninjau dan menyetujui persyaratan dalam Pemberitahuan AI yang Bertanggung Jawab**: *Dipilih*.
 
-    > **Catatan** Jika Anda telah menyediakan sumber daya Azure Cognitive Search** tingkat **gratis, kuota Anda mungkin tidak memungkinkan Anda untuk membuat sumber daya lain. Dalam hal ini, pilih tingkat selain **F Gratis**.
+    > **Catatan** Jika telah menyediakan sumber daya **Azure Cognitive Search** tingkat gratis, kemungkinan, kuota Anda tidak memungkinkan membuat yang lain. Dalam hal ini, pilih tingkat selain **F Gratis**.
 
 1. Klik **Tinjau dan Buat**, lalu klik **Buat**. Tunggu penyebaran layanan Bahasa yang akan mendukung pangkalan pengetahuan jawaban atas pertanyaan kustom Anda.
 
@@ -108,19 +108,19 @@ Pangkalan Pengetahuan menyediakan layanan back-end yang dapat digunakan aplikasi
 
 1. Setelah layanan disebarkan, klik **Buat bot**. Tindakan ini akan membuka portal Azure di tab browser baru sehingga Anda dapat membuat Bot Aplikasi Web di langganan Azure Anda.
 
-1. Di portal Azure, buat Bot Aplikasi Web. (Anda mungkin melihat pesan peringatan untuk memeriksa apakah sumber templat dapat dipercaya. Anda tidak perlu mengambil tindakan apa pun untuk pesan tersebut.) Lanjutkan dengan memperbarui pengaturan berikut:
+1. Membuat Aplikasi Web di Portal Microsoft Azure (Anda mungkin melihat pesan peringatan untuk memeriksa apakah sumber templat dapat dipercaya. Anda tidak perlu mengambil tindakan apa pun untuk pesan tersebut.) Lanjutkan dengan memperbarui pengaturan berikut:
 
     - **Detail Proyek**
         - **Langganan**: *Langganan Azure Anda*
         - **Grup sumber daya**: *Grup sumber daya yang berisi sumber daya Bahasa Anda*
     - **Detail instans**
-        - **Lokasi** grup sumber daya: *Lokasi yang sama dengan layanan* Bahasa Anda.
+        - **Lokasi**: *Lokasi yang sama dengan layanan Bahasa Anda*.
     - **Azure Bot**
-        - **Handel bot: *Nama unik untuk bot* Anda (*telah diisi sebelumnya*)**
-    - **Pilih tingkat harga Anda**
+        - Handle bot: Nama unik untuk bot Anda
+    - Pilih tingkat harga Anda
         - **Tingkat** harga: Gratis (F0) (Anda mungkin perlu memilih *Ubah paket*)
-    - **ID Aplikasi Microsoft**
-        - **Jenis** pembuatan: *Pilih Buat identitas terkelola baru yang ditetapkan pengguna* 
+    - ID Aplikasi Microsoft:
+        - Pilih identitas terkelola yang ditetapkan pengguna, atau buat yang baru. 
 
 5. Pilih **Berikutnya: Aplikasi Web >** untuk terus memperbarui pengaturan. 
     - **App Service**
@@ -128,16 +128,16 @@ Pangkalan Pengetahuan menyediakan layanan back-end yang dapat digunakan aplikasi
         - **Bahasa SDK**: *Pilih C# atau Node.js*
     - **Paket App Service**
         - **Jenis** Pembuatan: *Pilih Buat paket layanan aplikasi baru*
-    - **Pengaturan Aplikasi**
+    - Pengaturan Aplikasi
         - **Kunci** Sumber Daya Bahasa: *Anda harus menyalin kunci sumber daya Bahasa Anda dan menempelkannya di sini.* 
         
-        > **Catatan** Untuk menavigasi ke kunci sumber daya Bahasa Anda, bukahttps://portal.azure.com[](https://portal.azure.com?azure-portal=true) . Pada beranda, klik *Grup* Sumber Daya dan temukan grup sumber daya tempat Anda membuat sumber daya Bahasa. Pilih Sumber daya Bahasa Anda dan navigasikan ke menu sebelah kirinya. Lalu pilih *Kunci dan Titik* Akhir. Salin salah satu kunci. 
+        > **Catatan** Untuk menavigasi ke kunci sumber daya Bahasa Anda, bukahttps://portal.azure.com[](https://portal.azure.com?azure-portal=true) . Pada beranda, klik *Grup* Sumber Daya dan temukan grup sumber daya tempat Anda membuat sumber daya Bahasa. Pilih Sumber daya Bahasa Anda dan navigasikan ke menu sebelah kirinya. Pilih *Kunci dan Titik Akhir.* Salin salah satu kunci. 
 
     -  
         - **Nama** proyek bahasa: MargiesTravel
         - **Nama** host titik akhir layanan bahasa: *Telah diisi sebelumnya dengan titik akhir layanan bahasa Anda*
     - **Detail layanan bahasa**
-        - **Id** Langganan: *Telah diisi sebelumnya dengan ID langganan Anda*
+        - Ganti subscription-id dengan ID langganan Anda.
         - **Nama** Grup Sumber Daya: *Telah diisi sebelumnya dengan nama grup sumber daya Anda*
         - **Nama** Akun: *Telah diisi sebelumnya dengan nama sumber daya Anda*
 

@@ -11,21 +11,21 @@ Tantangan visi komputer yang umum adalah mendeteksi dan menafsirkan teks dalam g
 
 Untuk menguji kemampuan Read API, kami akan menggunakan aplikasi command line sederhana yang berjalan di Cloud Shell. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
 
-## Menggunakan layanan Azure AI Vision untuk Membaca Teks dalam Gambar
+## Menggunakan Layanan Computer Vision untuk Membaca Teks dalam Gambar
 
-Layanan **Azure AI Vision** menyediakan dukungan untuk tugas OCR, termasuk:
+Layanan kognitif **Computer Vision** dilengkapi dengan dukungan untuk tugas OCR, termasuk:
 
 - **Read** API yang dioptimalkan untuk dokumen lebih besar. API ini digunakan secara asinkron, dan dapat digunakan untuk teks cetak dan tulis.
 
-## Membuat *sumber daya layanan* Azure AI
+## Membuat sumber daya Azure App Service
 
-Anda dapat menggunakan layanan Azure AI Vision dengan membuat **sumber daya Computer Vision** atau **sumber daya layanan** Azure AI.
+Anda dapat menggunakan layanan Computer Vision dengan membuat sumber daya **Computer Vision** atau sumber daya **Cognitive Services**.
 
-Jika Anda belum melakukannya, buat **sumber daya layanan** Azure AI di langganan Azure Anda.
+Jika Anda belum melakukannya, buat sumber daya **Layanan bahasa** di langganan Azure Anda.
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. **Klik &#65291; Buat tombol sumber daya** dan cari *layanan* Azure AI. Pilih **buat** **paket layanan** Azure AI. Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
+1. **Klik &#65291; Buat tombol sumber daya** dan cari *layanan* Azure AI. Pilih **buat** **paket layanan** Azure AI. Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan PuTTY dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: *Pilih wilayah yang tersedia*.
@@ -35,7 +35,7 @@ Jika Anda belum melakukannya, buat **sumber daya layanan** Azure AI di langganan
 
 1. Tinjau dan buat sumber daya, dan tunggu hingga penyebaran selesai. Lalu pergi ke sumber daya yang disebarkan.
 
-1. Lihat halaman **Kunci dan Titik** Akhir untuk sumber daya layanan Azure AI Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
+1. Lihat halaman **Kunci dan Titik Akhir** untuk mengetahui sumber daya Cognitive Services Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
 
 ## Menjalankan Cloud Shell
 
@@ -85,7 +85,7 @@ Setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien sederhana y
 
     ![Editor berisi kode untuk menganalisis teks dalam gambar.](media/read-text-computer-vision/ocr-code.png)
 
-1. Jangan terlalu khawatir tentang detail kode, yang penting adalah bahwa ia membutuhkan URL titik akhir dan salah satu kunci untuk sumber daya layanan Azure AI Anda. Salin ini dari halaman **Kunci dan Titik Akhir** untuk sumber daya Anda dari portal Azure dan tempelkan ke dalam editor kode, dengan mengganti nilai tempat penampung **YOUR_KEY** dan **YOUR_ENDPOINT** masing-masing.
+1. Jangan terlalu khawatir dengan detail kode, yang penting adalah bahwa kode ini memerlukan URL titik akhir dan salah satu kunci untuk sumber Cognitive Services Anda. Salin ini dari halaman **Kunci dan Titik Akhir** untuk sumber daya Anda dari portal Azure dan tempelkan ke dalam editor kode, dengan mengganti nilai tempat penampung **YOUR_KEY** dan **YOUR_ENDPOINT** masing-masing.
 
     > **Tips** Anda mungkin perlu menggunakan bilah pemisah untuk menyesuaikan area layar saat bekerja dengan panel **Tombol dan Titik Akhir** serta **Editor**.
 
@@ -96,7 +96,7 @@ Setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien sederhana y
     $endpoint="https..."
     ```
 
-1. Di kanan atas panel editor, gunakan tombol **...** untuk membuka menu dan pilih **Simpan** untuk menyimpan perubahan Anda. Kemudian, buka menu lagi dan pilih **Tutup Editor**. Setelah menyiapkan kunci dan titik akhir, Anda dapat menggunakan sumber daya layanan Azure AI untuk mengekstrak teks dari gambar.
+1. Di kanan atas panel editor, gunakan tombol **...** untuk membuka menu dan pilih **Simpan** untuk menyimpan perubahan Anda. Kemudian, buka menu lagi dan pilih **Tutup Editor**. Setelah menyiapkan kunci dan titik akhir, Anda dapat menggunakan sumber daya Cognitive Services untuk mengekstrak teks dari gambar.
 
     Mari gunakan **Read** API. Dalam hal ini, Anda memiliki gambar iklan untuk perusahaan ritel Northwind Traders fiktif yang berisi beberapa teks.
 

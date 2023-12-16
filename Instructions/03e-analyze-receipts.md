@@ -15,15 +15,15 @@ Form Recognizer menggunakan model pembelajaran mesin yang dilatih untuk mengekst
 
 Untuk menguji kemampuan layanan Form Recognizer, kita akan menggunakan aplikasi baris perintah sederhana yang dijalankan di Cloud Shell. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
 
-## Membuat *sumber daya layanan* Azure AI
+## Buat sumber daya *Layanan Azure AI*
 
-Anda dapat menggunakan layanan Form Recognizer dengan membuat **sumber daya Form Recognizer** atau **sumber daya layanan** Azure AI.
+Anda dapat menggunakan layanan Form Recognizer dengan membuat sumber daya **Form Recognizer** atau sumber daya **Layanan Azure AI**.
 
-Jika Anda belum melakukannya, buat **sumber daya layanan** Azure AI di langganan Azure Anda.
+Jika Anda belum melakukannya, buat sumber daya **Layanan Azure AI** di langganan Azure Anda.
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. **Klik &#65291; Buat tombol sumber daya** dan cari *layanan* Azure AI. Pilih **buat** **paket layanan** Azure AI. Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
+1. Klik tombol **＋Buat sumber daya**dan cari *layanan Azure AI*. Pilih **buat** paket **layanan Azure AI**. Anda akan diarahkan ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: *Pilih wilayah yang tersedia*.
@@ -33,7 +33,7 @@ Jika Anda belum melakukannya, buat **sumber daya layanan** Azure AI di langganan
 
 1. Tinjau dan buat sumber daya, dan tunggu hingga penyebaran selesai. Lalu pergi ke sumber daya yang disebarkan.
 
-1. Lihat halaman **Kunci dan Titik** Akhir untuk sumber daya layanan Azure AI Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
+1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Layanan Azure AI Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
 
 ## Menjalankan Cloud Shell
 
@@ -83,7 +83,7 @@ Setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien sederhana y
 
     ![Editor yang berisi kode untuk menganalisis bidang dalam tanda terima.](media/analyze-receipts/recognize-receipt-code.png)
 
-1. Jangan terlalu khawatir tentang detail kode, yang penting adalah bahwa ia membutuhkan URL titik akhir dan salah satu kunci untuk sumber daya layanan Azure AI Anda. Salin ini dari halaman **Kunci dan Titik Akhir** untuk sumber daya Anda dari portal Azure dan tempelkan ke dalam editor kode, dengan mengganti nilai tempat penampung **YOUR_KEY** dan **YOUR_ENDPOINT** masing-masing.
+1. Jangan terlalu khawatir dengan detail kode, yang penting adalah bahwa kode ini memerlukan URL titik akhir dan salah satu kunci untuk sumber Layanan Azure AI Anda. Salin ini dari halaman **Kunci dan Titik Akhir** untuk sumber daya Anda dari portal Azure dan tempelkan ke dalam editor kode, dengan mengganti nilai tempat penampung **YOUR_KEY** dan **YOUR_ENDPOINT** masing-masing.
 
     > **Tips** Anda mungkin perlu menggunakan bilah pemisah untuk menyesuaikan area layar saat bekerja dengan panel **Tombol dan Titik Akhir** serta **Editor**.
 
