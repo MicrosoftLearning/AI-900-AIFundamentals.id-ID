@@ -11,21 +11,21 @@ lab:
 
 Misalnya, inisiatif keselamatan jalan mungkin mengidentifikasi pejalan kaki dan pengendara sepeda sebagai pengguna jalan yang paling rentan di persimpangan lalu lintas. Dengan menggunakan kamera untuk memantau persimpangan, gambar pengguna jalan dapat dianalisis untuk mendeteksi pejalan kaki dan pengendara sepeda untuk memantau jumlah mereka atau bahkan mengubah perilaku sinyal lalu lintas.
 
-Layanan kognitif **Custom Vision** di Microsoft Azure menyediakan solusi berbasis cloud untuk membuat dan menerbitkan model deteksi objek kustom. Di Azure, Anda dapat menggunakan layanan Custom Vision untuk melatih model klasifikasi gambar berdasarkan gambar yang ada. Ada dua elemen untuk membuat solusi deteksi objek. Pertama, Anda harus melatih model untuk mendeteksi lokasi dan kelas objek menggunakan gambar berlabel. Kemudian, saat model dilatih, Anda harus menerbitkannya sebagai layanan yang dapat digunakan oleh aplikasi.
+Layanan **Custom Vision** di Microsoft Azure menyediakan solusi berbasis cloud untuk membuat dan menerbitkan model deteksi objek kustom. Di Azure, Anda dapat menggunakan layanan Custom Vision untuk melatih model deteksi objek berdasarkan gambar yang ada. Ada dua elemen untuk membuat solusi deteksi objek. Pertama, Anda harus melatih model untuk mendeteksi lokasi dan kelas objek menggunakan gambar berlabel. Kemudian, saat model dilatih, Anda harus menerbitkannya sebagai layanan yang dapat digunakan oleh aplikasi.
 
-Untuk menguji kemampuan layanan Custom Vision guna mendeteksi objek dalam gambar, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
+Untuk menguji kemampuan layanan Custom Vision guna mendeteksi objek dalam gambar, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsionalitas yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi seluler.
 
-## Membuat sumber daya Azure App Service
+## Buat sumber daya *Layanan Azure AI*
 
-Anda dapat menggunakan layanan Custom Vision dengan membuat sumber daya **Custom Vision** atau sumber daya **Cognitive Services**.
+Anda dapat menggunakan layanan Custom Vision dengan membuat **sumber daya Custom Vision** atau **sumber daya layanan** Azure AI.
 
-> **Catatan** Tidak semua sumber daya tersedia di setiap wilayah. Baik Anda membuat sumber daya Custom Vision atau Cognitive Services, hanya sumber daya yang dibuat di [wilayah tertentu](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) yang dapat digunakan untuk mengakses layanan Custom Vision. Demi kemudahan, wilayah telah dipilih sebelumnya untuk Anda dalam instruksi konfigurasi di bawah ini.
+> **Catatan** Tidak semua sumber daya tersedia di setiap wilayah. Baik Anda membuat sumber daya layanan Custom Vision atau Azure AI, hanya sumber daya yang dibuat di [wilayah tertentu yang](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) dapat digunakan untuk mengakses layanan Custom Vision. Demi kemudahan, wilayah telah dipilih sebelumnya untuk Anda dalam instruksi konfigurasi di bawah ini.
 
-Membuat sumber daya Azure **Layanan bahasa ** di langganan Azure Anda
+Buat **sumber daya layanan** Azure AI di langganan Azure Anda.
 
 1. Di tab browser lain, buka portal Microsoft Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. **Klik &#65291; Buat tombol sumber daya** dan cari *layanan* Azure AI. Pilih **buat** **paket layanan** Azure AI. Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan PuTTY dengan pengaturan berikut:
+1. Klik tombol **＋Buat sumber daya**dan cari *layanan Azure AI*. Pilih **buat** paket **layanan Azure AI**. Anda akan diarahkan ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: US Timur
@@ -35,7 +35,7 @@ Membuat sumber daya Azure **Layanan bahasa ** di langganan Azure Anda
 
 1. Tinjau dan buat sumber daya, dan tunggu hingga penyebaran selesai. Lalu pergi ke sumber daya yang disebarkan.
 
-1. Lihat halaman **Kunci dan Titik Akhir** untuk mengetahui sumber daya Cognitive Services Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
+1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Layanan Azure AI Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
 
 ## Membuat proyek Visual Kustom
 
@@ -48,7 +48,7 @@ Untuk melatih model deteksi objek, Anda perlu membuat proyek Custom Vision berda
     - **Deskripsi**: Deteksi objek untuk keselamatan jalan.
     - **Sumber daya**: *Sumber daya yang Anda buat sebelumnya*
     - **Jenis Proyek**: Deteksi Objek
-    - **Domain**: Umum
+    - **** Domain: Umum \[A1]
 
 1. Tunggu proyek dibuat dan dibuka di browser.
 
@@ -56,7 +56,7 @@ Untuk melatih model deteksi objek, Anda perlu membuat proyek Custom Vision berda
 
 Untuk melatih model deteksi objek, Anda perlu mengunggah gambar yang berisi kelas yang ingin diidentifikasi oleh model, dan memberi tag gambar untuk menunjukkan kotak pembatas untuk setiap instans objek.
 
-1. Unduh dan ekstrak gambar pelatihan dari [https://aka.ms/traffic-images](https://aka.ms/traffic-images). Folder yang diekstrak berisi kumpulan gambar buah-buahan.
+1. Unduh dan ekstrak gambar pelatihan dari [https://aka.ms/traffic-images](https://aka.ms/traffic-images). Folder yang diekstrak berisi kumpulan gambar pengendara sepeda dan pejalan kaki.
 
 1. Di portal Custom Vision, di proyek deteksi objek Traffic Brankas ty** Anda**, pilih **Tambahkan gambar** dan unggah semua gambar di folder yang diekstrak.
 
@@ -64,13 +64,13 @@ Untuk melatih model deteksi objek, Anda perlu mengunggah gambar yang berisi kela
 
 1. Setelah gambar diunggah, pilih yang pertama untuk membukanya.
 
-1. Tahan mouse di atas objek apa pun pada gambar hingga wilayah yang terdeteksi secara otomatis ditampilkan seperti gambar di bawah ini. Kemudian pilih objek, dan jika perlu ubah ukuran wilayah untuk mengelilinginya. Atau, Anda cukup menyeret objek untuk membuat wilayah.
+1. Tahan mouse di atas objek apa pun (pengendara sepeda atau pejalan kaki) pada gambar hingga wilayah yang terdeteksi secara otomatis ditampilkan. Kemudian pilih objek, dan jika perlu ubah ukuran wilayah untuk mengelilinginya. Atau, Anda cukup menyeret objek untuk membuat wilayah.
 
     Saat objek dipilih dengan erat dalam wilayah persegi panjang, masukkan tag yang sesuai untuk objek (*Pengendara Sepeda* atau *Pejalan* Kaki) dan gunakan **tombol Wilayah** tag (**+**) untuk menambahkan tag ke proyek.
 
     ![Cuplikan layar gambar dengan wilayah yang ditandai dalam kotak dialog Detaol Gambar.](media/create-object-detection-solution/tag-image.png)
 
-1. Gunakan tautan  di sebelah kanan untuk membuka gambar berikutnya, dan beri tag pada objeknya. Kemudian terus kerjakan seluruh kumpulan gambar, beri tag pada setiap apel, pisang, dan jeruk.
+1. **Gunakan tautan Berikutnya** (**(>)** di sebelah kanan untuk masuk ke gambar berikutnya, dan tandai objeknya. Kemudian terus bekerja melalui seluruh koleksi gambar, menandai setiap pengendara sepeda dan pejalan kaki.
 
     Saat Anda menandai gambar, perhatikan hal berikut:
 
@@ -90,15 +90,15 @@ Sekarang setelah memberi tag gambar dalam proyek, Anda siap untuk melatih model.
 
 1. Dalam proyek Custom Vision, klik **Latih** untuk melatih model deteksi objek menggunakan gambar yang diberi tag. Pilih opsi **Pelatihan Cepat**.
 
-    > Pelatihan mungkin memerlukan waktu beberapa menit untuk diselesaikan. Sambil menunggu, lihat Analitik [video untuk kota](https://www.microsoft.com/research/video/video-analytics-for-smart-cities/) pintar, yang menjelaskan proyek nyata untuk menggunakan visi komputer dalam inisiatif peningkatan keselamatan jalan.
+    > **Tips**: Pelatihan mungkin memakan waktu beberapa menit. Sambil menunggu, lihat Analitik [video untuk kota](https://www.microsoft.com/research/video/video-analytics-for-smart-cities/) pintar, yang menjelaskan proyek nyata untuk menggunakan visi komputer dalam inisiatif peningkatan keselamatan jalan.
 
-2. Tunggu hingga pelatihan selesai (mungkin memerlukan waktu sekitar sepuluh menit), lalu tinjau metrik kinerja *Presisi*, *Recall*, dan *mAP* - ini mengukur prediksi kebaikan model deteksi objek, dan semuanya harus tinggi.
+2. Ketika pelatihan selesai, tinjau *metrik performa Presisi, *Pengenalan**, dan *mAP* - ini mengukur kebaikan prediksi model deteksi objek, dan semuanya harus cukup tinggi.
 
 3. Sesuaikan **Ambang** Probabilitas di sebelah kiri, tingkatkan dari 50% menjadi 90% dan amati pengaruhnya pada metrik performa. Pengaturan ini menentukan nilai probabilitas yang harus dipenuhi atau melebihi setiap evaluasi tag untuk dihitung sebagai prediksi.
 
     ![Cuplikan layar metrik performa untuk model terlatih.](media/create-object-detection-solution/performance-metrics.png)
 
-4. Di kanan atas halaman, klik **Uji Cepat**, lalu di kotak **URL Gambar**, masukkan `https://aka.ms/pedestrian-cyclist` dan lihat prediksi yang dihasilkan.
+4. Di kanan atas halaman, klik **Uji** Cepat, lalu di kotak **URL** Gambar, masukkan `https://aka.ms/pedestrian-cyclist` dan tampilkan hasilnya.
 
     Di panel sebelah kanan, di bawah **Prediksi**, setiap objek yang terdeteksi tercantum dengan tag dan probabilitasnya. Pilih setiap objek untuk melihatnya disorot dalam gambar.
 
@@ -124,19 +124,19 @@ Nanti, Anda akan memerlukan URL yang sesuai dan nilai-nilai Kunci Prediksi untuk
 
 ## Menyiapkan aplikasi klien
 
-Untuk menguji kemampuan layanan Custom Vision, kami akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell di Azure.
+Untuk menguji kemampuan layanan Custom Vision, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di shell cloud di Azure.
 
-1. Di portal Microsoft Azure, pilih tombol **[>_]** (**Cloud Shell**) di bagian atas halaman di sebelah kanan kotak pencarian. Tindakan ini akan membuka panel Cloud Shell di bagian bawah portal.
+1. Beralih kembali ke tab browser yang berisi portal Azure, dan pilih tombol **Cloud shell** (**[>_]**) di bagian atas halaman di sebelah kanan kotak pencarian. Ini membuka panel cloud shell di bagian bawah portal.
 
-    Saat pertama kali membuka Cloud Shell, Anda mungkin diminta untuk memilih jenis shell yang ingin digunakan (*Bash* atau *PowerShell*). Pilih **PowerShell**.
+    Saat pertama kali membuka Cloud Shell, Anda mungkin diminta untuk memilih jenis shell yang ingin digunakan (*Bash* atau *PowerShell*). Jika demikian, pilih **PowerShell**.
 
-    Jika Anda diminta membuat penyimpanan untuk Cloud Shell, pastikan langganan ditentukan dan pilih **Buat penyimpanan**. Kemudian tunggu sekitar satu menit hingga penyimpanan dibuat.
+    Jika Anda diminta untuk membuat penyimpanan untuk Cloud Shell Anda, pastikan langganan Anda dipilih dan pilih **Buat penyimpanan**. Kemudian tunggu sekitar satu menit hingga penyimpanan dibuat.
 
     Ketika cloud shell siap, cloud shell akan terlihat mirip dengan ini:
     
-    ![Cuplikan layar saat membuka Azure Cloud Shell di portal Microsoft Azure.](media/create-object-detection-solution/cloud-shell.png)
+    ![Cuplikan layar cloud shell di portal Azure.](media/create-object-detection-solution/cloud-shell.png)
 
-    > Pastikan jenis shell yang ditunjukkan di kiri atas panel Cloud Shell dialihkan ke PowerShell. Jika *Bash*, alihkan ke *PowerShell* dengan menggunakan menu drop-down.
+    > **Tips**: Pastikan bahwa jenis shell yang ditunjukkan di kiri atas panel Cloud Shell adalah *PowerShell*. Jika *Bash*, alihkan ke *PowerShell* dengan menggunakan menu drop-down.
 
     Perhatikan bahwa Anda dapat mengubah ukuran cloud shell dengan menyeret bilah pemisah di bagian atas panel, atau menggunakan ikon **&#8212;**, **&#9723;**, dan **X** di kanan atas panel untuk meminimalkan, memaksimalkan, dan menutup panel. Untuk informasi selengkapnya tentang menggunakan Azure Cloud Shell, lihat [dokumentasi Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
@@ -154,7 +154,7 @@ Untuk menguji kemampuan layanan Custom Vision, kami akan menggunakan aplikasi ba
     code detect-objects.ps1
     ```
 
-    Perhatikan bagaimana perintah ini membuka penyunting seperti pada gambar di bawah ini:
+    Perhatikan bagaimana ini membuka editor seperti yang ada pada gambar di bawah ini:
 
      ![Cuplikan layar editor kode di cloud shell.](media/create-object-detection-solution/code-editor.png)
 
@@ -173,7 +173,7 @@ Untuk menguji kemampuan layanan Custom Vision, kami akan menggunakan aplikasi ba
     $predictionKey ="1a2b3c4d5e6f7g8h9i0j...."
     ```
 
-5. Setelah membuat perubahan pada variabel dalam kode, tekan **CTRL+S** untuk menyimpan file. Kemudian tekan Ctrl+Q untuk menutup editor kode.
+5. Setelah membuat perubahan pada variabel dalam kode, tekan **CTRL+S** untuk menyimpan file. Kemudian tekan **CTRL+Q** untuk menutup editor kode.
 
 ## Menguji aplikasi klien
 
@@ -191,7 +191,7 @@ Sekarang Anda dapat menggunakan aplikasi klien sampel untuk mendeteksi pengendar
 
 1. Tinjau prediksi, yang mencantumkan objek apa pun yang terdeteksi dengan probabilitas 90% atau lebih, bersama dengan koordinat kotak pembatas di sekitar lokasinya.
 
-1. Sekarang mari kita coba gambar lain: Jalankan perintah ini:
+1. Sekarang mari kita coba gambar lain. Jalankan perintah ini:
 
     ```PowerShell
     ./detect-objects.ps1 2

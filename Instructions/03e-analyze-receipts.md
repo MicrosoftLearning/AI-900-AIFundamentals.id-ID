@@ -109,6 +109,6 @@ Setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien sederhana y
 
 1. Tinjau hasil yang ditampilkan. Perhatikan bahwa Form Recognizer dapat menafsirkan data dalam formulir, mengidentifikasi alamat pedagang dan nomor telepon dengan benar, serta tanggal dan waktu transaksi, serta item baris, subtotal, pajak, dan jumlah total.
 
-## Pelajari lebih lanjut
+## Pelajari selengkapnya
 
 Aplikasi sederhana ini hanya menunjukkan beberapa kemampuan Form Recognizer layanan Computer Vision. Untuk mempelajari lebih lanjut tindakan yang dapat Anda lakukan dengan layanan ini, lihat [halaman Form Recognizer](https://docs.microsoft.com/azure/applied-ai-services/form-recognizer/overview).

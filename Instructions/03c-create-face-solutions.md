@@ -132,6 +132,6 @@ Setelah memiliki model kustom, Anda dapat menjalankan aplikasi klien sederhana y
 
 1. Tinjau hasil analisis wajah untuk gambar ketiga.
 
-## Pelajari lebih lanjut
+## Pelajari selengkapnya
 
 Aplikasi sederhana ini hanya menunjukkan beberapa kemampuan layanan Face. Untuk mempelajari lebih lanjut tentang apa yang dapat Anda lakukan dengan layanan ini, lihat [halaman Face API](https://azure.microsoft.com/en-us/products/cognitive-services/vision-services).
