@@ -3,7 +3,7 @@ lab:
   title: Menjelajahi pemahaman bahasa
 ---
 
-# <a name="explore-language-understanding"></a>Menjelajahi pemahaman bahasa
+# Menjelajahi pemahaman bahasa
 
 > **Catatan** Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) dengan akses administrator.
 
@@ -11,7 +11,7 @@ Kami semakin berharap bahwa komputer dapat menggunakan AI untuk memahami perinta
 
 Untuk menguji kemampuan layanan Pemahaman Bahasa Percakapan, kami akan menggunakan aplikasi baris perintah yang berjalan di Cloud Shell. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
 
-## <a name="create-a-language-service-resource"></a>Buat sumber daya *Layanan bahasa*
+## Buat sumber daya *Layanan bahasa*
 
 Anda dapat menggunakan layanan Pemahaman Bahasa Percakapan dengan membuat sumber daya **Layanan bahasa**.
 
@@ -26,11 +26,11 @@ Jika Anda belum melakukannya, buat sumber daya **Layanan bahasa** di langganan A
     - **Wilayah**: US Timur 2
     - **Nama**: *Masukkan nama unik*.
     - **Tingkat harga**: S (1K Panggilan per menit)
-    - **Dengan mencentang kotak ini, saya menyatakan bahwa saya telah meninjau dan menyetujui persyaratan dalam Pemberitahuan AI yang Bertanggung Jawab.** : Dipilih.
+    - **Dengan mencentang kotak ini, saya menyatakan bahwa saya telah meninjau dan menyetujui persyaratan dalam Pemberitahuan AI yang Bertanggung Jawab.**: Dipilih.
 
 1. Tinjau dan buat sumber daya, dan tunggu hingga penyebaran selesai.
 
-### <a name="create-a-conversational-language-understanding-app"></a>Membuat Aplikasi Pemahaman Bahasa Percakapan
+### Membuat Aplikasi Pemahaman Bahasa Percakapan
 
 Untuk menerapkan pemahaman bahasa alami dengan Pemahaman Bahasa Percakapan, Anda membuat aplikasi; lalu tambahkan entitas, niat, dan ucapan untuk menentukan perintah yang Anda inginkan agar dijalankan oleh aplikasi.
 
@@ -61,7 +61,7 @@ Untuk menerapkan pemahaman bahasa alami dengan Pemahaman Bahasa Percakapan, Anda
 
 1. Di halaman *Tinjau dan selesaikan*, klik **Buat**.
 
-### <a name="create-intents-utterances-and-entities"></a>Membuat niat, ucapan, dan entitas
+### Membuat niat, ucapan, dan entitas
 
 *Tujuan* adalah tindakan yang ingin Anda lakukan - misalnya, Anda mungkin ingin menyalakan lampu, atau mematikan kipas. Dalam hal ini, Anda akan menentukan dua tujuan: satu untuk mengaktifkan perangkat, dan satu lagi untuk mematikan perangkat. Untuk setiap niat, Anda akan menentukan contoh *ungkapan* yang menunjukkan jenis bahasa yang digunakan untuk mengindikasikan maksud.
 
@@ -92,7 +92,7 @@ Untuk menerapkan pemahaman bahasa alami dengan Pemahaman Bahasa Percakapan, Anda
 
 1. Lakukan hal yang sama untuk semua ucapan. Beri label ucapan *kipas* atau *lampu* lainnya dengan entitas **perangkat**. Setelah selesai, verifikasi bahwa Anda memiliki ucapan berikut dan pastikan untuk memilih **Simpan perubahan**:
 
-    | **tujuan** | **ucapan** | **entitas** |
+    | **tujuan** | **ucapan** | **Entitas** |
     | --------------- | ------------------ | ------------------ |
     | switch_on   | Nyalakan kipas angin      | Perangkat - *pilih kipas* |
     | switch_on   | Nyalakan lampu    | Perangkat - *pilih lampu* |
@@ -118,7 +118,7 @@ Untuk menerapkan pemahaman bahasa alami dengan Pemahaman Bahasa Percakapan, Anda
 
 1. Beri label kata-kata *lampu* atau *kipas* dengan entitas **perangkat**. Setelah selesai, verifikasi bahwa Anda memiliki ucapan berikut dan pastikan untuk memilih **Simpan perubahan**:  
 
-    | **tujuan** | **ucapan** | **entitas** | 
+    | **tujuan** | **ucapan** | **Entitas** | 
     | --------------- | ------------------ | ------------------ |
     | switch_off   | Matikan kipas    | Perangkat - *pilih kipas* | 
     | switch_off   | Matikan lampu  | Perangkat - *pilih lampu* |
@@ -127,7 +127,7 @@ Untuk menerapkan pemahaman bahasa alami dengan Pemahaman Bahasa Percakapan, Anda
     | switch_off   | Matikan kipas angin | Perangkat - *pilih kipas* |
     | switch_off   | Matikan lampu | Perangkat - *pilih lampu* |
 
-### <a name="train-the-model"></a>Latih model
+### Melatih model
 
 Sekarang Anda siap menggunakan niat dan entitas yang ditentukan untuk melatih model bahasa percakapan untuk aplikasi Anda.
 
@@ -139,7 +139,7 @@ Sekarang Anda siap menggunakan niat dan entitas yang ditentukan untuk melatih mo
 
 1. Tunggu hingga pelatihan selesai. 
 
-### <a name="deploy-and-test-the-model"></a>Terapkan dan uji model
+### Terapkan dan uji model
 
 Untuk menggunakan model terlatih Anda dalam aplikasi klien, Anda harus menerapkannya sebagai titik akhir tempat aplikasi klien dapat mengirim ucapan baru; tempat tujuan dan entitas akan diprediksi.
 
@@ -167,7 +167,7 @@ Untuk menggunakan model terlatih Anda dalam aplikasi klien, Anda harus menerapka
     - *hidupkan lampu*
     - *nonaktifkan kipas*
 
-## <a name="run-cloud-shell"></a>Menjalankan Cloud Shell
+## Menjalankan Cloud Shell
 
 Sekarang mari kita coba model yang Anda sebarkan. Untuk melakukannya, kami akan menggunakan aplikasi baris perintah yang berjalan di Cloud Shell di Azure. 
 
@@ -191,7 +191,7 @@ Sekarang mari kita coba model yang Anda sebarkan. Untuk melakukannya, kami akan 
 
     ![Tunggu PowerShell untuk memulai.](media/conversational-language-understanding/powershell-prompt.png) 
 
-## <a name="configure-and-run-a-client-application"></a>Mengonfigurasi dan menjalankan aplikasi klien
+## Mengonfigurasi dan menjalankan aplikasi klien
 
 Sekarang mari kita buka dan edit skrip yang sudah ditulis sebelumnya, yang akan menjalankan aplikasi klien.
 
@@ -212,7 +212,7 @@ Sekarang mari kita buka dan edit skrip yang sudah ditulis sebelumnya, yang akan 
 
     Perhatikan bagaimana skrip membuka editor seperti pada gambar di bawah ini: 
 
-    ![Penyunting kode.](media/conversational-language-understanding/powershell-portal-guide-4.png)
+    ![Editor kode.](media/conversational-language-understanding/powershell-portal-guide-4.png)
 
 1. Di panel **File** di sebelah kiri, pilih file **understand.ps1** di folder **ai-900**. File ini berisi beberapa kode yang menggunakan model Pemahaman Bahasa Percakapan Anda. 
 
@@ -257,6 +257,6 @@ Sekarang mari kita buka dan edit skrip yang sudah ditulis sebelumnya, yang akan 
 
 >**Catatan** Selalu mulai dengan **./understand.ps1** diikuti dengan frasa. Sertakan tanda kutip di sekitar frasa Anda.
 
-## <a name="learn-more"></a>Pelajari lebih lanjut
+## Pelajari selengkapnya
 
 Aplikasi ini hanya menampilkan beberapa kemampuan fitur Pemahaman Bahasa Percakapan dari layanan Bahasa. Untuk mempelajari selengkapnya tindakan yang dapat Anda lakukan dengan layanan ini, lihat [Halaman Pemahaman Bahasa Percakapan](https://docs.microsoft.com/azure/cognitive-services/language-service/conversational-language-understanding/overview). 

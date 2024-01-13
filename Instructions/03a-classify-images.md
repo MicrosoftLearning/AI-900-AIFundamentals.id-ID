@@ -5,27 +5,27 @@ lab:
 
 # Menjelajahi klasifikasi gambar
 
-Layanan kognitif *Computer Vision* menyediakan model yang telah dibangun sebelumnya yang berguna untuk bekerja dengan gambar, tetapi Anda sering kali perlu melatih model Anda sendiri untuk computer vision. Misalnya, organisasi konservasi satwa liar ingin melacak penampakan hewan dengan menggunakan kamera yang sensitif terhadap gerakan. Gambar yang ditangkap oleh kamera kemudian dapat digunakan untuk memverifikasi keberadaan spesies tertentu di area tertentu dan membantu upaya konservasi untuk spesies yang terancam punah. Untuk mencapai hal ini, organisasi akan mendapat manfaat dari *model klasifikasi* gambar yang dilatih untuk mengidentifikasi berbagai spesies hewan dalam foto yang ditangkap.
+Layanan *Azure AI Vision* menyediakan model bawaan yang berguna untuk bekerja dengan gambar, tetapi Anda sering kali perlu melatih model Anda sendiri untuk visi komputer. Misalnya, organisasi konservasi satwa liar ingin melacak penampakan hewan dengan menggunakan kamera yang sensitif terhadap gerakan. Gambar yang ditangkap oleh kamera kemudian dapat digunakan untuk memverifikasi keberadaan spesies tertentu di area tertentu dan membantu upaya konservasi untuk spesies yang terancam punah. Untuk mencapai hal ini, organisasi akan mendapat manfaat dari *model klasifikasi* gambar yang dilatih untuk mengidentifikasi berbagai spesies hewan dalam foto yang ditangkap.
 
-Di Azure, Anda dapat menggunakan layanan Custom Vision untuk melatih model klasifikasi gambar berdasarkan gambar yang ada. Ada dua elemen untuk membuat solusi klasifikasi gambar. Pertama, Anda harus melatih model untuk mengenali kelas yang berbeda menggunakan gambar yang ada. Kemudian, saat model dilatih, Anda harus menerbitkannya sebagai layanan yang dapat digunakan oleh aplikasi.
+Di Azure, Anda dapat menggunakan ***layanan Custom Vision*** untuk melatih model klasifikasi gambar berdasarkan gambar yang ada. Ada dua elemen untuk membuat solusi klasifikasi gambar. Pertama, Anda harus melatih model untuk mengenali kelas yang berbeda menggunakan gambar yang ada. Kemudian, saat model dilatih, Anda harus menerbitkannya sebagai layanan yang dapat digunakan oleh aplikasi.
 
-Untuk menguji kemampuan layanan Custom Vision, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsi yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi ponsel.
+Untuk menguji kemampuan layanan Custom Vision, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell. Prinsip dan fungsionalitas yang sama berlaku dalam solusi dunia nyata, seperti situs web atau aplikasi seluler.
 
 ## Sebelum memulai
 
 Untuk menyelesaikan lab ini, Anda memerlukan [langganan Azure](https://azure.microsoft.com/free?azure-portal=true) tempat Anda memiliki akses administratif.
 
-## Membuat sumber daya Azure App Service
+## Buat sumber daya *Layanan Azure AI*
 
-Anda dapat menggunakan layanan Custom Vision dengan membuat sumber daya **Custom Vision** atau sumber daya **Cognitive Services**.
+Anda dapat menggunakan layanan Custom Vision dengan membuat **sumber daya Custom Vision** atau **sumber daya layanan** Azure AI.
 
->**Catatan** Tidak semua sumber daya tersedia di setiap wilayah. Baik Anda membuat sumber daya Custom Vision atau Cognitive Services, hanya sumber daya yang dibuat di [wilayah tertentu](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) yang dapat digunakan untuk mengakses layanan Custom Vision. Demi kemudahan, wilayah telah dipilih sebelumnya untuk Anda dalam instruksi konfigurasi di bawah ini.
+>**Catatan** Tidak semua sumber daya tersedia di setiap wilayah. Baik Anda membuat Custom Vision atau sumber daya layanan Azure AI, hanya sumber daya yang dibuat di [wilayah](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) tertentu yang dapat digunakan untuk mengakses layanan Custom Vision. Demi kemudahan, wilayah telah dipilih sebelumnya untuk Anda dalam instruksi konfigurasi di bawah ini.
 
-Membuat sumber daya Azure **Layanan bahasa ** di langganan Azure Anda
+Buat **sumber daya layanan** Azure AI di langganan Azure Anda.
 
 1. Buka portal Azure di [https://portal.azure.com](https://portal.azure.com?azure-portal=true), masuk dengan akun Microsoft Anda.
 
-1. **Klik &#65291; Buat tombol sumber daya** dan cari *layanan* Azure AI. Pilih **buat** **paket layanan** Azure AI. Anda akan dibawa ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan PuTTY dengan pengaturan berikut:
+1. Klik tombol **＋Buat sumber daya**dan cari *layanan Azure AI*. Pilih **buat** paket **layanan Azure AI**. Anda akan diarahkan ke halaman untuk membuat sumber daya layanan Azure AI. Konfigurasikan dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya dengan nama unik*.
     - **Wilayah**: US Timur
@@ -35,36 +35,36 @@ Membuat sumber daya Azure **Layanan bahasa ** di langganan Azure Anda
 
 1. Tinjau dan buat sumber daya, dan tunggu hingga penyebaran selesai. Lalu pergi ke sumber daya yang disebarkan.
 
-1. Lihat halaman **Kunci dan Titik Akhir** untuk mengetahui sumber daya Cognitive Services Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
+1. Lihat halaman **Kunci dan Titik Akhir** untuk sumber daya Layanan Azure AI Anda. Anda akan memerlukan titik akhir dan kunci untuk terhubung dari aplikasi klien.
 
 ## Membuat proyek Visual Kustom
 
 Untuk melatih model deteksi objek, Anda perlu membuat proyek Custom Vision berdasarkan sumber daya pelatihan. Untuk melakukannya, Anda akan menggunakan portal Custom Vision.
 
-1. Unduh dan ekstrak gambar pelatihan dari [https://aka.ms/animal-images](https://aka.ms/animal-images). Gambar-gambar ini disediakan dalam folder zip, yang jika diekstrak berisi subfolder yang disebut **apel**, **pisang**, dan **jeruk**.
+1. Unduh dan ekstrak gambar pelatihan dari [https://aka.ms/animal-images](https://aka.ms/animal-images). Gambar-gambar ini disediakan dalam folder zip, yang ketika diekstraksi berisi subfolder yang disebut **gajah**, **jerapah**, dan **singa**.
 
-1. Di tab browser baru, buka portal Visi Khusus di [https://customvision.ai](https://customvision.ai?azure-portal=true). Jika diminta, masuk menggunakan akun Microsoft yang terkait dengan langganan Azure Anda dan setujui ketentuan layanan.
+1. Buka tab browser baru, dan telusuri ke portal Custom Vision di [https://customvision.ai](https://customvision.ai?azure-portal=true). Jika diminta, masuk menggunakan akun Microsoft yang terkait dengan langganan Azure Anda dan setujui ketentuan layanan.
 
 1. Di portal Custom Vision, buat proyek baru dengan pengaturan berikut:
 
     - **Nama**: Identifikasi Hewan
-    - **Deskripsi**: Klasifikasi gambar untuk belanjaan
-    - **Sumber daya**: *Sumber daya Custom Vision yang Anda buat sebelumnya*
+    - **Deskripsi**: Klasifikasi gambar untuk hewan
+    - **Sumber Daya**: *Layanan Azure AI atau sumber daya Custom Vision yang Anda buat sebelumnya*
     - **Jenis Proyek**: Klasifikasi
     - **Jenis Klasifikasi**: Multikelas (Tag tunggal per gambar)
-    - **Domain**: Umum
+    - **** Domain: Umum \[A2]
 
-1. Klik **Tambahkan gambar**, dan pilih semua file di folder **apel** yang Anda ekstrak sebelumnya. Kemudian unggah file gambar, tentukan tag *apel*, seperti ini:
+1. Klik **Tambahkan gambar**, dan pilih semua file di folder gajah** yang **Anda ekstrak sebelumnya. Kemudian unggah file gambar, yang menentukan gajah* tag*, seperti ini:
 
     ![Cuplikan layar antarmuka pengunggahan Gambar.](media/create-image-classification-system/upload-elephants.png)
 
 1. Gunakan tombol **Tambahkan gambar** ([+]) untuk mengunggah gambar di **folder jerami** dengan jerami* tag*, dan gambar di **folder singa** dengan singa* tag*.
 
-1. Jelajahi gambar yang telah Anda unggah di proyek Custom Vision - harus ada 15 gambar dari setiap kelas, seperti ini:
+1. Jelajahi gambar yang telah Anda unggah dalam proyek Custom Vision - harus ada 17 gambar dari setiap kelas, seperti ini:
 
     ![Cuplikan layar gambar pelatihan yang diberi tag di portal Custom Vision.](media/create-image-classification-system/animal-training-images.png)
 
-1. Dalam proyek Custom Vision, di atas gambar, klik **Latih** untuk melatih model klasifikasi menggunakan gambar yang diberi tag. Pilih opsi **Pelatihan Cepat**, lalu tunggu hingga perulangan pelatihan selesai (hal ini mungkin memerlukan waktu sekitar satu menit).
+1. Dalam proyek Custom Vision, di atas gambar, klik **Latih** untuk melatih model klasifikasi menggunakan gambar yang diberi tag. **Pilih opsi Pelatihan** Cepat, lalu tunggu perulangan pelatihan selesai.
 
     > **Tips**: Pelatihan mungkin memakan waktu beberapa menit. Sambil menunggu, lihat [Bagaimana selfie macan tutul salju dan AI dapat membantu menyelamatkan spesies dari kepunahan](https://news.microsoft.com/transform/snow-leopard-selfies-ai-save-species/), yang menggambarkan proyek nyata yang menggunakan visi komputer untuk melacak hewan yang terancam punah di alam liar.
 
@@ -78,7 +78,7 @@ Sebelum menerbitkan perulangan model ini untuk digunakan aplikasi, Anda harus me
 
 1. Dalam kotak **URL** Gambar, ketik `https://aka.ms/giraffe` dan klik tombol **gambar uji cepat (&#10132;).**
 
-1. Lihat prediksi yang ditampilkan oleh model Anda - skor peluang untuk *apel* harus yang tertinggi, seperti ini:
+1. Lihat prediksi yang dikembalikan oleh model Anda - skor probabilitas untuk *jerapah* harus tertinggi, seperti ini:
 
     ![Cuplikan layar antarmuka Uji Cepat.](media/create-image-classification-system/quick-test.png)
 
@@ -100,19 +100,19 @@ Nanti, Anda akan memerlukan URL yang sesuai dan nilai-nilai Kunci Prediksi untuk
 
 ## Menyiapkan aplikasi klien
 
-Untuk menguji kemampuan layanan Custom Vision, kami akan menggunakan aplikasi baris perintah sederhana yang berjalan di Cloud Shell di Azure.
+Untuk menguji kemampuan layanan Custom Vision, kita akan menggunakan aplikasi baris perintah sederhana yang berjalan di shell cloud di Azure.
 
-1. Di portal Microsoft Azure, pilih tombol **[>_]** (**Cloud Shell**) di bagian atas halaman di sebelah kanan kotak pencarian. Tindakan ini akan membuka panel Cloud Shell di bagian bawah portal.
+1. Beralih kembali ke tab browser yang berisi portal Azure, dan pilih tombol **Cloud shell** (**[>_]**) di bagian atas halaman di sebelah kanan kotak pencarian. Ini membuka panel cloud shell di bagian bawah portal.
 
-    Saat pertama kali membuka Cloud Shell, Anda mungkin diminta untuk memilih jenis shell yang ingin digunakan (*Bash* atau *PowerShell*). Pilih **PowerShell**.
+    Saat pertama kali membuka Cloud Shell, Anda mungkin diminta untuk memilih jenis shell yang ingin digunakan (*Bash* atau *PowerShell*). Jika demikian, pilih **PowerShell**.
 
-    Jika Anda diminta membuat penyimpanan untuk Cloud Shell, pastikan langganan ditentukan dan pilih **Buat penyimpanan**. Kemudian tunggu sekitar satu menit hingga penyimpanan dibuat.
+    Jika Anda diminta untuk membuat penyimpanan untuk Cloud Shell Anda, pastikan langganan Anda dipilih dan pilih **Buat penyimpanan**. Kemudian tunggu sekitar satu menit hingga penyimpanan dibuat.
 
     Ketika cloud shell siap, cloud shell akan terlihat mirip dengan ini:
     
-    ![Cuplikan layar saat membuka Azure Cloud Shell di portal Microsoft Azure.](media/create-image-classification-system/cloud-shell.png)
+    ![Cuplikan layar cloud shell di portal Azure.](media/create-image-classification-system/cloud-shell.png)
 
-    > Pastikan jenis shell yang ditunjukkan di kiri atas panel Cloud Shell dialihkan ke PowerShell. Jika *Bash*, alihkan ke *PowerShell* dengan menggunakan menu drop-down.
+    > **Tips**: Pastikan bahwa jenis shell yang ditunjukkan di kiri atas panel Cloud Shell adalah *PowerShell*. Jika *Bash*, alihkan ke *PowerShell* dengan menggunakan menu drop-down.
 
     Perhatikan bahwa Anda dapat mengubah ukuran cloud shell dengan menyeret bilah pemisah di bagian atas panel, atau menggunakan ikon **&#8212;**, **&#9723;**, dan **X** di kanan atas panel untuk meminimalkan, memaksimalkan, dan menutup panel. Untuk informasi selengkapnya tentang menggunakan Azure Cloud Shell, lihat [dokumentasi Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
@@ -130,7 +130,7 @@ Untuk menguji kemampuan layanan Custom Vision, kami akan menggunakan aplikasi ba
     code classify-image.ps1
     ```
 
-    Perhatikan bagaimana perintah ini membuka penyunting seperti pada gambar di bawah ini:
+    Perhatikan bagaimana ini membuka editor seperti yang ada pada gambar di bawah ini:
 
      ![Cuplikan layar editor kode di cloud shell.](media/create-image-classification-system/code-editor.png)
 
@@ -149,7 +149,7 @@ Untuk menguji kemampuan layanan Custom Vision, kami akan menggunakan aplikasi ba
     $predictionKey ="1a2b3c4d5e6f7g8h9i0j...."
     ```
 
-5. Setelah membuat perubahan pada variabel dalam kode, tekan **CTRL+S** untuk menyimpan file. Kemudian tekan Ctrl+Q untuk menutup editor kode.
+5. Setelah membuat perubahan pada variabel dalam kode, tekan **CTRL+S** untuk menyimpan file. Kemudian tekan **CTRL+Q** untuk menutup editor kode.
 
 ## Menguji aplikasi klien
 
@@ -165,9 +165,9 @@ Sekarang Anda dapat menggunakan aplikasi klien sampel untuk mengklasifikasikan g
 
     ![Foto jerami.](media/create-image-classification-system/animal-1.jpg)
 
-1. Tinjau prediksi, yang seharusnya **apel**.
+1. Tinjau prediksi, yang harus **jerami**.
 
-1. Sekarang mari kita coba gambar lain: Jalankan perintah ini:
+1. Sekarang mari kita coba gambar lain. Jalankan perintah ini:
 
     ```PowerShell
     ./classify-image.ps1 2
@@ -177,19 +177,19 @@ Sekarang Anda dapat menggunakan aplikasi klien sampel untuk mengklasifikasikan g
 
     ![Foto gajah.](media/create-image-classification-system/animal-2.jpg)
 
-1. Pastikan model mengklasifikasikan gambar ini sebagai **jeruk**.
+1. Verifikasi bahwa model mengklasifikasikan gambar ini sebagai **gajah**.
 
-1. Mari coba sekali lagi: Jalankan perintah ini:
+1. Mari kita coba satu lagi. Jalankan perintah ini:
 
     ```PowerShell
     ./classify-image.ps1 3
     ```
 
-    Jadwal akhir terlihat seperti ini:
+    Gambar akhir terlihat seperti ini:
 
-    ![Foto seekor anjing.](media/create-image-classification-system/animal-3.jpg)
+    ![Foto singa.](media/create-image-classification-system/animal-3.jpg)
 
-1. Pastikan model mengklasifikasikan gambar ini sebagai **jeruk**.
+1. Verifikasi bahwa model mengklasifikasikan gambar ini sebagai **singa**.
 
 Mudah-mudahan, model klasifikasi gambar Anda mengklasifikasikan ketiga gambar dengan benar.
 
